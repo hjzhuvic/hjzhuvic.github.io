@@ -5,16 +5,19 @@
   
 
   
-  <title>tags | HEXO</title>
+  <title>四月天 | HEXO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="hjzhuvic.github.io/tags/index.html">
+  <meta name="description" content="四月再见。 五月你好。 答辩论文交掉了。基本上告一段落。 先说说答辩的情况把。还是年少轻狂，小看了老师，也高估了自己。总的来说答辩的时候不是特别好，很多时候没有抓到committee的重点，一些自己觉得很简单的事情，对于他们而言不是那么的直接，论文里面也没有直接的解释。 没答好的几个问题：  BSFC一系列。 回答的时候没有理解他们没有看懂这个图。  BSFC为什么不用数学模型。 但是大脑当机了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四月天">
+<meta property="og:url" content="hjzhuvic.github.io/2020/04/29/2020-04-29%20%E5%9B%9B%E6%9C%88%E5%A4%A9/index.html">
 <meta property="og:site_name" content="HEXO">
+<meta property="og:description" content="四月再见。 五月你好。 答辩论文交掉了。基本上告一段落。 先说说答辩的情况把。还是年少轻狂，小看了老师，也高估了自己。总的来说答辩的时候不是特别好，很多时候没有抓到committee的重点，一些自己觉得很简单的事情，对于他们而言不是那么的直接，论文里面也没有直接的解释。 没答好的几个问题：  BSFC一系列。 回答的时候没有理解他们没有看懂这个图。  BSFC为什么不用数学模型。 但是大脑当机了">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-04T06:16:53.080Z">
-<meta property="article:modified_time" content="2020-06-19T06:14:26.000Z">
+<meta property="article:published_time" content="2020-04-29T18:51:26.000Z">
+<meta property="article:modified_time" content="2020-08-23T07:07:37.568Z">
 <meta property="article:author" content="Haijia Alex Zhu">
+<meta property="article:tag" content="随想录">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="HEXO" type="application/atom+xml">
@@ -64,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="tags-" class="article article-type-tags" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2020-04-29 四月天" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/tags/index.html" class="article-date">
-  <time datetime="2020-09-04T06:16:53.080Z" itemprop="datePublished">2020-09-03</time>
+    <a href="/2020/04/29/2020-04-29%20%E5%9B%9B%E6%9C%88%E5%A4%A9/" class="article-date">
+  <time datetime="2020-04-29T18:51:26.000Z" itemprop="datePublished">2020-04-29</time>
 </a>
     
   </div>
@@ -78,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      四月天
     </h1>
   
 
@@ -86,17 +89,68 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>四月再见。</p>
+<p>五月你好。</p>
+<h2 id="答辩"><a href="#答辩" class="headerlink" title="答辩"></a>答辩</h2><p>论文交掉了。基本上告一段落。</p>
+<p>先说说答辩的情况把。还是<del>年少</del>轻狂，小看了老师，也高估了自己。总的来说答辩的时候不是特别好，很多时候没有抓到committee的重点，一些自己觉得很简单的事情，对于他们而言不是那么的直接，论文里面也没有直接的解释。</p>
+<p>没答好的几个问题：</p>
+<ol>
+<li><p>BSFC一系列。</p>
+<p>回答的时候没有理解他们没有看懂这个图。</p>
+</li>
+<li><p>BSFC为什么不用数学模型。</p>
+<p>但是大脑当机了</p>
+</li>
+<li><p>全局最优解能否确保这个是全局最优解吗</p>
+<p>其实，这个问题是我最没有回答好的。回答的不算错，只是没有回答全。</p>
+</li>
+</ol>
+<p>说说这个没回答好的问题，这个问题的其实比较tricky，理论上这类算法无法保证找到的解是全局最优解，只能说是最优解。但是，对于一个工程问题，理论上不一定存在全局最优解，或者存在最优解，但是不一定找得到。那么stochastic global optimization algorithm 找到的算全局最优解吗？</p>
+<p><code>答案是&quot;算&quot;！ 这类算法通过搜索整个design space，几乎是遍历的所有可能的解，找到的解当然是最优的（基于统计学）。这也引入了这类算法的普遍缺点，比较耗时（computational intensive）。 为了解决这个比较耗时的问题，我们引入的surrogate model 来加快这个过程。</code></p>
+<p>这个也说明了自己存在的一些问题，特别是自己思维上的问题。我一直都知道这类*<strong>全局最优算法**<em>找不到正真的</em></strong>全局***最优解，但是却一直没有提出这个问题：</p>
+<p><code>为什么这类全局最优算法明明不能找到真正的全局最优解，但是却被称为global optimization？</code></p>
+<p><strong>思维定势啊！！</strong> 以后要多思考，不要陷入这类陷阱。多问为什么！</p>
+<h2 id="答辩后的生活"><a href="#答辩后的生活" class="headerlink" title="答辩后的生活"></a>答辩后的生活</h2><p>答辩以后每天都是上上网随便逛逛。没有做什么正经事。。。接下来有一些事情需要完成。</p>
+<ul>
+<li>Submit study permit by April 30</li>
+<li>Organize all the code and model, setup version control and create a actual library</li>
+<li>3D printer 搞起来 （PPE要跟上）</li>
+<li>整理一下自己的routine</li>
+<li>READ: Fuel cell engine </li>
+</ul>
+<p><strong>少年成为他想要模样，就是岁月最好奖赏</strong></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="hjzhuvic.github.io/tags/index.html" data-id="ckenuuv6x0002jlsc3od1ajvg" class="article-share-link">Share</a>
+      <a data-url="hjzhuvic.github.io/2020/04/29/2020-04-29%20%E5%9B%9B%E6%9C%88%E5%A4%A9/" data-id="ckenuuv93003ojlsc3bf46s2r" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2020/04/30/2020-04-29%20%E6%89%8B%E5%B8%90%E5%92%8C%E6%97%A5%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          手帐和日程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/19/2020-04-19%20%E5%9B%9B%E6%9C%88%E9%9A%8F%E6%83%B3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">四月随想</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
