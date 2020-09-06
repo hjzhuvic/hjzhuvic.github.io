@@ -63,7 +63,6 @@ article .highlight a:visited {
 article .highlight .gutter pre,
 article .gist .gist-file .gist-data .line-numbers {
   color: #666;
-  font-size: 0.85em;
 }
 code {
   background-color: #ebefef;
@@ -71,9 +70,6 @@ code {
 }
 .highlight .line.marked {
   background-color: #d1dada;
-}
-.highlight .line {
-  min-height: 22px;
 }
 article pre,
 article code {
