@@ -41,26 +41,18 @@
 
 	<article>
 	
-		<h1><a href="/2021/05/12/黑苹果/">黑苹果</a></h1>
+		<h1><a href="/2021/05/10/黑苹果/"></a></h1>
 	
 	<div class="article__infos">
-		<span class="article__date">2021-05-12</span><br />
+		<span class="article__date">2021-05-10</span><br />
 		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/tech-%E6%94%B6%E5%BD%95/" rel="tag">tech/收录</a>
-			</span>
 		
 	</div>
 
 	
 
 	
-		<p>用了一段时间的黑苹果之后，正儿八经决定升级一下。</p>
-<p>配置:<br>CPU: Intel 10700<br>Motherboard: Gigabyte B460M ds3h AC<br>Wifi/Bluetooth: Onboard Intel 6120<br>Case: NXZT 510</p>
-<p>EFI@Github: <a target="_blank" rel="noopener" href="https://github.com/hjzhuvic/Gigabyte-B460m-ds3h-AC-Hackintosh">https://github.com/hjzhuvic/Gigabyte-B460m-ds3h-AC-Hackintosh</a></p>
-<p>参考资料：<br>[1] <a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Install-Guide/">OpenCore Install Guide</a></p>
-
+		
 	
 
 	
@@ -390,13 +382,20 @@
 	
 
 	
-		<p>稍微记录一下自用dockr</p>
-<ul>
-<li><a href="%5Bhttps://odcn.top/2019/04/12/3108/%5D(https://odcn.top/2019/04/12/3108/)">自动续freenom域名</a></li>
-<li>calibre</li>
-<li><a href="%5Bhttps://hub.docker.com/r/teddysun/kms%5D(https://hub.docker.com/r/teddysun/kms)">KMS 激活服务器</a></li>
+		<p>稍微记录一下自用的应用</p>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><ul>
+<li>portainer</li>
+<li>[自动续freenom域名(<a target="_blank" rel="noopener" href="https://odcn.top/2019/04/12/3108/">https://odcn.top/2019/04/12/3108/</a>)</li>
+<li>[KMS 激活服务器]<ul>
+<li><a target="_blank" rel="noopener" href="https://hub.docker.com/r/teddysun/kms">teddysun/kms (docker.com)</a></li>
+<li><a target="_blank" rel="noopener" href="http://wind4.github.io/vlmcsd/">vlmcsd</a></li>
+</ul>
+</li>
 <li><a target="_blank" rel="noopener" href="https://hub.docker.com/r/jellyfin/jellyfin">Jellyfin</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/nondanee/UnblockNeteaseMusic">UnblockNeteaseMusic</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/nondanee/UnblockNeteaseMusic">UnblockNeteaseMusic</a><ul>
+<li>docker run –name unmusic -d -p 4567:8081 -p 4566:63455 nondanee/unblockneteasemusic -p 63455:8081</li>
+</ul>
+</li>
 <li>Aria2NG<ul>
 <li>硬盘会进不了休眠</li>
 </ul>
@@ -407,10 +406,7 @@
 </li>
 <li><a target="_blank" rel="noopener" href="https://www.iots.vip/post/synology-series-7.html">Watcher Over</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/binux/qiandao/wiki/Docker%E9%83%A8%E7%BD%B2%E7%AD%BE%E5%88%B0%E7%AB%99%E6%95%99%E7%A8%8B#%E4%B8%89%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8">签到</a>　　</li>
-<li>pihole<ul>
-<li>备用服务，主要服务部署在orange pi zero plus上</li>
-</ul>
-</li>
+<li>pihole/AdGuard</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/loblab/noip-renew.git">noip-renew</a><ul>
 <li>用来续ddns的，暂时没搞明白怎么构建docker，现在部署在pihole上<ul>
 <li>貌似没起来？？？</li>
@@ -418,6 +414,9 @@
 </li>
 </ul>
 </li>
+</ul>
+<h2 id="Jail"><a href="#Jail" class="headerlink" title="Jail"></a>Jail</h2><ul>
+<li>Calibre-web</li>
 </ul>
 
 	
