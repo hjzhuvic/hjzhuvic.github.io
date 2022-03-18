@@ -1,123 +1,32 @@
-<!DOCTYPE html>
-<html>
+extends includes/layout.pug
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="theme-color" content="#33474d">
-	<title>2019生日快乐 | 花开彼岸天</title>
-	<link rel="stylesheet" href="/css/style.css" />
-	
-      <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
-    
-<meta name="generator" content="Hexo 5.1.1"></head>
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-<body>
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
+        
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
 
-	<header class="header">
-		<nav class="header__nav">
-			
-				<a href="/" class="header__link">Home</a>
-			
-				<a href="/wish" class="header__link">Wishes</a>
-			
-				<a href="/man" class="header__link">MAN</a>
-			
-				<a href="/archives" class="header__link">Archive</a>
-			
-				<a href="/tags" class="header__link">Tags</a>
-			
-				<a href="/books" class="header__link">Books</a>
-			
-				<a href="/movies" class="header__link">Movies</a>
-			
-		</nav>
-		<h1 class="header__title"><a href="/">花开彼岸天</a></h1>
-		<h2 class="header__subtitle">鱼跃此时海</h2>
-	</header>
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
 
-	<main>
-		<article>
-	
-		<h1>2019生日快乐</h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-02-09</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
 
-	
-
-	
-		<h1 id="生日快乐"><a href="#生日快乐" class="headerlink" title="生日快乐"></a>生日快乐</h1><p>先祝我自己生日快乐and新年快乐。</p>
-<p>这个文档其实是好几天前建立的，但是一直都没有写，生日也过了好几天了。主要是觉得没什么好写的。</p>
-<p>这一年，怎么说呢，其实是一言难尽啊。</p>
-<p>算起来，我已经28周岁，30虚岁了。</p>
-<p>孔子曾经说过：<br><code>吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲不逾矩。</code></p>
-<p>说的就是人到了三十岁，人生观世界观价值观已经“立”，不动摇。或者放到现在的社会要求，人到30，应当能够独立于世，就现阶段来说：我并没有做到。</p>
-<p>人的环境和处境真的很能影响三观，我一直以为自己的三观已经基本上固化，觉得自己很有底线，但是现在看来我还是在不断的改变，不断的突破自己的下限。</p>
-<p>突破自己的底线是从两方面的，但是这个先不谈，下次有时间再谈。先谈谈最近一年的情况吧，或者说这两年的情况：</p>
-<ol>
-<li>年度计划从来都没有完成过；月计划从来没有完成过；季度计划从来都没有完成过。自然，日计划也没有完成过。行动力很低，虽然明白应该做的事情，比如说最近最最应该做的事情是写论文，但是总时不愿意写，花很多时间去做那些不要紧的，无意义的事情：比如刷知乎。</li>
-<li>很多事情都不愿意做了，比如说刷牙。。。每次刷牙都要磨磨蹭蹭的。说起来真的很搞笑，但是有的时候真的觉得自己很奇怪。</li>
-<li>懒了。原来的时候虽然算不上一个勤快的人，但是很多事情也都是收拾的干干净净的。</li>
-<li>一直没有踏出自己的comfort zone，当然主要也是懒。。。</li>
-</ol>
-<p>为了避免这个变成有一个自我批评的奇怪画风，还是就此打住吧。对未来的期望什么也免了~</p>
-<p>现在的生活比较单调无聊，早上懒懒散散的起床，磨磨蹭蹭去学校，在学校懒散的上上网刷刷刷刷刷微博知乎ifanr少数派数字尾巴fb之类的，时间差不多就回家做饭吃饭，吃完饭睡觉，然后一天<del>愉快的</del>过去了。既没有出去散散步散散心。</p>
-<p>哎就这样吧，<del>迟到的</del>生日快乐<br><code>BE A BETTER MAN!</code></p>
-
-	
-
-	
-		<span class="different-posts"><a href="/2019/02/09/2019-02-09-%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
-
-	
-
-</article>
-
-	</main>
-
-	<footer class="footer">
-	<div class="footer-content">
-		
-	      <div class="footer__element">
-	<p>我，<br />自钱塘江边,<br />这里是我观察和思考的窗口,<br />愿我成为一个不平凡的人。<br />以上！</p>
-</div>
-
-	    
-	      <div class="footer__element">
-	<h5>Check out</h5>
-	<ul class="footer-links">
-		<li class="footer-links__link"><a href="/about">About</a></li>
-		<li class="footer-links__link"><a href="/archives">Archive</a></li>
-		<li class="footer-links__link"><a href="/tags">Tags</a></li>
-		<li class="footer-links__link"><a href="/categories">Categories</a></li>
-		
-		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
-	    
-
-	</ul>
-</div>
-
-	    
-
-		<div class="footer-credit">
-			<span>© 2022 Haijia Alex Zhu | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
-		</div>
-
-	</div>
-
-
-</footer>
-
-
-
-</body>
-
-</html>
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
+      

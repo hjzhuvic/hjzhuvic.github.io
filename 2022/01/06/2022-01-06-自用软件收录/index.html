@@ -1,157 +1,32 @@
-<!DOCTYPE html>
-<html>
+extends includes/layout.pug
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="theme-color" content="#33474d">
-	<title>自用软件收录 | 花开彼岸天</title>
-	<link rel="stylesheet" href="/css/style.css" />
-	
-      <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
-    
-<meta name="generator" content="Hexo 5.1.1"></head>
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-<body>
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
+        
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
 
-	<header class="header">
-		<nav class="header__nav">
-			
-				<a href="/" class="header__link">Home</a>
-			
-				<a href="/wish" class="header__link">Wishes</a>
-			
-				<a href="/man" class="header__link">MAN</a>
-			
-				<a href="/archives" class="header__link">Archive</a>
-			
-				<a href="/tags" class="header__link">Tags</a>
-			
-				<a href="/books" class="header__link">Books</a>
-			
-				<a href="/movies" class="header__link">Movies</a>
-			
-		</nav>
-		<h1 class="header__title"><a href="/">花开彼岸天</a></h1>
-		<h2 class="header__subtitle">鱼跃此时海</h2>
-	</header>
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
 
-	<main>
-		<article>
-	
-		<h1>自用软件收录</h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2022-01-06</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/tech-%E6%94%B6%E5%BD%95/" rel="tag">tech/收录</a>
-			</span>
-		
-	</div>
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
 
-	
-
-	
-		<p>收录自用软件和服务。</p>
-<ul>
-<li>Research, Reading and Learning<ul>
-<li>Zotero</li>
-<li>Harzing’s Publish or Perish</li>
-<li>PDF 阅读器</li>
-<li>Eudict</li>
-<li>Anki</li>
-<li>MarginNote</li>
-<li>CiteSpace</li>
-<li>Web Plot Digitizer</li>
-</ul>
-</li>
-<li>编辑<ul>
-<li>Typora</li>
-<li>Zettlr</li>
-<li>Logseq</li>
-</ul>
-</li>
-<li>编程<ul>
-<li>Matlab</li>
-<li>Github desktop/cli</li>
-<li>Sublime Text/VSCode</li>
-</ul>
-</li>
-<li>系统/Utility<ul>
-<li>Everything for Windows</li>
-<li>Keepass</li>
-<li>KdeConnect</li>
-<li>Firefox</li>
-<li>WeChat</li>
-<li>WinDynamicDesktop</li>
-<li>网易云音乐+unblock neatease music</li>
-<li>obs</li>
-</ul>
-</li>
-<li>财务相关<ul>
-<li>Portfolio Performance</li>
-<li>KMyMoney</li>
-<li>Beancount</li>
-<li>Min</li>
-</ul>
-</li>
-<li>个人管理<ul>
-<li>Pomotodo</li>
-<li>Toggl</li>
-<li>Todoist / Microsoft Todo</li>
-<li></li>
-</ul>
-</li>
-</ul>
-
-	
-
-	
-		<span class="different-posts"><a href="/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
-
-	
-
-</article>
-
-	</main>
-
-	<footer class="footer">
-	<div class="footer-content">
-		
-	      <div class="footer__element">
-	<p>我，<br />自钱塘江边,<br />这里是我观察和思考的窗口,<br />愿我成为一个不平凡的人。<br />以上！</p>
-</div>
-
-	    
-	      <div class="footer__element">
-	<h5>Check out</h5>
-	<ul class="footer-links">
-		<li class="footer-links__link"><a href="/about">About</a></li>
-		<li class="footer-links__link"><a href="/archives">Archive</a></li>
-		<li class="footer-links__link"><a href="/tags">Tags</a></li>
-		<li class="footer-links__link"><a href="/categories">Categories</a></li>
-		
-		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
-	    
-
-	</ul>
-</div>
-
-	    
-
-		<div class="footer-credit">
-			<span>© 2022 Haijia Alex Zhu | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
-		</div>
-
-	</div>
-
-
-</footer>
-
-
-
-</body>
-
-</html>
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
+      

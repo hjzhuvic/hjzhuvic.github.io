@@ -1,110 +1,32 @@
-<!DOCTYPE html>
-<html>
+extends includes/layout.pug
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="theme-color" content="#33474d">
-	<title>【转】二十岁时候的你在想些什么？ | 花开彼岸天</title>
-	<link rel="stylesheet" href="/css/style.css" />
-	
-      <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
-    
-<meta name="generator" content="Hexo 5.1.1"></head>
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-<body>
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
+        
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
 
-	<header class="header">
-		<nav class="header__nav">
-			
-				<a href="/" class="header__link">Home</a>
-			
-				<a href="/wish" class="header__link">Wishes</a>
-			
-				<a href="/man" class="header__link">MAN</a>
-			
-				<a href="/archives" class="header__link">Archive</a>
-			
-				<a href="/tags" class="header__link">Tags</a>
-			
-				<a href="/books" class="header__link">Books</a>
-			
-				<a href="/movies" class="header__link">Movies</a>
-			
-		</nav>
-		<h1 class="header__title"><a href="/">花开彼岸天</a></h1>
-		<h2 class="header__subtitle">鱼跃此时海</h2>
-	</header>
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
 
-	<main>
-		<article>
-	
-		<h1>【转】二十岁时候的你在想些什么？</h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2014-04-25</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
 
-	
-
-	
-		<h1 id="【转】二十岁时候的你在想些什么？"><a href="#【转】二十岁时候的你在想些什么？" class="headerlink" title="【转】二十岁时候的你在想些什么？"></a>【转】二十岁时候的你在想些什么？</h1><p>by <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/snowyang/activities"><strong>羊小雪</strong></a><strong>，不如我們同歸於盡。</strong></p>
-<p>生命的前十八年里，我什么都想要，什么都输不起。<br>我一边身在强化班，一边鄙视那些认真做题的好学生；不交作业跟老师吵架，一边考得太好让他无可奈何；拿奖学金刚升完旗，就躲在小卖部后面抽了第一根烟；我男生缘不错，却很少被女生背后碎嘴；我认识考试接近满分的学霸，也认识所谓混出了道儿的小痞子；毕业了几年的学长都知道我，同时也听说有学妹在桌子上写我名字当作人生楷模。<br>那时我知道得要搞定一件事情，才有谈论它的资格。于是我毫不费力地得到了这么些小东西，然后装作什么都不在乎的样子。<br>非常浅薄，非常幼稚，我既然说出来，就不怕你们笑。<br>年轻的时候，我什么都想要，什么都不放在眼里。现在我依然年轻，所以我依旧是这样。可这中间相差的，大概不仅仅是几年的不足道的眼界和阅历，不仅是知道不费力气得来的不会是好东西，不仅是知道你过得怎样其实没人在乎，也不仅仅是发现，你拼尽力气去争取的东西还是有可能会不留情面地开你个玩笑，再给你一个耳光。<br>那天下午我在房间里哭得喘不上气，Carla在来找我的路上发了一堆短信，其中有一句说，<strong>I know it will sound cheesy, but everything happens for a reason, and most of the times, a good reason.</strong><br>这话别人说我兴许会觉得无聊，而她说，却让我觉得稳妥。在她那个全民狂欢的国度，我相信她也曾是个要钱有钱要地位有地位要爱有爱的遭人嫉妒的女青年，而在本该是最好的时光里，她的丈夫突然出车祸去世，她把自己关在房间里暴饮暴食，抑郁了整整一年半。一年半后她走出那个房间，申到奖学金然后来念了这个一直想学的专业，并且在一帮小她十来岁的小蠢逼中间，完全是个整天在大笑的知心姐姐。<br>她的这句话在后来的很多时刻，都是给我勇气的定心丸。<br>有段话是这样的，<br><em>那一天我二十一岁，在我一生的黄金时代。我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云。后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消失，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。</em><br>在我二十一岁生日的时候，就算有人把这一点明着告诉我，我还是会怀抱着很多很多的奢望，对着迎面挥来的锤子眨一下眼睛。就算知道最后可能被扇一个耳光，我还是会竭尽所能去追。就算知道热情会被耗尽，还是要趁着这一刻奋力地跳起来。我什么都想要，那就先随便来一个，试试看好了，你说万一最后什么都没有，怕什么，我才二十一岁啊。<br>这个题目下面的大多数答案我都很想赞。二十岁左右的少年，其实有多相似啊。<br>提到未来，大家都瞬间焦虑起来，然后重重叹一口气；有人把自己搞得很忙什么都不肯错过，不忙的人也在拼命转着脑筋，想了很多很多没用的东西；每个人都在假装自己干了跟别人不一样的事情，显得很牛逼的样子；每个人都在伤脑筋，在踌躇，有时雄心壮志地立誓，有时是及时行乐麾下狗；我们谈恋爱，吵架，摔东西，坐在楼梯上哭；我们学外语，找实习，考前通宵背书，考完通宵喝酒；我们第一次被欺骗，第一次被背叛，第一次面试，第一次上床，第一次自己去旅行心砰砰跳地打印攻略，第一次穿高跟鞋心惊胆战地挤地铁。<br>每个人都是一身用不完的力气，没有方向地这里甩一点，那里甩一点。你有时失望，有时害怕，有时讨厌自己，有时恨不得自杀，没关系，这就是二十岁啊。<br>单是想想有这么多少年在跟你一样地上蹿下跳，就觉得很奇妙呢。<br>我现在也不是很老，但如果要回头跟二十岁的自己说点什么，我会想说，二十岁，是无论如何都不可以保守的年纪呢。<br>会想说，<strong>你可以迷茫，但不可以因为迷茫就踌躇无为，可以害怕，但不可以因为害怕就畏缩不前。</strong><br>二十岁，还没到时候因为「没有结果」这种理由而去逃避喜欢的人，用不着因为「没有用」这种理由而逃避想学的东西，也不应该因为怕自己忙不过来就放弃各种有趣的事情啊。<br>你干嘛要计较着没有时间，没有钱，没有希望，没有精力，拜托你才二十岁诶。<br>是不是张爱玲说的来着，年轻时的弯路是非走不可的。我确实就是这样的人，前面有路口，我就想走过去看看拐了弯是什么样子，前面有座山，我就想爬上去看看山后面是什么，你说山后面没什么好玩的，哈我就是要自己看一下再决定你说得对不对。很多时候路的尽头确实是死胡同，山后面的狗东西也确实很吓人，但更让人开心的，其实是走路和爬山的过程啊。<br>最怕就是听说山后面没什么好的，于是觉得还是过两天爬别的山好了，听说这条路的尽头不好看，就想着要么别走这条路了，不值得。<br>一心想着走最快捷的路，看最好的风景，想着用最少的付出换最牛逼的收益，这么迷茫来迷茫去，只怕最后路也走不动，山也不会爬了。<br>计较个什么，你才二十岁，起码能再生猛个十年，什么也锤不了你。<br>转自：<a target="_blank" rel="noopener" href="http://www.zhihu.com/question/23312072/answer/24218182">http://www.zhihu.com/question/23312072/answer/24218182</a></p>
-<hr>
-<p><strong><em>你可以迷茫，但不可以因为迷茫就踌躇无为，可以害怕，但不可以因为害怕就畏缩不前。</em></strong><br><strong>自勉。</strong></p>
-
-	
-
-	
-		<span class="different-posts"><a href="/2014/04/25/2014-04-08/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
-
-	
-
-</article>
-
-	</main>
-
-	<footer class="footer">
-	<div class="footer-content">
-		
-	      <div class="footer__element">
-	<p>我，<br />自钱塘江边,<br />这里是我观察和思考的窗口,<br />愿我成为一个不平凡的人。<br />以上！</p>
-</div>
-
-	    
-	      <div class="footer__element">
-	<h5>Check out</h5>
-	<ul class="footer-links">
-		<li class="footer-links__link"><a href="/about">About</a></li>
-		<li class="footer-links__link"><a href="/archives">Archive</a></li>
-		<li class="footer-links__link"><a href="/tags">Tags</a></li>
-		<li class="footer-links__link"><a href="/categories">Categories</a></li>
-		
-		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
-	    
-
-	</ul>
-</div>
-
-	    
-
-		<div class="footer-credit">
-			<span>© 2022 Haijia Alex Zhu | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
-		</div>
-
-	</div>
-
-
-</footer>
-
-
-
-</body>
-
-</html>
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
+      

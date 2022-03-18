@@ -1,110 +1,32 @@
-<!DOCTYPE html>
-<html>
+extends includes/layout.pug
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="theme-color" content="#33474d">
-	<title>双链笔记daily note | 花开彼岸天</title>
-	<link rel="stylesheet" href="/css/style.css" />
-	
-      <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
-    
-<meta name="generator" content="Hexo 5.1.1"></head>
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-<body>
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
+        
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
 
-	<header class="header">
-		<nav class="header__nav">
-			
-				<a href="/" class="header__link">Home</a>
-			
-				<a href="/wish" class="header__link">Wishes</a>
-			
-				<a href="/man" class="header__link">MAN</a>
-			
-				<a href="/archives" class="header__link">Archive</a>
-			
-				<a href="/tags" class="header__link">Tags</a>
-			
-				<a href="/books" class="header__link">Books</a>
-			
-				<a href="/movies" class="header__link">Movies</a>
-			
-		</nav>
-		<h1 class="header__title"><a href="/">花开彼岸天</a></h1>
-		<h2 class="header__subtitle">鱼跃此时海</h2>
-	</header>
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
 
-	<main>
-		<article>
-	
-		<h1>双链笔记daily note</h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2022-02-24</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/tech-%E6%94%B6%E5%BD%95/" rel="tag">tech/收录</a>
-			</span>
-		
-	</div>
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
 
-	
-
-	
-		<p>双链笔记真的是一个很有意思的东西， 有一段时间用双链笔记用的很起劲，特别是daily note 功能。只是某种程度上来说，这个东西很有迷惑性，因为它不太具有回顾的功能。特别是之前看了<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hZ4y1V73k?spm_id_from=333.999.0.0">Struggle with me</a> 的某次分享以后，直接套用了她的模版，但是一直用的很不顺手。不是说她们的方法不好，而是不适合我这种懒得回顾的这种。特别是和buju混合之后就总是乱乱的。 直到今天无意中看了另外一位大佬写的<a target="_blank" rel="noopener" href="https://www.yuque.com/deerain/gannbs/ffqk2e#cc42c80a">专栏</a>，然后有一点明白这个流程是怎么样的。 这里引用文章里的一句话，很好的总结了daily note的作用：</p>
-<p><code>当下的我们需要做的，是那些只有现在能做，而且有意义的事情，「每天坚持积累」正是这样的事，而「整理得井井有条」并不是，这才是快速无压记录的真正核心。</code></p>
-<p>作者的观念是，daily note适合做收集，只是要加上合适的tag活着链接，那么下次整理的时候就能吧所有相关的议题都包含进来。 而所谓创作其实包含两部分，一部分是知识/创意收集，另外一部分才是整理。当我打开了一个文档做笔记的时候，其实很多时候是将这两部分一起执行的，只是很多时候这个方式是增加了很多的压力，毕竟只有有一定的理解了之后才能做合适的整理工作。那么使用传统的方法就会导致了对笔记的重构。 </p>
-<p>重构什么的。。。。呵呵呵呵呵 做两次就不想做了</p>
-
-	
-
-	
-		<span class="different-posts"><a href="/2022/02/24/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
-
-	
-
-</article>
-
-	</main>
-
-	<footer class="footer">
-	<div class="footer-content">
-		
-	      <div class="footer__element">
-	<p>我，<br />自钱塘江边,<br />这里是我观察和思考的窗口,<br />愿我成为一个不平凡的人。<br />以上！</p>
-</div>
-
-	    
-	      <div class="footer__element">
-	<h5>Check out</h5>
-	<ul class="footer-links">
-		<li class="footer-links__link"><a href="/about">About</a></li>
-		<li class="footer-links__link"><a href="/archives">Archive</a></li>
-		<li class="footer-links__link"><a href="/tags">Tags</a></li>
-		<li class="footer-links__link"><a href="/categories">Categories</a></li>
-		
-		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
-	    
-
-	</ul>
-</div>
-
-	    
-
-		<div class="footer-credit">
-			<span>© 2022 Haijia Alex Zhu | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
-		</div>
-
-	</div>
-
-
-</footer>
-
-
-
-</body>
-
-</html>
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
+      
