@@ -1,32 +1,150 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>【转】二十岁时候的你在想些什么？ | 花开彼岸天</title><meta name="keywords" content="随想录"><meta name="author" content="Haijia Alex Zhu"><meta name="copyright" content="Haijia Alex Zhu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="【转】二十岁时候的你在想些什么？by 羊小雪，不如我們同歸於盡。 生命的前十八年里，我什么都想要，什么都输不起。我一边身在强化班，一边鄙视那些认真做题的好学生；不交作业跟老师吵架，一边考得太好让他无可奈何；拿奖学金刚升完旗，就躲在小卖部后面抽了第一根烟；我男生缘不错，却很少被女生背后碎嘴；我认识考试接近满分的学霸，也认识所谓混出了道儿的小痞子；毕业了几年的学长都知道我，同时也听说有学妹在桌子上写我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转】二十岁时候的你在想些什么？">
+<meta property="og:url" content="hjzhuvic.github.io/2014/04/25/2014-04-08/index.html">
+<meta property="og:site_name" content="花开彼岸天">
+<meta property="og:description" content="【转】二十岁时候的你在想些什么？by 羊小雪，不如我們同歸於盡。 生命的前十八年里，我什么都想要，什么都输不起。我一边身在强化班，一边鄙视那些认真做题的好学生；不交作业跟老师吵架，一边考得太好让他无可奈何；拿奖学金刚升完旗，就躲在小卖部后面抽了第一根烟；我男生缘不错，却很少被女生背后碎嘴；我认识考试接近满分的学霸，也认识所谓混出了道儿的小痞子；毕业了几年的学长都知道我，同时也听说有学妹在桌子上写我">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg">
+<meta property="article:published_time" content="2014-04-25T07:00:01.000Z">
+<meta property="article:modified_time" content="2022-03-18T23:46:51.949Z">
+<meta property="article:author" content="Haijia Alex Zhu">
+<meta property="article:tag" content="随想录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="hjzhuvic.github.io/2014/04/25/2014-04-08/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【转】二十岁时候的你在想些什么？',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-18 16:46:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
-
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
-
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
-
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books"><span> Books</span></a></li><li><a class="site-page child" href="/movies"><i class="fa-fw fas fa-video"></i><span> Movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="//wish/"><i class="fa-fw fas fa-link"></i><span> Wishes</span></a></div><div class="menus_item"><a class="site-page" href="/man/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">花开彼岸天</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books"><span> Books</span></a></li><li><a class="site-page child" href="/movies"><i class="fa-fw fas fa-video"></i><span> Movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="//wish/"><i class="fa-fw fas fa-link"></i><span> Wishes</span></a></div><div class="menus_item"><a class="site-page" href="/man/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【转】二十岁时候的你在想些什么？</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2014-04-25T07:00:01.000Z" title="发表于 2014-04-25 00:00:01">2014-04-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-18T23:46:51.949Z" title="更新于 2022-03-18 16:46:51">2022-03-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【转】二十岁时候的你在想些什么？"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="【转】二十岁时候的你在想些什么？"><a href="#【转】二十岁时候的你在想些什么？" class="headerlink" title="【转】二十岁时候的你在想些什么？"></a>【转】二十岁时候的你在想些什么？</h1><p>by <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/snowyang/activities"><strong>羊小雪</strong></a><strong>，不如我們同歸於盡。</strong></p>
+<p>生命的前十八年里，我什么都想要，什么都输不起。<br>我一边身在强化班，一边鄙视那些认真做题的好学生；不交作业跟老师吵架，一边考得太好让他无可奈何；拿奖学金刚升完旗，就躲在小卖部后面抽了第一根烟；我男生缘不错，却很少被女生背后碎嘴；我认识考试接近满分的学霸，也认识所谓混出了道儿的小痞子；毕业了几年的学长都知道我，同时也听说有学妹在桌子上写我名字当作人生楷模。<br>那时我知道得要搞定一件事情，才有谈论它的资格。于是我毫不费力地得到了这么些小东西，然后装作什么都不在乎的样子。<br>非常浅薄，非常幼稚，我既然说出来，就不怕你们笑。<br>年轻的时候，我什么都想要，什么都不放在眼里。现在我依然年轻，所以我依旧是这样。可这中间相差的，大概不仅仅是几年的不足道的眼界和阅历，不仅是知道不费力气得来的不会是好东西，不仅是知道你过得怎样其实没人在乎，也不仅仅是发现，你拼尽力气去争取的东西还是有可能会不留情面地开你个玩笑，再给你一个耳光。<br>那天下午我在房间里哭得喘不上气，Carla在来找我的路上发了一堆短信，其中有一句说，<strong>I know it will sound cheesy, but everything happens for a reason, and most of the times, a good reason.</strong><br>这话别人说我兴许会觉得无聊，而她说，却让我觉得稳妥。在她那个全民狂欢的国度，我相信她也曾是个要钱有钱要地位有地位要爱有爱的遭人嫉妒的女青年，而在本该是最好的时光里，她的丈夫突然出车祸去世，她把自己关在房间里暴饮暴食，抑郁了整整一年半。一年半后她走出那个房间，申到奖学金然后来念了这个一直想学的专业，并且在一帮小她十来岁的小蠢逼中间，完全是个整天在大笑的知心姐姐。<br>她的这句话在后来的很多时刻，都是给我勇气的定心丸。<br>有段话是这样的，<br><em>那一天我二十一岁，在我一生的黄金时代。我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云。后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消失，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。</em><br>在我二十一岁生日的时候，就算有人把这一点明着告诉我，我还是会怀抱着很多很多的奢望，对着迎面挥来的锤子眨一下眼睛。就算知道最后可能被扇一个耳光，我还是会竭尽所能去追。就算知道热情会被耗尽，还是要趁着这一刻奋力地跳起来。我什么都想要，那就先随便来一个，试试看好了，你说万一最后什么都没有，怕什么，我才二十一岁啊。<br>这个题目下面的大多数答案我都很想赞。二十岁左右的少年，其实有多相似啊。<br>提到未来，大家都瞬间焦虑起来，然后重重叹一口气；有人把自己搞得很忙什么都不肯错过，不忙的人也在拼命转着脑筋，想了很多很多没用的东西；每个人都在假装自己干了跟别人不一样的事情，显得很牛逼的样子；每个人都在伤脑筋，在踌躇，有时雄心壮志地立誓，有时是及时行乐麾下狗；我们谈恋爱，吵架，摔东西，坐在楼梯上哭；我们学外语，找实习，考前通宵背书，考完通宵喝酒；我们第一次被欺骗，第一次被背叛，第一次面试，第一次上床，第一次自己去旅行心砰砰跳地打印攻略，第一次穿高跟鞋心惊胆战地挤地铁。<br>每个人都是一身用不完的力气，没有方向地这里甩一点，那里甩一点。你有时失望，有时害怕，有时讨厌自己，有时恨不得自杀，没关系，这就是二十岁啊。<br>单是想想有这么多少年在跟你一样地上蹿下跳，就觉得很奇妙呢。<br>我现在也不是很老，但如果要回头跟二十岁的自己说点什么，我会想说，二十岁，是无论如何都不可以保守的年纪呢。<br>会想说，<strong>你可以迷茫，但不可以因为迷茫就踌躇无为，可以害怕，但不可以因为害怕就畏缩不前。</strong><br>二十岁，还没到时候因为「没有结果」这种理由而去逃避喜欢的人，用不着因为「没有用」这种理由而逃避想学的东西，也不应该因为怕自己忙不过来就放弃各种有趣的事情啊。<br>你干嘛要计较着没有时间，没有钱，没有希望，没有精力，拜托你才二十岁诶。<br>是不是张爱玲说的来着，年轻时的弯路是非走不可的。我确实就是这样的人，前面有路口，我就想走过去看看拐了弯是什么样子，前面有座山，我就想爬上去看看山后面是什么，你说山后面没什么好玩的，哈我就是要自己看一下再决定你说得对不对。很多时候路的尽头确实是死胡同，山后面的狗东西也确实很吓人，但更让人开心的，其实是走路和爬山的过程啊。<br>最怕就是听说山后面没什么好的，于是觉得还是过两天爬别的山好了，听说这条路的尽头不好看，就想着要么别走这条路了，不值得。<br>一心想着走最快捷的路，看最好的风景，想着用最少的付出换最牛逼的收益，这么迷茫来迷茫去，只怕最后路也走不动，山也不会爬了。<br>计较个什么，你才二十岁，起码能再生猛个十年，什么也锤不了你。<br>转自：<a target="_blank" rel="noopener" href="http://www.zhihu.com/question/23312072/answer/24218182">http://www.zhihu.com/question/23312072/answer/24218182</a></p>
+<hr>
+<p><strong><em>你可以迷茫，但不可以因为迷茫就踌躇无为，可以害怕，但不可以因为害怕就畏缩不前。</em></strong><br><strong>自勉。</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Haijia Alex Zhu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="/hjzhuvic.github.io/2014/04/25/2014-04-08/">hjzhuvic.github.io/2014/04/25/2014-04-08/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="hjzhuvic.github.io" target="_blank">花开彼岸天</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/">随想录</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2014/04/25/2014-03-25/"><img class="prev-cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">时间去哪儿</div></div></a></div><div class="next-post pull-right"><a href="/2014/04/13/2014-04-13/"><img class="next-cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">我是个傻逼</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2012/10/31/2012-10-31/" title="青春的故事"><img class="cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2012-10-31</div><div class="title">青春的故事</div></div></a></div><div><a href="/2013/11/27/2012-11-11/" title="无语"><img class="cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2013-11-27</div><div class="title">无语</div></div></a></div><div><a href="/2012/11/12/2012-11-12/" title="今天天气不错。。。。"><img class="cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2012-11-12</div><div class="title">今天天气不错。。。。</div></div></a></div><div><a href="/2012/11/27/2012-11-27/" title="我很少写这种事情"><img class="cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2012-11-27</div><div class="title">我很少写这种事情</div></div></a></div><div><a href="/2012/11/17/2012-12-07/" title="这是一个明媚的早晨"><img class="cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2012-11-17</div><div class="title">这是一个明媚的早晨</div></div></a></div><div><a href="/2012/12/13/2012-12-13/" title="选择？"><img class="cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2012-12-13</div><div class="title">选择？</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Haijia Alex Zhu</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%80%90%E8%BD%AC%E3%80%91%E4%BA%8C%E5%8D%81%E5%B2%81%E6%97%B6%E5%80%99%E7%9A%84%E4%BD%A0%E5%9C%A8%E6%83%B3%E4%BA%9B%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">【转】二十岁时候的你在想些什么？</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/24/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/" title="双链笔记daily note"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="双链笔记daily note"/></a><div class="content"><a class="title" href="/2022/02/24/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/" title="双链笔记daily note">双链笔记daily note</a><time datetime="2022-02-24T04:39:00.000Z" title="发表于 2022-02-23 20:39:00">2022-02-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/27/2022-01-26-Proposal/" title="Proposal"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Proposal"/></a><div class="content"><a class="title" href="/2022/01/27/2022-01-26-Proposal/" title="Proposal">Proposal</a><time datetime="2022-01-27T06:57:10.000Z" title="发表于 2022-01-26 22:57:10">2022-01-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/18/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/" title="聊聊自卑吧"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="聊聊自卑吧"/></a><div class="content"><a class="title" href="/2022/01/18/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/" title="聊聊自卑吧">聊聊自卑吧</a><time datetime="2022-01-18T07:45:00.000Z" title="发表于 2022-01-17 23:45:00">2022-01-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/11/2022-01-11/" title="不开心"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="不开心"/></a><div class="content"><a class="title" href="/2022/01/11/2022-01-11/" title="不开心">不开心</a><time datetime="2022-01-11T23:09:00.000Z" title="发表于 2022-01-11 15:09:00">2022-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/" title="自用软件收录"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自用软件收录"/></a><div class="content"><a class="title" href="/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/" title="自用软件收录">自用软件收录</a><time datetime="2022-01-06T19:01:00.000Z" title="发表于 2022-01-06 11:01:00">2022-01-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Haijia Alex Zhu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

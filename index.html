@@ -1,7 +1,501 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>花开彼岸天 - 鱼跃此时海</title><meta name="author" content="Haijia Alex Zhu"><meta name="copyright" content="Haijia Alex Zhu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="花开彼岸天">
+<meta property="og:url" content="hjzhuvic.github.io/index.html">
+<meta property="og:site_name" content="花开彼岸天">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Haijia Alex Zhu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="hjzhuvic.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '花开彼岸天',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-03-18 16:48:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books"><span> Books</span></a></li><li><a class="site-page child" href="/movies"><i class="fa-fw fas fa-video"></i><span> Movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="//wish/"><i class="fa-fw fas fa-link"></i><span> Wishes</span></a></div><div class="menus_item"><a class="site-page" href="/man/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">花开彼岸天</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books"><span> Books</span></a></li><li><a class="site-page child" href="/movies"><i class="fa-fw fas fa-video"></i><span> Movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="//wish/"><i class="fa-fw fas fa-link"></i><span> Wishes</span></a></div><div class="menus_item"><a class="site-page" href="/man/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">花开彼岸天</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/02/24/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/" title="双链笔记daily note"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="双链笔记daily note"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/24/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/" title="双链笔记daily note">双链笔记daily note</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-24T04:39:00.000Z" title="发表于 2022-02-23 20:39:00">2022-02-23</time></span></div><div class="content">双链笔记真的是一个很有意思的东西， 有一段时间用双链笔记用的很起劲，特别是daily note 功能。只是某种程度上来说，这个东西很有迷惑性，因为它不太具有回顾的功能。特别是之前看了Struggle with me 的某次分享以后，直接套用了她的模版，但是一直用的很不顺手。不是说她们的方法不好，而是不适合我这种懒得回顾的这种。特别是和buju混合之后就总是乱乱的。 直到今天无意中看了另外一位大佬写的专栏，然后有一点明白这个流程是怎么样的。 这里引用文章里的一句话，很好的总结了daily note的作用：
+当下的我们需要做的，是那些只有现在能做，而且有意义的事情，「每天坚持积累」正是这样的事，而「整理得井井有条」并不是，这才是快速无压记录的真正核心。
+作者的观念是，daily note适合做收集，只是要加上合适的tag活着链接，那么下次整理的时候就能吧所有相关的议题都包含进来。 而所谓创作其实包含两部分，一部分是知识/创意收集，另外一部分才是整理。当我打开了一个文档做笔记的时候，其实很多时候是将这两部分一起执行的，只是很多时候这个方式是增加了很多的压力，毕竟只有有一定的理解了之后才能做合 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/01/27/2022-01-26-Proposal/" title="Proposal"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Proposal"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/27/2022-01-26-Proposal/" title="Proposal">Proposal</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-27T06:57:10.000Z" title="发表于 2022-01-26 22:57:10">2022-01-26</time></span></div><div class="content">今天老董打电话来问开题报告的事情，我和他说我这周给他。
+如果回头看看过去的两三周，其实我基本上就没怎么动过开题报告。今天下午感觉写了一会儿，但是看了一下记录也就半个小时的样子。一天的有效工作时间也就40分钟左右。哎
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/01/18/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/" title="聊聊自卑吧"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="聊聊自卑吧"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/18/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/" title="聊聊自卑吧">聊聊自卑吧</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-18T07:45:00.000Z" title="发表于 2022-01-17 23:45:00">2022-01-17</time></span></div><div class="content">差不多是睡觉的时间了，只是看到一个博客，突然就就觉得很有意思。有一点感触的吧。
+聊聊自卑吧
+情绪是很能影响一个人的，尤其是自卑带给人的情绪。我已经记不清楚自信和自卑交替的这种情绪伴随我多长时间了，但就像蔡康永说的，要做好一个人，做自己，这最重要。时刻辨认当下自己的情绪，知道他们由哪儿来，可以放到哪儿去。当你发现自己有自卑、不自信、焦虑等消极情绪是，记得跳出来，看看自己身上有哪些标签，有别人贴给你的，有自己贴给自己的。把那些标签丢掉，只留下几个自己认为重要的标签，留下来，把它做好，别再为了一个不想干的人丢给你的标签，毁了你的整个生活。
+时刻辨认当下自己的情绪 是一个很重要的能力。感觉曾经的我可以做到这种事情，但是慢慢的由于某些原因，逐渐的失去的这个能力。
+每次看到那种自信的人，都是极为的羡慕。可以说，每次看到这种人的时候，都觉得他们整个人都在放光。
+还是记得刚来的时候也是踌躇满志，只是现实很快就破了一盆又一盆的冷水，觉得自己很周围的很多人有差距。。然后慢慢的又往另外一个极端去了。慢慢的就变的拖延，佛系，而这个差距也越来越大；自然而然的，也越来越自卑。周围的人可能大概率不会觉得我是一个自卑 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/01/11/2022-01-11/" title="不开心"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="不开心"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/11/2022-01-11/" title="不开心">不开心</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-11T23:09:00.000Z" title="发表于 2022-01-11 15:09:00">2022-01-11</time></span></div><div class="content">现在一直不开心。
+很难说到底是为什么，
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/" title="自用软件收录"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自用软件收录"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/" title="自用软件收录">自用软件收录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-06T19:01:00.000Z" title="发表于 2022-01-06 11:01:00">2022-01-06</time></span></div><div class="content">收录自用软件和服务。
+
+Research, Reading and Learning
+Zotero
+Harzing’s Publish or Perish
+PDF 阅读器
+Eudict
+Anki
+MarginNote
+CiteSpace
+Web Plot Digitizer
+
+
+编辑
+Typora
+Zettlr
+Logseq
+
+
+编程
+Matlab
+Github desktop/cli
+Sublime Text/VSCode
+
+
+系统/Utility
+Everything for Windows
+Keepass
+KdeConnect
+Firefox
+WeChat
+WinDynamicDesktop
+网易云音乐+unblock neatease music
+obs
+
+
+财务相关
+Portfolio Performance
+KMyMoney
+Beancount
+Min
+
+
+个人管理
+Pomotodo
+Toggl
+Todoist / Microsoft Todo
+
+
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/11/29/2021-11-29-%E6%81%90%E6%83%A7/" title="恐惧"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="恐惧"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/29/2021-11-29-%E6%81%90%E6%83%A7/" title="恐惧">恐惧</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-29T08:06:01.000Z" title="发表于 2021-11-29 00:06:01">2021-11-29</time></span></div><div class="content">刚收到一封邮件，一组学生的模型还是没有跑通， 约了明天早上10点meeting。刚收到邮件的时候有一种莫名奇妙的慌张和恐惧，有一种我搞不定的感觉，但是其实也不可能搞不定啊。也不知道他们现在什么情况。只能说要冷静一点，然后看是什么情况，再
+这周其实过的完全不是按照计划来的：计划中的8点起床完全没有实现。冥想和背单词也完全没有动手。封网站得赶紧动手，防止自己手软，然后以25分钟为一个模块，执行番茄计时。
+此外，要再思考一下buju的事情，现在用的这套系统虽然是无纸化的，便于检索，但是感觉作为每天的记录还是不太好用，经常用着用着就不用了，之前的notability感觉其实更加实用。
+Recall一下上这周的计划：
+
+8点起床。
+
+8点半出门；或者Keep拉伸一下，然后9点出门。
+
+路上整理一下今天要做的事情。
+
+到办公室以后先背半个小时单词
+
+每天争取读两篇论文
+
+中午出门走走，meditation！
+
+10点半洗澡，上床后手机放远处。
+
+
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/11/17/2021-11-17-%E6%97%A0%E9%A2%98/" title="无题"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/17/2021-11-17-%E6%97%A0%E9%A2%98/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-17T23:09:00.000Z" title="发表于 2021-11-17 15:09:00">2021-11-17</time></span></div><div class="content">周一整个BC都瘫痪了，发大水什么的，只是岛上还是一如既往的最岁月静好，在考虑要不要去买点吃的，防止这两天断粮。。。。
+最近总是懒得做很多事情，在lab的时候效率也很低，论文也看不下去，某种程度上是由于长期的熬夜，真的是不作死就不会死。这个学期刚开始的时候还还准备去健身房的，但是很快发现这个学期健身房关门了；有做keep的想法，但是一直没有实践。
+日记什么的也很久没有写了。感觉马上就要不用了。。。。不过键盘搞定了，基本上完全搞定了，划船机还没买；椅子买好了，还没送到，tracking也没有更新，找Herman Miller的客服，结果给了错的tracking（寄到了ON，现实已签收。）
+现在也总是在床上玩手机，感觉必须要把手机放起来，省的一睡醒就玩手机。
+身体毕竟是本钱，要开始锻炼身体，恢复身体素质。（上周打球把脚皮磨掉了。。。。疼）
+每天的routine 要构建起来！
+
+8点起床。
+8点半出门；或者Keep拉伸一下，然后9点出门。
+路上整理一下今天要做的事情。
+每天争取读两篇论文
+中午出门走走。meditation！
+
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/08/31/2021-08-30-%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/" title="无处安放"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无处安放"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/31/2021-08-30-%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/" title="无处安放">无处安放</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-31T01:28:10.000Z" title="发表于 2021-08-30 18:28:10">2021-08-30</time></span></div><div class="content">很长的一段时间没有写一些没啥营养的废话了。今年年初的时候有那么一点抗拒写东西一直“宣称”自己很忙，当然实际上忙不忙其实也只有自己知道。先总结一下之前这半年吧：Done：
+
+课上完了。
+分体键盘搞好了Not Done：
+论文01没有写。
+论文02没有写。
+Research 基本上停滞了。
+开题没有弄。
+游泳没有学， OW也没有考
+枪证没有考。
+早睡就没有大成果
+每天阅读30分钟未达成
+2W词汇量未达成（2月份以后就没有背过单词了。。。）
+
+有的时候真的很讨厌自己。
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C/" title="无题"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-05-10T07:00:00.000Z" title="发表于 2021-05-10 00:00:00">2021-05-10</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/01/11/2021-01-11-%E5%85%B3%E4%BA%8E%E6%95%88%E7%8E%87/" title="关于效率"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于效率"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/11/2021-01-11-%E5%85%B3%E4%BA%8E%E6%95%88%E7%8E%87/" title="关于效率">关于效率</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-11T23:09:00.000Z" title="发表于 2021-01-11 15:09:00">2021-01-11</time></span></div><div class="content">如果说，每天9半点开始干活，中午休息一个小时。到晚上6点，可以有至少6小时工作时间。
+做饭吃饭2个小时，睡觉9小时，那么差不多可以有3个小时干其他事情.这个月开始实践一下吧! 毕竟现在是博士生了,要认真啊.时间总是不够的.
+
+08:30: 起床
+08:40: Anki
+09:30: 早饭
+09:45: Reading a paper
+10:30: Work (3h)
+13:30: Break
+15:00: Work (3h)
+18:00: Break &amp; Dinner
+20:00: Reading a book (Do NOT watch Youtube/Bilibili)
+22:30: Shower
+
+加油！少年成为他想要模样，就是岁月最好奖赏！ 
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/01/04/2021-01-03-AI/" title="AI"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/04/2021-01-03-AI/" title="AI">AI</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-04T05:39:15.000Z" title="发表于 2021-01-03 21:39:15">2021-01-03</time></span></div><div class="content">要爱自己啊。
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/01/01/2020-12-31-2020/" title="2020"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2020"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/01/2020-12-31-2020/" title="2020">2020</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-01T07:50:15.000Z" title="发表于 2020-12-31 23:50:15">2020-12-31</time></span></div><div class="content">2020!还没回顾自己的2020，某种程度上，又一次浑浑噩噩的过了一年。这一年的任务基本上都没有完成。
+
+Overall
+
+词汇量1.5W
+写完两篇论文
+大论文开题
+Machine Learning/Data Mining 入门
+考证( Firearm License @ spring, 学会游泳，然后OWD license)
+学一个乐器
+早睡早起，床上不玩手机,不看视频！
+每天阅读
+多运动，保持身体健康
+扩大社交圈，见更多人、走更多路，提升自己的见识
+春天的时候拍樱花
+找到自己的routine，flow
+
+
+细节
+
+每天做bullet journal，列清单，持续复盘，让进步看得见，
+每周精读三篇论文
+
+
+Entertainment 
+
+弄完3D Printer
+Hydrofoil surfboard modleing2021年要加油啊！
+
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2020/09/28/2020-09-28-%E7%A7%8B%E5%88%86%E5%B7%B2%E8%BF%87%EF%BC%8C%E4%B8%AD%E7%A7%8B%E9%99%8D%E8%87%B3/" title="秋分已过，中秋降至"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="秋分已过，中秋降至"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/28/2020-09-28-%E7%A7%8B%E5%88%86%E5%B7%B2%E8%BF%87%EF%BC%8C%E4%B8%AD%E7%A7%8B%E9%99%8D%E8%87%B3/" title="秋分已过，中秋降至">秋分已过，中秋降至</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-28T07:36:07.000Z" title="发表于 2020-09-28 00:36:07">2020-09-28</time></span></div><div class="content">今天，其实应该说是昨天（现在已经凌晨了）聚餐，提前欢送彪哥回国。
+认识彪哥很多年了，虽然很多事情都没有细谈，但是不得不说他是一个很有意思的人。不过这些都是别人，说说自己吧。
+这个学期上连续介质力学，这个课还是蛮难的，有一点跟不上进度，但是主要原因还是没有正确的花时间进去。之前找的参考书非常的好，讲解的也非常的详细，排版也很舒服，但是一只没有花时间进去看，导致现在有一点跟不上。至于老师推荐的那个书，其实也很不错，只是排版什么的比较难受，可以作为强化思路的材料；优点是很薄。
+饭后聊天的时候，说起另外一个学生，彪哥说老板夸他认真仔细努力。
+哎，很长的一段时间里，我都是有一点自卑的吧，可能现在这个已经很影响我的观念，思想和行为了。
+曾经我也是很意气风发，只是哎
+希望少年成为他想要模样
+加油吧，已经老了的少年！
+对于拖延症：a. 避免去想完整的大任务，避免去想接下来自己要努力一星期甚至一个月、一年。这会让你觉得人生无望。b. 也不去管，1小时之后你是在学习，还是在玩手机，或者出去浪；我们的小目标，仅仅是管住自己1小时，这是绝对没问题的。
+给这1小时，赋予非常明确的任务，比如单纯地找资料、或者看1 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2020/09/14/2020-09-13-%E5%92%8C%E6%97%B6%E9%97%B4%E5%81%9A%E6%9C%8B%E5%8F%8B/" title="和时间做朋友"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="和时间做朋友"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/14/2020-09-13-%E5%92%8C%E6%97%B6%E9%97%B4%E5%81%9A%E6%9C%8B%E5%8F%8B/" title="和时间做朋友">和时间做朋友</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-14T06:45:24.000Z" title="发表于 2020-09-13 23:45:24">2020-09-13</time></span></div><div class="content">
+选择相反，直接的结果就是时间质量的不同——这不是所谓的“时间管理技巧”可以弥补的。制作一个“任务列表”，其实谁都会；分清楚“重要”与“次要”，或者“紧急”与“非紧急”也没有谁不会。因“不知道学习有什么用”而拒绝学习的人，会在接下来的日子里虚度无数光阴，哪怕他们天天“科学地”制定计划，编制“任务列表”。而与之相反，因“不知道学习有什么用”而选择努力学习的人，每时每刻都充满了收获，并且会在将来的某一天获得更多的“意外”收获，哪怕他们可能显得“漫无目的”——结果真的是天壤之别
+
+
+“做好这件事情究竟对自己有没有意义？如果有，那就要努力做，直到做好为止——没有其他选择。”
+
+
+“不应该用别人的错误惩罚自己，那么做不仅不对，并且愚蠢。”
+
+随心所欲”只不过是幼年时的真实、少年时的幻想、成年时的苦恼，老年时的绝望。
+
+“心智开启”的起点是“意识到可以自律”，而心智发展的过程就是克服懒惰的过程。
+
+“最可怕的敌人就是你自己”，这句话如果有道理的话，那个“最可怕的敌人”实际上应该指的是“你那无法控制的懒惰”
+
+开始记录时间开销
+
+判断一项任务是否“真的重要”，其实只需要一个标准：就是看这项任务的完成 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2020/09/11/2020-09-11-%E8%87%AA%E7%94%A8docker/" title="自用docker"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自用docker"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/11/2020-09-11-%E8%87%AA%E7%94%A8docker/" title="自用docker">自用docker</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-11T21:47:45.000Z" title="发表于 2020-09-11 14:47:45">2020-09-11</time></span></div><div class="content">稍微记录一下自用的应用
+Docker
+portainer
+
+KindleEar
+
+KindleEar-Docker
+
+
+RssHub
+
+TTRS
+
+[KMS 激活服务器]
+
+teddysun/kms (docker.com)
+vlmcsd
+
+
+Jellyfin
+
+之前某一下嫌麻烦直接下线了。 主要是现在嘛，没有地方安全的下载片子了。。。
+
+
+UnblockNeteaseMusic
+
+docker run –name unmusic -d -p 4567:8081 -p 4566:63455 nondanee/unblockneteasemusic -p 63455:8081
+
+
+pihole/AdGuard
+
+
+Jail
+Calibre-web
+
+
+计划ingwakapi: 📊 , Wakapi – Coding Statistics官网
+Dashboard：
+
+Organizr – Forget Bookmarks
+Homedash2
+
+Filestash — Self-hosted client for your data
+Offline
+
+签到　　
+
+[自动续freenom域名 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2020/08/27/2020-08-26-%E4%B8%83%E6%9C%88%E6%B5%81%E7%81%AB%EF%BC%8C%E5%85%AB%E6%9C%88%E8%90%91%E8%8B%87/" title="七月流火，八月萑苇"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="七月流火，八月萑苇"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/08/27/2020-08-26-%E4%B8%83%E6%9C%88%E6%B5%81%E7%81%AB%EF%BC%8C%E5%85%AB%E6%9C%88%E8%90%91%E8%8B%87/" title="七月流火，八月萑苇">七月流火，八月萑苇</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-27T06:00:41.000Z" title="发表于 2020-08-26 23:00:41">2020-08-26</time></span></div><div class="content">一不留神2020已经过去四分之三了。 回顾一下，这三个月没有做什么有效的事情，也就是蹲家里，打游戏，做做饭。看了一下RescueTime的记录，这个月至今总记录时间222h
+
+
+
+Website
+Hours
+
+
+
+Youtube/bilibili
+90
+
+
+知乎
+26
+
+
+虎嗅网易reddit, etc.
+3.5
+
+
+Starcraft/Build&amp;shoot
+11
+
+
+其他零零散散的时间先不算，光这些就已经超过一半了。
+影响我效率的原因有很多，但是最主要的还是自己的心态。计划背单词的，貌似上个月开始就完全没有进展了，锻炼身体跳绳什么的也完全没有执行。**想要做什么呢？**Atomic habits上有说过，首先是想明白想要成为什么样的人，然后知道成为这样的人需要做什么，最好才是去执行。
+那么，我想成为什么样的人呢？
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2020/06/28/2020-06-28-6%E6%9C%88Review/" title="6月Review"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="6月Review"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/28/2020-06-28-6%E6%9C%88Review/" title="6月Review">6月Review</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-28T22:24:14.000Z" title="发表于 2020-06-28 15:24:14">2020-06-28</time></span></div><div class="content">
+君不见黄河之水天上来，奔流到海不复还。君不见高堂明镜悲白发，朝如青丝暮成雪。
+时光流逝一去不复返。
+一直对 ‘李白’ 的将进酒有一种莫名的感觉
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2020/06/18/2020-06-18-PhD-%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%88/" title="PhD 第一个月"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PhD 第一个月"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/18/2020-06-18-PhD-%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%88/" title="PhD 第一个月">PhD 第一个月</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-18T22:12:46.000Z" title="发表于 2020-06-18 15:12:46">2020-06-18</time></span></div><div class="content">
+最近一段效率很低。稍微总结一下主要是两个原因：
+
+睡得太晚，上床以后经常玩手机，2AM才睡觉；晌午才起来。
+很多的时间都用在娱乐，比如看视频/zhihu
+
+解决方法：
+
+晚上睡觉前不带手机上床
+每日review / 每周review / Bullet journal 重新一下。
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2020/04/30/2020-04-29-%E6%89%8B%E5%B8%90%E5%92%8C%E6%97%A5%E7%A8%8B/" title="手帐和日程"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="手帐和日程"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/30/2020-04-29-%E6%89%8B%E5%B8%90%E5%92%8C%E6%97%A5%E7%A8%8B/" title="手帐和日程">手帐和日程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-30T20:11:55.000Z" title="发表于 2020-04-30 13:11:55">2020-04-30</time></span></div><div class="content">拖延症一段时间有在用手帐。
+手帐的作用其实蛮明显的，特别是对于我这样子缺乏自控力的人。只是也存在缺点，自制力还是不够， 有的时候会懒得用，或者有的时候制定了计划，但是却不去执行拖拉。
+最近一段时间看见一些关于执行力的文章，有一些建设性意见：
+
+制定计划
+执行计划要先从复杂的，困难的先开始。
+
+这两条结合起来效果不错，特别是第二条。很多时候，我会沉迷于简单/重复的工作。比如高三的的时候，我特别喜欢做化学题，而且是那种没有特别创新的，没有特别难的化学题。这导致了两个问题：*浪费了精力**，以及没有取得进步, 没有收获***。然后一直以来我都没有意识到这个问题。这个会衍生出我的另外一个问题：不愿走出comfort zone
+在接下来的一段时间，暂定30天，要每天都制定计划，按照优先级以及重要性排序，不能选择简单的任务先执行。
+软件的选择用了一段时间的goodnote 5，Notability和一直使用的onenote。简单比较一下：
+
+Goodnote 5:
+Pos: 
+
+界面更加美观，各种key更便利，封面功能很棒。
+内置模板众多
+稳定
+写出来的字好看
+
+Con:
+
+不支持Windows， ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2020/04/29/2020-04-29-%E5%9B%9B%E6%9C%88%E5%A4%A9/" title="四月天"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四月天"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/29/2020-04-29-%E5%9B%9B%E6%9C%88%E5%A4%A9/" title="四月天">四月天</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-29T18:51:26.000Z" title="发表于 2020-04-29 11:51:26">2020-04-29</time></span></div><div class="content">四月再见。
+五月你好。
+答辩论文交掉了。基本上告一段落。
+先说说答辩的情况把。还是年少轻狂，小看了老师，也高估了自己。总的来说答辩的时候不是特别好，很多时候没有抓到committee的重点，一些自己觉得很简单的事情，对于他们而言不是那么的直接，论文里面也没有直接的解释。
+没答好的几个问题：
+
+BSFC一系列。
+回答的时候没有理解他们没有看懂这个图。
+
+BSFC为什么不用数学模型。
+但是大脑当机了
+
+全局最优解能否确保这个是全局最优解吗
+其实，这个问题是我最没有回答好的。回答的不算错，只是没有回答全。
+
+
+说说这个没回答好的问题，这个问题的其实比较tricky，理论上这类算法无法保证找到的解是全局最优解，只能说是最优解。但是，对于一个工程问题，理论上不一定存在全局最优解，或者存在最优解，但是不一定找得到。那么stochastic global optimization algorithm 找到的算全局最优解吗？
+答案是&quot;算&quot;！ 这类算法通过搜索整个design space，几乎是遍历的所有可能的解，找到的解当然是最优的（基于统计学）。这也引入了这类算法的普遍缺点，比较 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2020/04/19/2020-04-19-%E5%9B%9B%E6%9C%88%E9%9A%8F%E6%83%B3/" title="四月随想"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四月随想"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/19/2020-04-19-%E5%9B%9B%E6%9C%88%E9%9A%8F%E6%83%B3/" title="四月随想">四月随想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-19T19:16:59.000Z" title="发表于 2020-04-19 12:16:59">2020-04-19</time></span></div><div class="content">建立了页面但是没有写。。。
+唉
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2020/01/03/2020-01-03-%E5%B0%91%E5%B9%B4%E6%88%90%E4%B8%BA%E4%BB%96%E6%83%B3%E8%A6%81%E6%A8%A1%E6%A0%B7%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%B2%81%E6%9C%88%E6%9C%80%E5%A5%BD%E5%A5%96%E8%B5%8F/" title="少年成为他想要模样，就是岁月最好奖赏"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="少年成为他想要模样，就是岁月最好奖赏"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/01/03/2020-01-03-%E5%B0%91%E5%B9%B4%E6%88%90%E4%B8%BA%E4%BB%96%E6%83%B3%E8%A6%81%E6%A8%A1%E6%A0%B7%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%B2%81%E6%9C%88%E6%9C%80%E5%A5%BD%E5%A5%96%E8%B5%8F/" title="少年成为他想要模样，就是岁月最好奖赏">少年成为他想要模样，就是岁月最好奖赏</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-01-03T23:13:13.000Z" title="发表于 2020-01-03 15:13:13">2020-01-03</time></span></div><div class="content">少年成为他想要模样，就是岁月最好奖赏
+你好2020
+看了一下去年/前年/大大前年的年度展望，没有什么营养，也没有什么作用。
+做事情还是懒懒散散的。
+之前看见一句话叫做：人做事有三重境界：谋定而后动或后不动，边动边谋，光谋不动。
+对于我而言，绝大部分都处在光谋不动。
+有的是畏惧；有的是懒，好高骛远。
+
+之前没有写完，继续写，晚上打了很久的游戏，今天也是，只是今天的到学校的时候就已经决定了今天要任性的玩最后的几把。然后就把游戏删了。
+之前也都删过好多次，最后都装回来了，这次要把持住鸭。
+继续说之前的，宋小姐送我的新年寄语是少年成为他想要模样，就是岁月最好奖赏。其实蛮有感觉的。的确，不管愿不愿意，人一定会成为某一个样子，而这个模样是由在过去的岁月中慢慢积累，不管喜欢与否。
+回过头来说，这个月定一个主题吧：
+谋且动
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2019/11/12/2019-10-30-%E6%95%88%E7%8E%872/" title="效率-2"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="效率-2"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/11/12/2019-10-30-%E6%95%88%E7%8E%872/" title="效率-2">效率-2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-11-12T00:58:11.000Z" title="发表于 2019-11-11 16:58:11">2019-11-11</time></span></div><div class="content">效率最近有一段时间的效率还比较可以，但是很严重的问题就是不能持久。有三个原因：
+
+Starcraft 2 打的有点多, 这个月已经打了 21h 14m 了。
+虽然知乎什么上的少了，但是实际上总时间还是挺多的 4h。
+拖延症。解决方法其实很简单。首先，删星际。虽然我觉得我可能很快又会把这个装回来，但是现在先删。ManicTime装一下吧，这个软件比Rescue Time复杂，但是稍微研究一下应该是ok的。至于拖延症，其实没有什么好方法，本身的习惯其实也有问题。番茄时间用起来，以及，take a break。 其实一直埋头写写写看看看不是一个好习惯。要定期休息一下。
+
+有朋自远方来这周末，朱幸雨突然跑到加拿大来了。自己也比较忙，然后其实也有一些其他的原因，没有带她逛逛，没有好好招待她。只是约她吃了一个饭。其实感觉她成熟了很多啊。对比我，我真的自愧不如。
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2019/10/17/2019-10-16-%E6%95%88%E7%8E%87/" title="效率"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="效率"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/10/17/2019-10-16-%E6%95%88%E7%8E%87/" title="效率">效率</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-10-17T01:56:00.000Z" title="发表于 2019-10-16 18:56:00">2019-10-16</time></span></div><div class="content">这两天论文有在改，只是效率很低。手头上的工作整理一下：
+
+论文revision。
+模型修bug。
+测试修改完的模型。
+模型重新跑一下，出一下数据。
+DP调试，动态规划那个一直没有测试。我感觉我都要忘记当时是怎么写代码的了。
+全局优化的作业。。。。还有两个一个月就due了。。。。但是一个都没有写。。。
+
+其实有很多事情的。所以其实没有时间闲逛知乎之类的。但是实际上每天还是有大量时间用于闲逛，比如逛知乎虎嗅ifanr之类的。心理学上说人面对要紧的急迫的事情都会有一种短期逃避，长期后悔的情绪，逃避这类事情会给人带来一种短期的心理上的愉悦，仿佛这个问题不存在了；但是事后会不断的懊悔，对自己产生质疑。然后不断产生一个正反馈，直到最后问题越来越严重。
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2019/10/04/2019-10-03-%E5%90%91%E5%89%8D%E8%B5%B0%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%81%9C/" title="向前走，不要停"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="向前走，不要停"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/10/04/2019-10-03-%E5%90%91%E5%89%8D%E8%B5%B0%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%81%9C/" title="向前走，不要停">向前走，不要停</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-10-04T01:56:00.000Z" title="发表于 2019-10-03 18:56:00">2019-10-03</time></span></div><div class="content">其实在取题目的时候有点犹豫，应该取名为送父亲母亲还是取一个和俞jy有关的标题。想了一会儿，还是决定写一些她吧。刚刚发了一个朋友圈:向前走，不要停。是啊，人总是要向前走，不能停下来，我已经原地踏步了很久，久到我自己都没有意识到已经这么久了。今天送父母走。他们明天早上的飞机，只是我明天下午需要给学生带实验课，不得以，只得今天提前回去。好在酒店有免费的大巴车到机场，而且YVR机场中国人很多，机场内中文标识也很多。可以稍微放心。这次他们待了两周半，不得不感慨时间很快。不知道为什么有一种感觉，以后这种时光会很少了。老爸也一直说很多年没有这么没有心事放松了。说说她吧，我貌似从大学开始喜欢她的。也许就是所谓得不到的就是最好的把。一直都对她那么一点意思。其实我很早就明白我们不是一路人。也许，她知道我喜欢她吧，也许不知道。但是又能如何呢。昨天蚂蚁森林偷了一下她能量，难得的发现她能量很多。WeChat上调侃了她一句她走的挺多啊，然后突然意识到国庆节了。早上的时候她回了我，(不知是不是)很认真的回复了我：我和我男朋友这两天在外面玩，所以走的比较多。说真的，看到的时候五味杂陈。之前她分手的时候我还很渣的暗中窃 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2019/09/03/2019-08-20-%E7%A7%8B%E9%AB%98%E6%B0%94%E7%88%BD/" title="秋高气爽"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="秋高气爽"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/09/03/2019-08-20-%E7%A7%8B%E9%AB%98%E6%B0%94%E7%88%BD/" title="秋高气爽">秋高气爽</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-03T04:42:00.000Z" title="发表于 2019-09-02 21:42:00">2019-09-02</time></span></div><div class="content">新生入学了
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2019/08/21/2019-08-20-%E6%8B%A9%E5%81%B6%E6%A0%87%E5%87%86/" title="择偶标准"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="择偶标准"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/08/21/2019-08-20-%E6%8B%A9%E5%81%B6%E6%A0%87%E5%87%86/" title="择偶标准">择偶标准</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-08-21T04:18:00.000Z" title="发表于 2019-08-20 21:18:00">2019-08-20</time></span></div><div class="content">前两天看到有一个知乎的问题叫做“在加拿大的你，择偶标准是怎样的？”。这是一个很有意思的问题。稍微思考了一下，其实很简单，能共患难，能同富贵。具体而言，其实很复杂。
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2019/06/10/2019-06-10-%E5%BC%BA%E5%85%B3%E7%B3%BB%E5%BC%B1%E5%85%B3%E7%B3%BB%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%B8%83%E5%B9%B4/" title="强关系弱关系，以及七年"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="强关系弱关系，以及七年"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/06/10/2019-06-10-%E5%BC%BA%E5%85%B3%E7%B3%BB%E5%BC%B1%E5%85%B3%E7%B3%BB%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%B8%83%E5%B9%B4/" title="强关系弱关系，以及七年">强关系弱关系，以及七年</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-06-10T23:41:00.000Z" title="发表于 2019-06-10 16:41:00">2019-06-10</time></span></div><div class="content">昨天很生气，我现在也还是很生气。但是也麻木了，做人做到这份上没什么意思。
+今天看了一个视频，是我一直很喜欢的一个UP主，Ivy，一个北大出来的女孩子。 她对很多事情都有不错的见解，也很乐于分享自己的经验。她的视频里你可以看到她的迷茫，她的困惑以及她的求索之道。换成人话就是：她在视频里展示出了一个普通的挣扎与进步而不是一个各方面吊打你的学霸。。。。。。她最近的一个视频里讲了和朋友的关系，并且指出重点。
+的确，很多时候人与人之间的社交都是无效的。首先强关系下的人与人一定是高度近似的（人以群分，物以类聚）。而弱连接才是有效的：所谓的弱关系，圈子里的异质性会比较多，而这（“物种”多样性）才能让人不断的学习到不同的知识、理念。
+此外，每个人的时间，精力都是有限的。 所以如果浪费很多时间在无效的社交上，也就是在浪费生命吧。所以，不需要想着让弱关系升级，不用惦记着升级弱关系。不要试着去讨好别人。 LOVE YOURSELF.
+最近在ftchinses上又看到BBC的一个纪录片的新闻，《人生七年》。不得不说这是一个很有意思的纪录片，我并没有看过，但是看看它的简介就会忍不住发出感慨。一方面感慨作为中国人 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2019/05/24/2019-05-24-%E5%A4%8D%E7%9B%98%E4%B8%8E%E5%81%A5%E8%BA%AB/" title="复盘与健身"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="复盘与健身"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/05/24/2019-05-24-%E5%A4%8D%E7%9B%98%E4%B8%8E%E5%81%A5%E8%BA%AB/" title="复盘与健身">复盘与健身</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-05-24T22:57:37.000Z" title="发表于 2019-05-24 15:57:37">2019-05-24</time></span></div><div class="content">复盘的意义说起来好久没有写博客了。上个月10号准备写的时候，不知道为什么写了一句话就没有写下去了，好像是因为办公室有人，还是说每次想写的时候都是晚上准备回家的时候。。。
+最近怎么说呢，反正有种这个月也写不完thesis了啊。
+先说点好消息吧，现在慢慢的，有的时候能把自己按下来写东西了。虽然说效率还是很低，但是至少说开始写起来了。差不多这周写了2000字吧， 上周基本上没有怎么写。上上周貌似有写一点。哎
+总的来说效率还是太低，但是至少开始动起来了。昨天一个人坐在椅子上思考了一会儿，感觉曾经的我不是不是这样子的，不知道从某一天开始我慢慢的开始不再思考；我意识到这个问题其实有一段时间了，但是一直没有没有心来调整。或者说生活中有太多其他的事情来打扰，然后慢慢的生活的重心开始偏移。原来的时候虽然有的时候也蛮不认真的，但是经常会自我反思，当失去这个以后，慢慢的“被生活磨平了棱角”。。。。
+所以！！！我决定了，我要开始再次重新做人。开始每日/每周复盘。
+我预计复盘是一种很痛苦的事情，毕竟之前做过，也明白。但是复盘的意义再与：能够明白自己最初的想法，中间的过程，影响行为的因素，能够发现自己改进的方向。 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2019/04/11/2019-04-10-%E5%9B%9B%E6%9C%88%E5%8D%8A/" title="四月半"><img class="post_bg" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四月半"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/04/11/2019-04-10-%E5%9B%9B%E6%9C%88%E5%8D%8A/" title="四月半">四月半</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-04-11T00:05:37.000Z" title="发表于 2019-04-10 17:05:37">2019-04-10</time></span></div><div class="content">四月过了一半了。
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Haijia Alex Zhu</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/24/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/" title="双链笔记daily note"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="双链笔记daily note"/></a><div class="content"><a class="title" href="/2022/02/24/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/" title="双链笔记daily note">双链笔记daily note</a><time datetime="2022-02-24T04:39:00.000Z" title="发表于 2022-02-23 20:39:00">2022-02-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/27/2022-01-26-Proposal/" title="Proposal"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Proposal"/></a><div class="content"><a class="title" href="/2022/01/27/2022-01-26-Proposal/" title="Proposal">Proposal</a><time datetime="2022-01-27T06:57:10.000Z" title="发表于 2022-01-26 22:57:10">2022-01-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/18/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/" title="聊聊自卑吧"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="聊聊自卑吧"/></a><div class="content"><a class="title" href="/2022/01/18/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/" title="聊聊自卑吧">聊聊自卑吧</a><time datetime="2022-01-18T07:45:00.000Z" title="发表于 2022-01-17 23:45:00">2022-01-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/11/2022-01-11/" title="不开心"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="不开心"/></a><div class="content"><a class="title" href="/2022/01/11/2022-01-11/" title="不开心">不开心</a><time datetime="2022-01-11T23:09:00.000Z" title="发表于 2022-01-11 15:09:00">2022-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/" title="自用软件收录"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自用软件收录"/></a><div class="content"><a class="title" href="/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/" title="自用软件收录">自用软件收录</a><time datetime="2022-01-06T19:01:00.000Z" title="发表于 2022-01-06 11:01:00">2022-01-06</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/tech-%E6%94%B6%E5%BD%95/" style="font-size: 1.23em; color: #999ea6">tech/收录</a> <a href="/tags/%E5%91%A8%E6%9C%AB%E9%97%B2%E8%B0%88/" style="font-size: 1.1em; color: #999">周末闲谈</a> <a href="/tags/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/" style="font-size: 1.37em; color: #99a4b2">无处安放</a> <a href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" style="font-size: 1.43em; color: #99a6b9">絮絮叨叨</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 1.3em; color: #99a1ac">计划</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 1.17em; color: #999c9f">读书笔记</a> <a href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" style="font-size: 1.5em; color: #99a9bf">随想录</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">85</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-03-18T23:48:00.461Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Haijia Alex Zhu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

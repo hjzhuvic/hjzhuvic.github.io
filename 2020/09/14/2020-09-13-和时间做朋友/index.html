@@ -1,32 +1,257 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>和时间做朋友 | 花开彼岸天</title><meta name="keywords" content="读书笔记"><meta name="author" content="Haijia Alex Zhu"><meta name="copyright" content="Haijia Alex Zhu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="选择相反，直接的结果就是时间质量的不同——这不是所谓的“时间管理技巧”可以弥补的。制作一个“任务列表”，其实谁都会；分清楚“重要”与“次要”，或者“紧急”与“非紧急”也没有谁不会。因“不知道学习有什么用”而拒绝学习的人，会在接下来的日子里虚度无数光阴，哪怕他们天天“科学地”制定计划，编制“任务列表”。而与之相反，因“不知道学习有什么用”而选择努力学习的人，每时每刻都充满了收获，并且会在将来的某一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="和时间做朋友">
+<meta property="og:url" content="hjzhuvic.github.io/2020/09/14/2020-09-13-%E5%92%8C%E6%97%B6%E9%97%B4%E5%81%9A%E6%9C%8B%E5%8F%8B/index.html">
+<meta property="og:site_name" content="花开彼岸天">
+<meta property="og:description" content="选择相反，直接的结果就是时间质量的不同——这不是所谓的“时间管理技巧”可以弥补的。制作一个“任务列表”，其实谁都会；分清楚“重要”与“次要”，或者“紧急”与“非紧急”也没有谁不会。因“不知道学习有什么用”而拒绝学习的人，会在接下来的日子里虚度无数光阴，哪怕他们天天“科学地”制定计划，编制“任务列表”。而与之相反，因“不知道学习有什么用”而选择努力学习的人，每时每刻都充满了收获，并且会在将来的某一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg">
+<meta property="article:published_time" content="2020-09-14T06:45:24.000Z">
+<meta property="article:modified_time" content="2022-03-18T23:46:51.953Z">
+<meta property="article:author" content="Haijia Alex Zhu">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="hjzhuvic.github.io/2020/09/14/2020-09-13-%E5%92%8C%E6%97%B6%E9%97%B4%E5%81%9A%E6%9C%8B%E5%8F%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '和时间做朋友',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-03-18 16:46:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
-
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
-
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
-
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books"><span> Books</span></a></li><li><a class="site-page child" href="/movies"><i class="fa-fw fas fa-video"></i><span> Movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="//wish/"><i class="fa-fw fas fa-link"></i><span> Wishes</span></a></div><div class="menus_item"><a class="site-page" href="/man/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">花开彼岸天</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books"><span> Books</span></a></li><li><a class="site-page child" href="/movies"><i class="fa-fw fas fa-video"></i><span> Movies</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="//wish/"><i class="fa-fw fas fa-link"></i><span> Wishes</span></a></div><div class="menus_item"><a class="site-page" href="/man/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">和时间做朋友</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-14T06:45:24.000Z" title="发表于 2020-09-13 23:45:24">2020-09-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-18T23:46:51.953Z" title="更新于 2022-03-18 16:46:51">2022-03-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="和时间做朋友"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ul>
+<li>选择相反，直接的结果就是时间质量的不同——这不是所谓的“时间管理技巧”可以弥补的。制作一个“任务列表”，其实谁都会；分清楚“重要”与“次要”，或者“紧急”与“非紧急”也没有谁不会。因“不知道学习有什么用”而拒绝学习的人，会在接下来的日子里虚度无数光阴，哪怕他们天天“科学地”制定计划，编制“任务列表”。而与之相反，因“不知道学习有什么用”而选择努力学习的人，每时每刻都充满了收获，并且会在将来的某一天获得更多的“意外”收获，哪怕他们可能显得“漫无目的”——结果真的是天壤之别</li>
+</ul>
+<ul>
+<li>“做好这件事情究竟对自己有没有意义？如果有，那就要努力做，直到做好为止——没有其他选择。”</li>
+</ul>
+<ul>
+<li><p>“不应该用别人的错误惩罚自己，那么做不仅不对，并且愚蠢。”</p>
+</li>
+<li><p>随心所欲”只不过是幼年时的真实、少年时的幻想、成年时的苦恼，老年时的绝望。</p>
+</li>
+<li><p>“心智开启”的起点是“意识到可以自律”，而心智发展的过程就是克服懒惰的过程。</p>
+</li>
+<li><p>“最可怕的敌人就是你自己”，这句话如果有道理的话，那个“最可怕的敌人”实际上应该指的是“你那无法控制的懒惰”</p>
+</li>
+<li><p>开始记录时间开销</p>
+</li>
+<li><p>判断一项任务是否“真的重要”，其实只需要一个标准：就是看这项任务的完成是否对你的目标达成确实有益</p>
+</li>
+<li><p>可对照下表检查一下，用阴影标出有用事情。 往往，审视一下自己的生活，你就可能会痛苦地发现自己经常仅仅因为非常有趣就去做那些其实无用的事情。</p>
+</li>
+<li><p>判断一件事情是否真的重要的标准只有一个：是否对你的目标（无论是长期，还是短期）的实现有益。</p>
+</li>
+<li><p>你只需要一个判断标准就够了：这事儿是否真的重要。再往后的道理就一目了然了：真正最重要的任务永远只有一个——那个真正对你的目标实现有帮助的任务。</p>
+</li>
+<li><p>千万不要在整个任务完成之前中途更改列表中的项目。</p>
+</li>
+<li><p>一事无成的最根本原因就是因为放弃</p>
+</li>
+<li><p>我知道那位同学的愤怒，本质上并非针对我，只是那一瞬间他被现实打击到了失控的地步。我不觉得在这样的时候“善意的安慰或者鼓励”和“虚伪”或者“欺骗”有什么分别。他生气不是因为我说了实话，是因为没听到他想要听到的话</p>
+</li>
+<li><p>无论计划简单还是复杂，缺乏切实的行动就注定会失败或者失效。我个人的经验是，有些时候故意根本不做计划反倒是有益的。</p>
+<ul>
+<li>GerePersonal opinion. I wil live a even worse life  if i don’t  have any plan.</li>
+</ul>
+</li>
+<li><p>我只做了一件事儿——坚持</p>
+</li>
+<li><p>其间也有不愿意去的时候，但是，我知道那只不过是我的大脑的想法，而不应该是我的想法——只要意识到这个，就不存在什么挣扎</p>
+</li>
+<li><p>很多的时候，没必要做计划的原因有两个，除了前面提到过的“大多数计划其实非常简单”之外，另外一个是“初始状态下，我们往往实际上并没有能力去制定合理有效的计划”。因为做任何事情，我们都可能要经历相同的过程：逐步熟悉，小心摸索，失败失败再失败，认真反思，卷土重来，直至成功。而在最初甚至连基本的认知都没有的时候，制定出来的计划十有八九只不过是空谈。</p>
+</li>
+<li><p>如果你想改变你自己，或者你目前的处境并不令人满意，那就一切从简——找一个你觉得该给你带来改变的行动，然后去做就是了。不要怕碰壁，不要怕失败，那是必须经历的一个过程。还是那句话，失败并不可怕，因为你总是要失败许多次才会有结果，并且全天下又不是只有你一个人失败，怕什么？关键在于在每次挫折之后能否汲取教训。只要能汲取教训，然后自我调整，那就是进步了。</p>
+</li>
+<li><p>提问之前，一定要尽量自己找答案，实在找不着了，记下来。如果你问的都是随处可以获得答案的问题，别人懒得帮你。如果三番五次地麻烦别人，他想不烦你都很难——所以，最好提前整理好所有要问的问题，方便自己，也方便别人</p>
+</li>
+<li><p>总结一下： 1．要热爱考试，因为你喜欢通行证。 2．分辨考试的重要性。 3．提前很久开始准备重要的考试。 4．做题是最好的准备方法。 5．通过做题了解考试的重点、难点。 6．全面补习难点重点，并经常重新审视。 7．教是最好的学习方法。</p>
+</li>
+<li><p>学东西，就要好好学，不能只学样不学本。</p>
+</li>
+<li><p>记笔记都起码有这样几个好处： 1．可以使自己保持参与状态。 2．提供一个完整的捕捉灵感、疑惑的机制。 3．可以用来与其他参与者沟通、讨论正确的信息。</p>
+</li>
+<li><p>他使用下图所示的方法把页面分成不同的区域： ·　笔记内容栏：尽可能完整而全面地记录演讲内容。 ·　提示栏：当你做笔记的时候，让提示栏保留空白。演讲过后，简化你的笔记使之成为简明提示以供日后记忆、回顾和消化（思考）之用。 ·　概要：用一个或两个句子总结你的每页笔记。 在记笔记的时候，可以借助一些符号来简化书写，例如： ·　［］方括号标注为要做的事。 ·　（）圆括号标注为指派给他人的事情。 ·　*星号标注为重要的事情。 ·　？问号标注为下一步要研究或是询问的事情。</p>
+</li>
+<li><p>一个人一旦认为自己的情况比较特殊，他从本质上就可能永远无法接受别人的建议。</p>
+</li>
+<li><p>浪费时间、虚度年华的人，有个共同的特征——他们拼命想控制自己完全不能控制的，却在自己真正能掌控的地方彻底失控</p>
+</li>
+<li><p>相信运气其实是缺乏自制力的表现。</p>
+</li>
+<li><p>量力而行”是如此高难度的行为模式——a．承认自己能力有限；b．不怕在别人面前露怯；c．敢于不去证明自己是“好人”……</p>
+</li>
+<li><p>努力并不像传说中的那么艰苦，只不过是“每天至少专心学习、工作6小时”；耐心却远比大多数人想象得巨大，“要与时间相伴短则5年，长则20年”。</p>
+</li>
+<li><p>专心做可以提升自己的事情，学习并拥有更多更好的技能，成为一个值得交往的人。 ·　学会独善其身，以不给他人制造麻烦为美德，用你的独立赢得尊重。 ·　除非有特殊原因，应该尽量回避那些连在物质生活上都不能独善其身的人；那些精神生活上不能独善其身的，就更应该回避了——尽管甄别起来比较困难。 ·　真正关心一个朋友的意思是说，你情愿在他身上花费甚至浪费更多的时间。 ·　记住，一个人的幸福程度，往往取决于他多大程度上可以脱离对外部世界的依附。</p>
+</li>
+<li><p>他们的效率很差。根源在于，他们其实只做简单的事情，而回避那些有难度的工作。</p>
+</li>
+<li><p>通过前面讲的那些道理，你可以知道这些人本质上应该是被自己大脑控制的人，而不是那些控制自己大脑的人。某种意义上，我们不得不说，这样的人心智发育不是很健全，因为他们太容易满足于并仅仅满足于简单的感官刺激，而很少甚至无法感知那些需要通过复杂的劳动才可以获得的那种心灵上的愉悦。</p>
+</li>
+<li><p>你知道你能通过什么确信自己做到了或者至少部分做到了么？方法很简单，看看每天你做的事儿里，有多少是尽管无趣但却是非常重要的，有多少是非常有趣但却是不重要的。</p>
+</li>
+<li><p>趣但实际上对你来说非常重要的事情</p>
+</li>
+<li><p>未来的一个星期乃至一个月的时间里，每天至少专注于这件事儿2个小时</p>
+</li>
+<li><p>效率很差。根源在于，他们其实只做简单的事情，而回避那些有难度的工作。</p>
+</li>
+<li><p>控制这种逃避倾向</p>
+</li>
+<li><p>质上来看，任务中相当重要的一部分（通常因为重要而困难，也因为困难而重要）永远完成不了</p>
+</li>
+<li><p>大多数人喜欢先做甚至只做自己喜欢的</p>
+</li>
+<li><p>他们总是完成不了任务。因为在现实生活中基本上每一个任务都是“系统工程”，即，每个任务其实总是由许多需要不同技能的任务组成。最终只有那些全面掌握这些（而不是某一个）技能的人才能够完成任务。</p>
+</li>
+<li><p>做任何事情之前，花上一定的时间分析完成任务所需的种种技能； ·　诚实面对自己，正视自己相对于这些技能上的熟练程度； ·　如果自己在某些技能上有所欠缺，那么a．短期：求助于他人；b．长期：求人不如求己——开始学习； ·　测算时间，把自己擅长的部分放到后面可能是优势策略； ·　养成记录的习惯，以便自己随时监督自己； ·　按部就班完成计划。</p>
+</li>
+<li><p>拿出纸笔、列一列，然后问问自己，“我的时间究竟可以标价多少？”——这就是一个人决心不再浪费时间的最有效的起点和动力。只有爱惜才可能产生节约的动力。</p>
+</li>
+<li><p>要想办法从理解上把抽象事物转变为具体事物——这样才能更好地理解抽象事物。因为你把时间具体化为金钱，使得你开始格外爱惜时间，并且开始动脑思考“我应该如何运用我的时间呢？”需要注意的是，过去你常听到的那句“陈词滥调”——“时间就是金钱”事实上并没有改变你对时间的态度。因为，仅仅这样一句话依然是很抽象的，是非常不具体的</p>
+</li>
+<li><p>事实上，很多大学生所谓的“利用课余时间打工”实际上就是基于这样的误解。如果家庭条件允许，大学生最好不要把宝贵的青春时间花费在“打工”上，因为，在大多数情况下，实际的回报实在是太少——相对于把时间精力花费在恰当的学习上而因此在将来可以获得的回报来看。</p>
+</li>
+<li><p>自己的大脑有这种非理性倾向是极其重要并且非常有用的：在金钱上，人们不仅倾向于低估未来回报的价值，甚至有时过度低估。</p>
+</li>
+<li><p>同样相信自己明天会有更多的时间——尽管今天总计有24个小时，明天总计也同样只有24小时</p>
+</li>
+<li><p>在时间上犯了错误，几乎是体会不到任何惩罚的——因为，错过了时间或者错过了机会的时候，真正要命的是我们往往根本不知道失去的是什么，而我们真的很难对“并不存在”的损失产生巨大的悔意。</p>
+</li>
+<li><p>回顾一下：a．人们普遍相信他们在明天会拥有比今天更多的金钱；b．人们普遍相信自己明天会有更多的时间。</p>
+</li>
+<li><p>在这两种普遍的曲解中，人们对时间的曲解程度远远高于对金钱的曲解程度</p>
+</li>
+<li><p>所有的成功本质上都是一样的。先花上相当的时间和精力去锁定一个方向或者目标。确定它是现实的、可行的之后，运用心智的力量在这个方向上再投入更多的时间，再更多一点的时间。把时间当作朋友，一路前行。当时间陪伴你足够久的时候，你的耐心就能从它那里得到回报。不知所以然的人会说，那是“运气”，或者那是走了狗屎运的人才会有的“天赐灵感”；而我们知道的是，如果那回报真的来了，只有一个名字，叫做“必然”。</p>
+</li>
+<li><p>临时抱佛脚的人却不知道自己早已陷入了荒谬的漩涡，每天忙忙碌碌而又实际上碌碌无为地度过，直至最终结果出现都不知道自己究竟错在哪里；只能在许多年后，对自己说：“年轻的时候，我也努力过……”</p>
+</li>
+<li><p>懒惰，是缺乏耐心而不愿投入时间精力去做任何事情。短视，是缺乏耐心而不能运用心智去展望未来。草率，是缺乏耐心而不愿投入时间精力去认真地调查研究。肤浅，是缺乏耐心而不能运用心智深入思考。夜郎自大，是因为缺乏耐心而拒绝观察外面的世界。而所有的成见与偏见，都是因为缺乏耐心而不愿投入更多的时间和精力去认真分辨每个个体的特征，而宁愿用粗暴简单的分类方法替代思考。</p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Haijia Alex Zhu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="/hjzhuvic.github.io/2020/09/14/2020-09-13-%E5%92%8C%E6%97%B6%E9%97%B4%E5%81%9A%E6%9C%8B%E5%8F%8B/">hjzhuvic.github.io/2020/09/14/2020-09-13-%E5%92%8C%E6%97%B6%E9%97%B4%E5%81%9A%E6%9C%8B%E5%8F%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="hjzhuvic.github.io" target="_blank">花开彼岸天</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/09/28/2020-09-28-%E7%A7%8B%E5%88%86%E5%B7%B2%E8%BF%87%EF%BC%8C%E4%B8%AD%E7%A7%8B%E9%99%8D%E8%87%B3/"><img class="prev-cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">秋分已过，中秋降至</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/11/2020-09-11-%E8%87%AA%E7%94%A8docker/"><img class="next-cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">自用docker</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2000/01/11/9999-Template/" title="template"><img class="cover" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2000-01-11</div><div class="title">template</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Haijia Alex Zhu</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/24/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/" title="双链笔记daily note"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="双链笔记daily note"/></a><div class="content"><a class="title" href="/2022/02/24/%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/" title="双链笔记daily note">双链笔记daily note</a><time datetime="2022-02-24T04:39:00.000Z" title="发表于 2022-02-23 20:39:00">2022-02-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/27/2022-01-26-Proposal/" title="Proposal"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Proposal"/></a><div class="content"><a class="title" href="/2022/01/27/2022-01-26-Proposal/" title="Proposal">Proposal</a><time datetime="2022-01-27T06:57:10.000Z" title="发表于 2022-01-26 22:57:10">2022-01-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/18/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/" title="聊聊自卑吧"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="聊聊自卑吧"/></a><div class="content"><a class="title" href="/2022/01/18/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/" title="聊聊自卑吧">聊聊自卑吧</a><time datetime="2022-01-18T07:45:00.000Z" title="发表于 2022-01-17 23:45:00">2022-01-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/11/2022-01-11/" title="不开心"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="不开心"/></a><div class="content"><a class="title" href="/2022/01/11/2022-01-11/" title="不开心">不开心</a><time datetime="2022-01-11T23:09:00.000Z" title="发表于 2022-01-11 15:09:00">2022-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/" title="自用软件收录"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2022/Marchblogheader.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自用软件收录"/></a><div class="content"><a class="title" href="/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/" title="自用软件收录">自用软件收录</a><time datetime="2022-01-06T19:01:00.000Z" title="发表于 2022-01-06 11:01:00">2022-01-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Haijia Alex Zhu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
