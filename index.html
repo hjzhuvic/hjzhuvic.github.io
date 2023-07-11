@@ -43,6 +43,60 @@
 
 	<article>
 	
+		<h1><a href="/2023/06/22/2023-06-21-小米AX9000折腾记录/">小米AX9000折腾记录</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2023-06-22</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-none-link" href="/tags/tech-%E6%94%B6%E5%BD%95/" rel="tag">tech/收录</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>双分区固件的好处不会死…… 用小米救砖工具能快速恢复分区表.</p>
+<h2 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h2><p>基本原理就是利用另外一个OpenWrt通过中继进行注入攻击, 具体操作参考卡卡的视频. 他的视频是最无脑的.</p>
+<p><code>cat /proc/mtd</code></p>
+<p>mtd21: 03800000 00020000 “rootfs”<br>mtd22: 03800000 00020000 “rootfs_1”</p>
+<p>rootfs总共有两个分区, 分别为21和22. 其中,当last success 返回1时, 使用的为mtd22; 返回0时,使用21;</p>
+<p><code>nvram get flag_last_success</code></p>
+<p>返回的值为1, 所以需要使用以下命令切换到21分区:<br>nvram set flag_last_success=0<br>nvram set flag_boot_rootfs=0<br>nvram commit<br>reboot</p>
+<p> 需要注意的是,切换分区后返回的值会变,这里指最开始的返回的值.</p>
+<p>接下来需要做两件事:</p>
+<ul>
+<li>刷入OP固件 ubiformat /dev/mtd22 -y -f /tmp/你上传的固件文件名 (.ubi)</li>
+<li>切换启动分区为22分区；<br><code>nvram set flag_last_success=1 nvram set flag_boot_rootfs=1 nvram commit reboot</code></li>
+</ul>
+<h2 id="双系统切换"><a href="#双系统切换" class="headerlink" title="双系统切换"></a>双系统切换</h2><h3 id="OP切换到小米系统"><a href="#OP切换到小米系统" class="headerlink" title="OP切换到小米系统"></a>OP切换到小米系统</h3><p>fw_setenv  flag_last_success 0<br>fw_setenv flag_boot_rootfs 0<br>reboot</p>
+<h3 id="小米系统切换到OP"><a href="#小米系统切换到OP" class="headerlink" title="小米系统切换到OP"></a>小米系统切换到OP</h3><p>nvram set flag_last_success=1<br>nvram set flag_boot_rootfs=1<br>nvram commit<br>reboot</p>
+<p>ssh密码:9b7fb870</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>默认安装完以后没有LuCI, 需要使用下列命令安装:<br>首先连接ssh: 不建议设置root密码.</p>
+<p><code>opkg update opkg install luci opkg install luci-ssl /etc/init.d/uhttpd restart</code></p>
+<p>默认用factory安装完以后是recovery mode, 进入固件升级页面, 使用同版本的upgrade固件”升级”系统. 重启后会退出该模式, 但是需要重新安装 LuCI.</p>
+<p><del>接下来就是该干嘛干嘛. 有一个需要注意的是, 官方固件会有第四个radio 出现, 不能有启用它, 一旦启用, wifi会有断流的情况, 每几秒就断流一次. 16MHZ 也不能启用.<br> <code>radio3 Qualcomm Atheros QCN6024/9024/9074 802.11ac/ax/n</code></del></p>
+<h2 id="频率设置"><a href="#频率设置" class="headerlink" title="频率设置"></a>频率设置</h2><p>radio0 (5GHz AN)<br>radio1 (5GHz AX 80MHz only)<br>radio2 (2.4GHz)<br>radio3 (5GHz AX 160MHz)</p>
+<h2 id="推荐安装的软件"><a href="#推荐安装的软件" class="headerlink" title="推荐安装的软件"></a>推荐安装的软件</h2><ul>
+<li>luci-app-upnp</li>
+<li><a target="_blank" rel="noopener" href="https://openwrt.org/docs/guide-user/services/dns/adguard-home">adguard home</a></li>
+<li>ddns</li>
+<li>acme</li>
+</ul>
+
+	
+
+	
+
+</article>
+
+
+
+
+	<article>
+	
 		<h1><a href="/2023/05/02/2023-05-01-DIY餐桌-Part-1/">DIY餐桌 Part 1</a></h1>
 	
 	<div class="article__infos">
@@ -393,7 +447,7 @@
 
 	<article>
 	
-		<h1><a href="/2022/01/11/2022-01-11/">不开心</a></h1>
+		<h1><a href="/2022/01/11/2022-01-11-不开心/">不开心</a></h1>
 	
 	<div class="article__infos">
 		<span class="article__date">2022-01-11</span><br />
@@ -1314,43 +1368,6 @@
 <li>拖延症。<br>解决方法其实很简单。<br>首先，删星际。虽然我觉得我可能很快又会把这个装回来，但是现在先删。ManicTime装一下吧，这个软件比Rescue Time复杂，但是稍微研究一下应该是ok的。<br>至于拖延症，其实没有什么好方法，本身的习惯其实也有问题。番茄时间用起来，以及，take a break。 其实一直埋头写写写看看看不是一个好习惯。要定期休息一下。</li>
 </ol>
 <h2 id="有朋自远方来"><a href="#有朋自远方来" class="headerlink" title="有朋自远方来"></a>有朋自远方来</h2><p>这周末，朱幸雨突然跑到加拿大来了。自己也比较忙，然后其实也有一些其他的原因，没有带她逛逛，没有好好招待她。只是约她吃了一个饭。其实感觉她成熟了很多啊。对比我，我真的自愧不如。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/10/17/2019-10-16-效率/">效率</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-10-17</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>这两天论文有在改，只是效率很低。<br>手头上的工作整理一下：</p>
-<ul>
-<li>论文revision。</li>
-<li>模型修bug。</li>
-<li>测试修改完的模型。</li>
-<li>模型重新跑一下，出一下数据。</li>
-<li>DP调试，动态规划那个一直没有测试。我感觉我都要忘记当时是怎么写代码的了。</li>
-<li>全局优化的作业。。。。还有两个一个月就due了。。。。但是一个都没有写。。。</li>
-</ul>
-<p>其实有很多事情的。所以其实没有时间闲逛知乎之类的。但是实际上每天还是有大量时间用于闲逛，比如逛知乎虎嗅ifanr之类的。心理学上说人面对要紧的急迫的事情都会有一种短期逃避，长期后悔的情绪，逃避这类事情会给人带来一种短期的心理上的愉悦，仿佛这个问题不存在了；但是事后会不断的懊悔，对自己产生质疑。然后不断产生一个正反馈，直到最后问题越来越严重。</p>
 
 	
 

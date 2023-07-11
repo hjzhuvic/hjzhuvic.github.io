@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>小米AX9000折腾记录 | 花开彼岸天</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
+    
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/" class="header__link">Home</a>
+			
+				<a href="/wish" class="header__link">Wishes</a>
+			
+				<a href="/man" class="header__link">MAN</a>
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/books" class="header__link">Books</a>
+			
+				<a href="/movies" class="header__link">Movies</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">花开彼岸天</a></h1>
+		<h2 class="header__subtitle">鱼跃此时海</h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>小米AX9000折腾记录</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2023-06-22</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-none-link" href="/tags/tech-%E6%94%B6%E5%BD%95/" rel="tag">tech/收录</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>双分区固件的好处不会死…… 用小米救砖工具能快速恢复分区表.</p>
+<h2 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h2><p>基本原理就是利用另外一个OpenWrt通过中继进行注入攻击, 具体操作参考卡卡的视频. 他的视频是最无脑的.</p>
+<p><code>cat /proc/mtd</code></p>
+<p>mtd21: 03800000 00020000 “rootfs”<br>mtd22: 03800000 00020000 “rootfs_1”</p>
+<p>rootfs总共有两个分区, 分别为21和22. 其中,当last success 返回1时, 使用的为mtd22; 返回0时,使用21;</p>
+<p><code>nvram get flag_last_success</code></p>
+<p>返回的值为1, 所以需要使用以下命令切换到21分区:<br>nvram set flag_last_success=0<br>nvram set flag_boot_rootfs=0<br>nvram commit<br>reboot</p>
+<p> 需要注意的是,切换分区后返回的值会变,这里指最开始的返回的值.</p>
+<p>接下来需要做两件事:</p>
+<ul>
+<li>刷入OP固件 ubiformat /dev/mtd22 -y -f /tmp/你上传的固件文件名 (.ubi)</li>
+<li>切换启动分区为22分区；<br><code>nvram set flag_last_success=1 nvram set flag_boot_rootfs=1 nvram commit reboot</code></li>
+</ul>
+<h2 id="双系统切换"><a href="#双系统切换" class="headerlink" title="双系统切换"></a>双系统切换</h2><h3 id="OP切换到小米系统"><a href="#OP切换到小米系统" class="headerlink" title="OP切换到小米系统"></a>OP切换到小米系统</h3><p>fw_setenv  flag_last_success 0<br>fw_setenv flag_boot_rootfs 0<br>reboot</p>
+<h3 id="小米系统切换到OP"><a href="#小米系统切换到OP" class="headerlink" title="小米系统切换到OP"></a>小米系统切换到OP</h3><p>nvram set flag_last_success=1<br>nvram set flag_boot_rootfs=1<br>nvram commit<br>reboot</p>
+<p>ssh密码:9b7fb870</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>默认安装完以后没有LuCI, 需要使用下列命令安装:<br>首先连接ssh: 不建议设置root密码.</p>
+<p><code>opkg update opkg install luci opkg install luci-ssl /etc/init.d/uhttpd restart</code></p>
+<p>默认用factory安装完以后是recovery mode, 进入固件升级页面, 使用同版本的upgrade固件”升级”系统. 重启后会退出该模式, 但是需要重新安装 LuCI.</p>
+<p><del>接下来就是该干嘛干嘛. 有一个需要注意的是, 官方固件会有第四个radio 出现, 不能有启用它, 一旦启用, wifi会有断流的情况, 每几秒就断流一次. 16MHZ 也不能启用.<br> <code>radio3 Qualcomm Atheros QCN6024/9024/9074 802.11ac/ax/n</code></del></p>
+<h2 id="频率设置"><a href="#频率设置" class="headerlink" title="频率设置"></a>频率设置</h2><p>radio0 (5GHz AN)<br>radio1 (5GHz AX 80MHz only)<br>radio2 (2.4GHz)<br>radio3 (5GHz AX 160MHz)</p>
+<h2 id="推荐安装的软件"><a href="#推荐安装的软件" class="headerlink" title="推荐安装的软件"></a>推荐安装的软件</h2><ul>
+<li>luci-app-upnp</li>
+<li><a target="_blank" rel="noopener" href="https://openwrt.org/docs/guide-user/services/dns/adguard-home">adguard home</a></li>
+<li>ddns</li>
+<li>acme</li>
+</ul>
+
+	
+
+	
+		<span class="different-posts"><a href="/2023/06/22/2023-06-21-%E5%B0%8F%E7%B1%B3AX9000%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>我，<br />自钱塘江边,<br />这里是我观察和思考的窗口,<br />愿我成为一个不平凡的人。<br />以上！</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/about">About</a></li>
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2023 Haijia Alex Zhu | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
