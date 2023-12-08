@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="theme-color" content="#33474d">
-	<title>做什么？ | 花开彼岸天</title>
+	<title>群晖反向代理设置 | 花开彼岸天</title>
 	<link rel="stylesheet" href="/css/style.css" />
 	
       <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
@@ -39,14 +39,14 @@
 	<main>
 		<article>
 	
-		<h1>做什么？</h1>
+		<h1>群晖反向代理设置</h1>
 	
 	<div class="article__infos">
-		<span class="article__date">2014-03-12</span><br />
+		<span class="article__date">2023-12-08</span><br />
 		
 		
 			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
+			  	<a class="article__tag-none-link" href="/tags/Homebuild/" rel="tag">Homebuild</a> <a class="article__tag-none-link" href="/tags/tech-%E6%94%B6%E5%BD%95/" rel="tag">tech/收录</a>
 			</span>
 		
 	</div>
@@ -54,13 +54,21 @@
 	
 
 	
-		<p>某些时候，我会不知道我是不是还正常，或者说有的时候，表现的简直就是废物，真正的废物。<br>我不知道自己在什么，我不知道该如何和别人说这件事情。浪费自己的时间。<br>过年前，1月12号考完第二次托福，想着说，那次不怎么好，下次努力，回家好好复习，结果，年前没看。过完年，从海南回来，还是没怎么看，然后，说去硖石一个人好好复习。但是在那边你干了什么呢？红色警戒？然后回到了学校，天天都是睡到9点多，然后11点多起床，磨蹭到下午慢慢看书，想着反正三月1好那次考试感觉还不错。<br>**<em>“就差那么一点了~~”**</em><br>就差那么一点了。。。。今天成绩出来了，78(21,29,19,18)。<br>准备4月中再考最后一次，最后一次。<br>“就差”=“没有”<br>“就差一点点就成功了”=“失败”<br>不要用这种词汇给自己心理安慰。<br> 没有多余的机会了。<br>时间安排<br>8点-10点，单词，四级词汇<br>10点半-11点半，一篇写作，<br>12点半-3点半，阅读，3篇。精读，词汇整理。<br>3点半-6点，口语。<br>7点-8点，写作，改一下，发给老师<a href="mailto:&#52;&#54;&#x36;&#51;&#50;&#x32;&#56;&#51;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#109;">&#52;&#54;&#x36;&#51;&#50;&#x32;&#56;&#51;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#109;</a>。<br>8点-10点，分类词汇。<br>10点-11点，kindle
- </p>
+		<h1 id="群晖反向代理设置"><a href="#群晖反向代理设置" class="headerlink" title="群晖反向代理设置"></a>群晖反向代理设置</h1><ol>
+<li>设置群晖反向代理.</li>
+<li>设置路由器端口转发</li>
+<li>Comment</li>
+</ol>
+<h2 id="设置群晖反向代理"><a href="#设置群晖反向代理" class="headerlink" title="设置群晖反向代理"></a>设置群晖反向代理</h2><p>设置 → 登陆门户 → 高级 → 反向代理服务器</p>
+<p>记得用SSL</p>
+<h2 id="OpenWRT端口转发"><a href="#OpenWRT端口转发" class="headerlink" title="OpenWRT端口转发"></a>OpenWRT端口转发</h2><p>理论上不需要做端口转发了. 直接指向端口转发服务器就可以啊.<br>所以我选择暴露443端口, 80 的全部都block掉.</p>
+<h2 id="配置证书"><a href="#配置证书" class="headerlink" title="配置证书"></a>配置证书</h2><p>ACME很好用. 这边使用的是群晖自带的 Let’s Encrypt. 需要注意的是记得把所有的二级域名都要加进去.…<br>Let’s Encrypt 不能自动包含二级域名,只能手动加.</p>
+<h2 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h2><p>群晖自带的反向代理工具其实基本上够用了.唯一存在的问题就是会经常唤醒</p>
 
 	
 
 	
-		<span class="different-posts"><a href="/2014/03/12/2014-03-12/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+		<span class="different-posts"><a href="/2023/12/08/2023-12-07-%E7%BE%A4%E6%99%96%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
 
 	
 
