@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>Poor Man&#39;s Synology (Xpenology) | 花开彼岸天</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
+    
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/" class="header__link">Home</a>
+			
+				<a href="/wish" class="header__link">Wishes</a>
+			
+				<a href="/man" class="header__link">MAN</a>
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/books" class="header__link">Books</a>
+			
+				<a href="/movies" class="header__link">Movies</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">花开彼岸天</a></h1>
+		<h2 class="header__subtitle">鱼跃此时海</h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>Poor Man&#39;s Synology (Xpenology)</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2024-02-25</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-none-link" href="/tags/Homebuild/" rel="tag">Homebuild</a> <a class="article__tag-none-link" href="/tags/tech-%E6%94%B6%E5%BD%95/" rel="tag">tech/收录</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>旧电脑准备退休了， 准备3D打印机修完以后重新搞一个机箱。</p>
+<ol>
+<li>创建虚拟机。选择intel E1000 网卡。</li>
+<li>添加启动盘，<a target="_blank" rel="noopener" href="https://github.com/AuxXxilium/arc">Arc loader</a>，下载下来的是img，无法直接添加到VM中，使用 qm importdisk 命令添加<br><code>qm importdisk 101 /var/lib/vz/template/iso/arc.img local-lvm</code></li>
+<li>添加硬盘。由于有一个比较大的18T的硬盘，所以直接passthrough，这样子性能比较好。另外两个硬盘直接作为ssd缓存 #TODO</li>
+</ol>
+<h2 id="硬盘直通："><a href="#硬盘直通：" class="headerlink" title="硬盘直通："></a>硬盘直通：</h2><p>裸磁盘映射，将单个硬盘或者分区，通过qemu进行映射到虚拟机。通过这种方式，硬盘会在虚拟机内会认为是一个qemu-hdd。</p>
+<h2 id="SATA控制器直通"><a href="#SATA控制器直通" class="headerlink" title="SATA控制器直通"></a>SATA控制器直通</h2><p>VM系统直通SATA Controller(SATA 控制器)，会把整个SATA总线全部直通过去，就是直接将sata总线直通，那么有些主板sata接口就会全部被直通。性能等于裸机， 需要IOMMU.</p>
+<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>迁移最方便的还是用hypber backup，在新主机上安装hypber backup vault， 然后在source上启动备份。#WIP<br>备份完成后，在新主机上释放备份就可以。</p>
+<h2 id="Passthrough-iGPU"><a href="#Passthrough-iGPU" class="headerlink" title="Passthrough iGPU"></a>Passthrough iGPU</h2><p>直通iGPU的原因是考虑到Jellfin和Moment的需求。 虽然貌似也可以用CPU，但是iGPU更加方便，特别是Jellfin那边。 #TODO</p>
+<h2 id="其他各种hack"><a href="#其他各种hack" class="headerlink" title="其他各种hack"></a>其他各种hack</h2><p>其他的就是添加各种支持，hack。<br><a target="_blank" rel="noopener" href="https://xpenology.com/forum/topic/65643-ame-30-patcher/">Advanced Media Extensions 3.0</a></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)">https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)</a><br><a target="_blank" rel="noopener" href="https://pve.proxmox.com/wiki/Performance_Tweaks#Disk_Cache">https://pve.proxmox.com/wiki/Performance_Tweaks#Disk_Cache</a><br><a target="_blank" rel="noopener" href="https://optimus-xs.github.io/posts/passthrough-hard-drive-in-proxmox-ve/">https://optimus-xs.github.io/posts/passthrough-hard-drive-in-proxmox-ve/</a></p>
+
+	
+
+	
+		<span class="different-posts"><a href="/2024/02/25/2024-02-25-Poor-Man-s-Synology/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>我，<br />自钱塘江边,<br />这里是我观察和思考的窗口,<br />愿我成为一个不平凡的人。<br />以上！</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/about">About</a></li>
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2024 Haijia Alex Zhu | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
