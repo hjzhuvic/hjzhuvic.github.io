@@ -1,324 +1,186 @@
-<!DOCTYPE html>
-<!--[if lte IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--
-***************  *      *     *
-      8          *    *       *
-      8          *  *         *
-      8          **           *
-      8          *  *         *
-      8          *    *       *
-      8          *      *     *
-      8          *        *   ***********  Theme By Kieran(http://go.kieran.top)
--->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
-<!--<![endif]-->
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>花开彼岸天 - 鱼跃此时海</title><meta name="author" content="Haijia Alex Zhu"><meta name="copyright" content="Haijia Alex Zhu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="花开彼岸天">
+<meta property="og:url" content="https://hjzhuvic.github.io/index.html">
+<meta property="og:site_name" content="花开彼岸天">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Haijia Alex Zhu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hjzhuvic.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.14.0-b2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
 
-<head>
-  <title>花开彼岸天</title>
-  <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="花开彼岸天">
-    <meta name="author" content="Haijia Alex Zhu">
-    <meta name="description" content="鱼跃此时海" />
-    <meta name="keywords" content="" />
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+          document.head.appendChild(script)
+        }),
 
-    <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
     
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+          if (name && keyObj[name]) return
     
-
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
-
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
-
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <![endif]-->
-
-  
-  
-  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
-  
-  
-
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
-</head>
-
-<!--
-<body class="home-template">
--->
-<body id="index" class="lightnav animsition">
-
-      <!-- ============================ Off-canvas navigation =========================== -->
-
-    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
-        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
-            <img src="/img/close.png" alt="Close"/>
-        </div>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
-            <!-- Dropdown Menu -->
-			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
-                </ul>
-            </li>
-            
-            
-            
-            <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
-                    
-                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
-                    
-                </ul>
-            </li>
-            
-        </ul>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu secondary">
-            
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
-        </ul>
-    </div>
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
     
-    <!-- ============================ END Off-canvas navigation =========================== -->
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
 
-    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
-
-    <div id="sb-site">
-        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-        <div id="navigation" class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <!-- Nav logo -->
-                    <div class="logo">
-                        <a href="/" title="Logo" class="animsition-link">
-                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
-                        </a>
-                    </div>
-                    <!-- // Nav logo -->
-                    <!-- Info-bar -->
-                    <nav>
-                        <ul class="nav">
-                            <li><a href="/" class="animsition-link">花开彼岸天</a></li>
-                            <li class="nolink"><span>Always </span>Creative.</li>
-                            
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
-                            
-                            
-                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
-                            
-                            
-                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
-                            
-                            
-                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
-                            
-                            
-                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
-                            
-                            <li class="nolink"><span>Welcome!</span></li>
-                        </ul>
-                    </nav>
-                    <!--// Info-bar -->
-                </div>
-                <!-- // .container -->
-                <div class="learnmore sb-toggle-right">More</div>
-                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar before"></span>
-                <span class="icon-bar main"></span>
-                <span class="icon-bar after"></span>
-                </button>
-            </div>
-            <!-- // .navbar-inner -->
-        </div>
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
-<section id="intro">
-    <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2024/04/11/9999-Template-Copy/">template</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2024-04-11T22:09:00.000Z" itemprop="datePublished">
-          2024-04-11
-      </time>
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
     
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-    | 
-    <a href='/tags/随想录/'>随想录</a>,
-    
-    <a href='/tags/无处安放/'>无处安放</a>,
-    
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>,
-    
-    <a href='/tags/计划/'>计划</a>,
-    
-    <a href='/tags/tech-收录/'>tech/收录</a>,
-    
-    <a href='/tags/读书笔记/'>读书笔记</a>,
-    
-    <a href='/tags/周末闲谈/'>周末闲谈</a>,
-    
-    <a href='/tags/Homebuild/'>Homebuild</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        This is a test!
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2024/04/11/9999-Template-Copy/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2024/02/25/2024-02-25-Poor-Man-s-Synology/">Poor Man's Synology (Xpenology)</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2024-02-25T21:35:53.000Z" itemprop="datePublished">
-          2024-02-25
-      </time>
-    
-    
-    | 
-    <a href='/tags/tech-收录/'>tech/收录</a>,
-    
-    <a href='/tags/Homebuild/'>Homebuild</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        旧电脑准备退休了， 准备3D打印机修完以后重新搞一个机箱。
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '花开彼岸天',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-04-11 18:01:52'
+}</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">96</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="花开彼岸天"><span class="site-name">花开彼岸天</span></a></span><div id="menus"><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">花开彼岸天</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/04/11/9999-Template-Copy/" title="template">template</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-04-11T22:09:00.000Z" title="发表于 2024-04-11 15:09:00">2024-04-11</time></span></div><div class="content">This is a test!
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/02/25/2024-02-25-Poor-Man-s-Synology/" title="Poor Man's Synology (Xpenology)">Poor Man's Synology (Xpenology)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-02-25T21:35:53.000Z" title="发表于 2024-02-25 13:35:53">2024-02-25</time></span></div><div class="content">旧电脑准备退休了， 准备3D打印机修完以后重新搞一个机箱。
 
 创建虚拟机。选择intel E1000 网卡。
 添加启动盘，Arc loader，下载下来的是img，无法直接添加到VM中，使用 qm importdisk 命令添加qm importdisk 101 /var/lib/vz/template/iso/arc.img local-lvm
-添加硬盘。由于有一个比较大的18T的硬盘，所以直接passthrough，这样子性能比较好
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2024/02/25/2024-02-25-Poor-Man-s-Synology/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/">Poor Man's Jellfin</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-12-09T21:35:53.000Z" itemprop="datePublished">
-          2023-12-09
-      </time>
-    
-    
-    | 
-    <a href='/tags/tech-收录/'>tech/收录</a>,
-    
-    <a href='/tags/Homebuild/'>Homebuild</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        基本流程如下
+添加硬盘。由于有一个比较大的18T的硬盘，所以直接passthrough，这样子性能比较好。另外两个硬盘直接作为ssd缓存 #TODO
+
+硬盘直通：裸磁盘映射，将单个硬盘或者分区，通过qemu进行映射到虚拟机。通过这种方式，硬盘会在虚拟机内会认为是一个qemu-hdd。
+SATA控制器直通VM系统直通SATA Controller(SATA 控制器)，会把整个SATA总线全部直通过去，就是直接将sata总线直通，那么有些主板sata接口就会全部被直通。性能等于裸机， 需要IOMMU.
+迁移迁移最方便的还是用hypber backup，在新主机上安装hypber backup vault， 然后在source上启动备份。#WIP备份完成后，在新 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/" title="Poor Man's Jellfin">Poor Man's Jellfin</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-09T21:35:53.000Z" title="发表于 2023-12-09 13:35:53">2023-12-09</time></span></div><div class="content">基本流程如下
 
 备份
 部署aliyun-webdav
@@ -329,44 +191,15 @@
 
 暴露阿里云盘API 使得他能通过webdav的方式访问
 
-因为Jellyfin不支持直接访问WebDav, 所以需要中间层, 之前别人是通过rclone来实现的, 但是我觉得太复杂了, 后来看到了aliyundrive-fuse, 但是阿里云盘改了API原作者懒
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2023/12/07/2023-12-07-Poor-Man-s-Jellfin-反向代理/">Poor Man's Jellfin 反向代理</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-12-07T22:24:30.000Z" itemprop="datePublished">
-          2023-12-07
-      </time>
-    
-    
-    | 
-    <a href='/tags/tech-收录/'>tech/收录</a>,
-    
-    <a href='/tags/Homebuild/'>Homebuild</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
+因为Jellyfin不支持直接访问WebDav, 所以需要中间层, 之前别人是通过rclone来实现的, 但是我觉得太复杂了, 后来看到了aliyundrive-fuse, 但是阿里云盘改了API原作者懒得改了, 直接archive了项目. 所以又回到了rclone
+
+群晖的奇怪设计导致rclone 总是起不来, 思索再三, 决定用虚拟机直接上一个.
+
+
+配置webdav 和rclone1rclone config
+
+1234#新建本地文件夹,位置可以自己选mkdir /data/aliyunwebdav#挂载rclone mount DriveName:Folder LocalFolder --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty
+DriverNam ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/12/07/2023-12-07-Poor-Man-s-Jellfin-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" title="Poor Man's Jellfin 反向代理">Poor Man's Jellfin 反向代理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-07T22:24:30.000Z" title="发表于 2023-12-07 14:24:30">2023-12-07</time></span></div><div class="content">
 设置群晖反向代理.
 设置路由器端口转发
 配置证书
@@ -375,189 +208,24 @@ Comment
 设置群晖反向代理设置 → 登陆门户 → 高级 → 反向代理服务器
 记得用SSL
 OpenWRT端口转发理论上不需要做端口转发了. 直接指向端口转发服务器就可以啊.所以我选择暴露443端口, 80 的全部都block掉.
-配置证书ACME很好用. 这边使用的是群晖自带的 Let’s Encrypt. 需要注意的是记得把所有的二级域名都要加进去.…Let’s Encryp
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2023/12/07/2023-12-07-Poor-Man-s-Jellfin-反向代理/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2023/11/02/2023-012-07-DIY餐桌-Part-2/">DIY餐桌 Part 2</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-11-02T06:09:10.000Z" itemprop="datePublished">
-          2023-11-01
-      </time>
-    
-    
-    | 
-    <a href='/tags/Homebuild/'>Homebuild</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        最终效果还ok, 但是有一个一开始就应该直接上一个planer. 选的木头有点不太平, 有sander打的有一点不平整. 除此之外上的油也有的不合适…但是总的来说还是满意的.
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2023/11/02/2023-012-07-DIY餐桌-Part-2/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2023/06/22/2023-06-21-小米AX9000折腾记录/">小米AX9000折腾记录</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-06-22T02:09:00.000Z" itemprop="datePublished">
-          2023-06-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/tech-收录/'>tech/收录</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        双分区固件的好处不会死…… 用小米救砖工具能快速恢复分区表.
+配置证书ACME很好用. 这边使用的是群晖自带的 Let’s Encrypt. 需要注意的是记得把所有的二级域名都要加进去.…Let’s Encrypt 不能自动包含二级域名,只能手动加.
+Comment群晖自带的反向代理工具其实基本上够用了.唯一存在的问题就是会经常唤醒有一个项目叫做lucky，感觉挺好的，需要再评估一下。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/02/2023-012-07-DIY%E9%A4%90%E6%A1%8C-Part-2/" title="DIY餐桌 Part 2">DIY餐桌 Part 2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-02T06:09:10.000Z" title="发表于 2023-11-01 23:09:10">2023-11-01</time></span></div><div class="content">最终效果还ok, 但是有一个一开始就应该直接上一个planer. 选的木头有点不太平, 有sander打的有一点不平整. 除此之外上的油也有的不合适…但是总的来说还是满意的.
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/22/2023-06-21-%E5%B0%8F%E7%B1%B3AX9000%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/" title="小米AX9000折腾记录">小米AX9000折腾记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-22T02:09:00.000Z" title="发表于 2023-06-21 19:09:00">2023-06-21</time></span></div><div class="content">双分区固件的好处不会死…… 用小米救砖工具能快速恢复分区表.
 ssh基本原理就是利用另外一个OpenWrt通过中继进行注入攻击, 具体操作参考卡卡的视频. 他的视频是最无脑的.
 cat /proc/mtd
 mtd21: 03800000 00020000 “rootfs”mtd22: 03800000 00020000 “rootfs_1”
-rootfs总共有两个分区, 分别为21和22. 其中,当last success 返回1时, 
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2023/06/22/2023-06-21-小米AX9000折腾记录/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2023/05/02/2023-05-01-DIY餐桌-Part-1/">DIY餐桌 Part 1</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-05-02T06:09:10.000Z" itemprop="datePublished">
-          2023-05-01
-      </time>
-    
-    
-    | 
-    <a href='/tags/Homebuild/'>Homebuild</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        看了一眼餐桌的选项，貌似最合适的是DIY。房子买了，但是太贵了。差不多一点的桌子都要一千多，而且也不是多么的好的那种。 不知道为什么突然灵光一闪，可以用homedepot的成品countertop来弄啊。一对桌脚，差不多就是$200，那么搭配一些螺丝，seal，wood finish oil，砂纸之类的，应该在$700左右。
-Hardwood Reflections 有一个很漂亮的相思木的厨房countertop，搭配桌脚或者X型桌腿。
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2023/05/02/2023-05-01-DIY餐桌-Part-1/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2023/04/03/2023-04-03-李笑来-Building-stuffs/">Building stuffs-李笑来</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-04-03T20:23:12.000Z" itemprop="datePublished">
-          2023-04-03
-      </time>
-    
-    
-    | 
-    <a href='/tags/tech-收录/'>tech/收录</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        Building stuffs — 做出东西来我个人最看中人的这个特质。人群中只有少数人最终能拿出完整的作品一人与人之间的差异是如此之大，乃至于少数人有作品，更少数人有好的作品，只极少数极少数人才可能作出传世的作品；而与此同时，绝大多数人（万分之九千九百九十九的人）一辈子都没有像样的作品，他们连一篇作文都写不明白。
-从一开始就要想尽一切办法做出完整的作品来，哪怕最初的作品很差一但必须完整。那些有完整作品的人，能力、耐力、学习能力都会超出
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2023/04/03/2023-04-03-李笑来-Building-stuffs/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2023/02/11/2023-02-10-无处安放/">无处安放</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-02-11T00:32:00.000Z" itemprop="datePublished">
-          2023-02-10
-      </time>
-    
-    
-    | 
-    <a href='/tags/无处安放/'>无处安放</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        今天整个人比较暴躁。暴躁的原因呢，可以归纳出三个原因：
+rootfs总共有两个分区, 分别为21和22. 其中,当last success 返回1时, 使用的为mtd22; 返回0时,使用21;
+nvram get flag_last_success
+返回的值为1, 所以需要使用以下命令切换到21分区:nvram set flag_last_success&#x3D;0nvram set flag_boot_rootfs&#x3D;0nvram commitreboot
+ 需要注意的是,切换分区后返回的值会变,这里指最开始的返回的值.
+接下来需要做两件事:
+
+刷入OP固件 ubiformat &#x2F;dev&#x2F;mtd22 -y -f &#x2F;tmp&#x2F;你上传的固件文件名 (.ub ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/02/2023-05-01-DIY%E9%A4%90%E6%A1%8C-Part-1/" title="DIY餐桌 Part 1">DIY餐桌 Part 1</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-02T06:09:10.000Z" title="发表于 2023-05-01 23:09:10">2023-05-01</time></span></div><div class="content">看了一眼餐桌的选项，貌似最合适的是DIY。房子买了，但是太贵了。差不多一点的桌子都要一千多，而且也不是多么的好的那种。 不知道为什么突然灵光一闪，可以用homedepot的成品countertop来弄啊。一对桌脚，差不多就是$200，那么搭配一些螺丝，seal，wood finish oil，砂纸之类的，应该在$700左右。
+Hardwood Reflections 有一个很漂亮的相思木的厨房countertop，搭配桌脚或者X型桌腿。 看上去效果很好，也可以考虑live edge的桌面。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/04/03/2023-04-03-%E6%9D%8E%E7%AC%91%E6%9D%A5-Building-stuffs/" title="Building stuffs-李笑来">Building stuffs-李笑来</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-03T20:23:12.000Z" title="发表于 2023-04-03 13:23:12">2023-04-03</time></span></div><div class="content">Building stuffs — 做出东西来我个人最看中人的这个特质。人群中只有少数人最终能拿出完整的作品一人与人之间的差异是如此之大，乃至于少数人有作品，更少数人有好的作品，只极少数极少数人才可能作出传世的作品；而与此同时，绝大多数人（万分之九千九百九十九的人）一辈子都没有像样的作品，他们连一篇作文都写不明白。
+从一开始就要想尽一切办法做出完整的作品来，哪怕最初的作品很差一但必须完整。那些有完整作品的人，能力、耐力、学习能力都会超出他人许多倍。无论看起来多简单的作品，只要是完整的，其表面之下的复杂程度是那些没做出过东西的人全然无法想像的。
+我甚至经常建议我的合伙人们，在招人的时候，把这一点当作最靠谱的判断方式。少废话，少吹牛逼，给我看看你的作品。这个原则可以一下子过滤掉所有的废物。另外一个很自然的现象是，如果一个人能做出像样的东西来，那么他身边的聪明人密度无论如何都会比其他人的高出很多。不要吹牛，聚焦作品、且是完整的作品。比如一篇文章，一个能跑起来的程序；一个能正常良性循环，不断产生收入的公司。当你完成这三件事情，几乎你一生可以说已经实现财务自由，基本不会再为衣食发愁。是文章，即使 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/02/11/2023-02-10-%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/" title="无处安放">无处安放</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-11T00:32:00.000Z" title="发表于 2023-02-10 16:32:00">2023-02-10</time></span></div><div class="content">今天整个人比较暴躁。暴躁的原因呢，可以归纳出三个原因：
 
 Ashley那边没有跟进。
 
@@ -569,452 +237,94 @@ Ashley那边没有跟进。
 首先，发现自己失去了长阅读能力。现在的我对于阅读长文的能力明显下降，或者说几乎就要不存在了，更加习惯阅读的时候不思考的那种模式。阅读论文的能力还是有的，但是对于日常的很多文章，经常会再阅读的过程中走神。
 拖延症：
 
-开题答辩
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2023/02/11/2023-02-10-无处安放/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2023/01/03/2023-01-03-展望2023/">展望2023</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2023-01-03T23:22:00.000Z" itemprop="datePublished">
-          2023-01-03
-      </time>
-    
-    
-    | 
-    <a href='/tags/随想录/'>随想录</a>,
-    
-    <a href='/tags/无处安放/'>无处安放</a>,
-    
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>,
-    
-    <a href='/tags/计划/'>计划</a>,
-    
-    <a href='/tags/tech-收录/'>tech/收录</a>,
-    
-    <a href='/tags/读书笔记/'>读书笔记</a>,
-    
-    <a href='/tags/周末闲谈/'>周末闲谈</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        今天算是正式过完年的第一个工作日。只是我不是很有心思干活。或者说最近一段时间都是这样子。
+开题答辩：应该说是前年开始弄得，但是到今天为止都还没弄好。
+
+摸鱼：不得不说，现在摸鱼太过分了。
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/03/2023-01-03-%E5%B1%95%E6%9C%9B2023/" title="展望2023">展望2023</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-03T23:22:00.000Z" title="发表于 2023-01-03 15:22:00">2023-01-03</time></span></div><div class="content">今天算是正式过完年的第一个工作日。只是我不是很有心思干活。或者说最近一段时间都是这样子。
 回头看看，感觉proposal真的拖了很久，我自己都不知道再干什么了。论文也没有什么进度，看看小伙伴们感觉自己简直就是。。。。
-很多的东西也都需要整理一下，比如说桌面，还记得之前看过的一篇文章讲整理桌面的，意思差不多就是 一屋不扫，何以扫天下；一桌不整理，何以整理人生。 文章暂时找不到了，但是大致的意思还是记得的。这次回国以后，家里面的行李都还没整
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2023/01/03/2023-01-03-展望2023/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2022/10/11/2022-10-11-孤独/">孤独</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-10-11T22:09:00.000Z" itemprop="datePublished">
-          2022-10-11
-      </time>
-    
-    
-    | 
-    <a href='/tags/无处安放/'>无处安放</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        时间真的是过的很快。算起来我也是30多的人了。年轻（本科）的时候算是挺有倾述欲的，只是一直觉得私人的事情，不适合和人说。但是，现在的我仿佛一点倾述的欲望也没有了，更加让我恐慌的是，有的时候貌似整个人都变得空心化了，没有什么可以倾述的。这次回家的时候，翻出了好多年前写的日记，只是由于太羞耻了没有一页页看，稍微看了几页而已。 但是，突然想到了当年写过的一句话：什么是孤独？孤独就是当你看到一个美景，遇到一个让人激动的事情，当你兴奋的拿出手机，
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2022/10/11/2022-10-11-孤独/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2022/05/15/2022-05-15-时间/">时间</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-05-15T22:53:00.000Z" itemprop="datePublished">
-          2022-05-15
-      </time>
-    
-    
-    | 
-    <a href='/tags/无处安放/'>无处安放</a>,
-    
-    <a href='/tags/计划/'>计划</a>,
-    
-    <a href='/tags/周末闲谈/'>周末闲谈</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        又到了周末，又是一个什么事情都没有做的周末。周六爬起来打羽毛球，现在浑身上下都是酸疼。。。现在的感觉就是自己浪，不注意身体，熬夜过度，掏空了身子的感觉 -_- 精神也不太好。起来以后，中午基本上就很累了。下午非常的没有精神。 这个问题现在以及很严重的影响了日常的生活，只是一直都没有办法调整过来，主要的问题是晚上上床太晚，玩手机；早上醒来玩手机，磨蹭一个小时才起床。
+很多的东西也都需要整理一下，比如说桌面，还记得之前看过的一篇文章讲整理桌面的，意思差不多就是 一屋不扫，何以扫天下；一桌不整理，何以整理人生。 文章暂时找不到了，但是大致的意思还是记得的。这次回国以后，家里面的行李都还没整理完，然而回来已经三个月了。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/10/11/2022-10-11-%E5%AD%A4%E7%8B%AC/" title="孤独">孤独</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-11T22:09:00.000Z" title="发表于 2022-10-11 15:09:00">2022-10-11</time></span></div><div class="content">时间真的是过的很快。算起来我也是30多的人了。年轻（本科）的时候算是挺有倾述欲的，只是一直觉得私人的事情，不适合和人说。但是，现在的我仿佛一点倾述的欲望也没有了，更加让我恐慌的是，有的时候貌似整个人都变得空心化了，没有什么可以倾述的。这次回家的时候，翻出了好多年前写的日记，只是由于太羞耻了没有一页页看，稍微看了几页而已。 但是，突然想到了当年写过的一句话：什么是孤独？孤独就是当你看到一个美景，遇到一个让人激动的事情，当你兴奋的拿出手机，却不知道要分享给谁的时候，那就是孤独。可能人就是会孤独吧。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/05/15/2022-05-15-%E6%97%B6%E9%97%B4/" title="时间">时间</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-15T22:53:00.000Z" title="发表于 2022-05-15 15:53:00">2022-05-15</time></span></div><div class="content">又到了周末，又是一个什么事情都没有做的周末。周六爬起来打羽毛球，现在浑身上下都是酸疼。。。现在的感觉就是自己浪，不注意身体，熬夜过度，掏空了身子的感觉 -_- 精神也不太好。起来以后，中午基本上就很累了。下午非常的没有精神。 这个问题现在以及很严重的影响了日常的生活，只是一直都没有办法调整过来，主要的问题是晚上上床太晚，玩手机；早上醒来玩手机，磨蹭一个小时才起床。
 总结一下最近不应该在忙的事情：
 
 逛reddit
 看黄老仙和F91
-看辉
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2022/05/15/2022-05-15-时间/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2022/02/25/2022-02-24-Proposal/">Proposal。。again</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-02-25T06:57:10.000Z" itemprop="datePublished">
-          2022-02-24
-      </time>
-    
-    
-    | 
-    <a href='/tags/无处安放/'>无处安放</a>,
-    
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>,
-    
-    <a href='/tags/计划/'>计划</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        今天老董打电话来问开题报告的事情，我和他说我这周给他。
+看辉光管相关的东西
+
+实际上应该做的事情：
+
+搭模型， RL，RB, OPT EMS for FC EV, HESS etc…
+改动态规划模型 + nest opt。 
+Proposal！！！！！！
+调整作息
+知识图谱的调整与方法整理
+写论文
+
+关于作息
+08:00 起床
+08:00-8:25 在早饭之前刷牙，吃早餐
+08:30 拉伸 
+08:45-9:15 去办公室
+09:20 To-Do list
+09:30 开始一天中最困难的工作
+10:30 让眼睛离开屏幕休息一下
+11:00 吃点水果
+13:00 午餐正能量
+14:30-15:30 午休一小会儿
+1 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/02/25/2022-02-24-Proposal/" title="Proposal。。again">Proposal。。again</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-25T06:57:10.000Z" title="发表于 2022-02-24 22:57:10">2022-02-24</time></span></div><div class="content">今天老董打电话来问开题报告的事情，我和他说我这周给他。
 如果回头看看过去的两三周，其实我基本上就没怎么动过开题报告。今天下午感觉写了一会儿，但是看了一下记录也就半个小时的样子。一天的有效工作时间也就40分钟左右。哎
 最近一直在写开题报告，拖了太太太久了。。。都不敢去找导师。 框架基本上写完了，还有一些preliminary study和一些零散的review没写完，估计下周可以写完。 如果努力一点，可能这周也能搞定。
-算起来疫情已经两年
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2022/02/25/2022-02-24-Proposal/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2022/02/24/2022-02-03-双链笔记daily-note/">双链笔记daily note</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-02-24T04:39:00.000Z" itemprop="datePublished">
-          2022-02-23
-      </time>
-    
-    
-    | 
-    <a href='/tags/tech-收录/'>tech/收录</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        双链笔记真的是一个很有意思的东西， 有一段时间用双链笔记用的很起劲，特别是daily note 功能。只是某种程度上来说，这个东西很有迷惑性，因为它不太具有回顾的功能。特别是之前看了Struggle with me 的某次分享以后，直接套用了她的模版，但是一直用的很不顺手。不是说她们的方法不好，而是不适合我这种懒得回顾的这种。特别是和buju混合之后就总是乱乱的。 直到今天无意中看了另外一位大佬写的专栏，然后有一点明白这个流程是怎么样的
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2022/02/24/2022-02-03-双链笔记daily-note/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2022/01/27/2022-01-26-Proposal/">Proposal</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-01-27T06:57:10.000Z" itemprop="datePublished">
-          2022-01-26
-      </time>
-    
-    
-    | 
-    <a href='/tags/无处安放/'>无处安放</a>,
-    
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>,
-    
-    <a href='/tags/计划/'>计划</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        今天老董打电话来问开题报告的事情，我和他说我这周给他。
+算起来疫情已经两年了。曾经以为疫情很快就会过去，但是回过头去发现错过了好多事情。最明显的事情就是整个人明显的烦躁起来了，不愿意出去走走散散步什么的。
+———-4个礼拜&amp;&amp;开题报告被打回来了两次以后———-
+最近总是有点emo上头，主要是做什么都提不起劲来。拖延症也越来越严重了，已经非常严重的影响了学习和生活。比如这个刚开始写的时候是二月头上，但是今天都已经是四月了。现在回头看年初定下的目标，感觉明年又是一个复制粘贴的过程。。。。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/02/24/2022-02-03-%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/" title="双链笔记daily note">双链笔记daily note</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-24T04:39:00.000Z" title="发表于 2022-02-23 20:39:00">2022-02-23</time></span></div><div class="content">双链笔记真的是一个很有意思的东西， 有一段时间用双链笔记用的很起劲，特别是daily note 功能。只是某种程度上来说，这个东西很有迷惑性，因为它不太具有回顾的功能。特别是之前看了Struggle with me 的某次分享以后，直接套用了她的模版，但是一直用的很不顺手。不是说她们的方法不好，而是不适合我这种懒得回顾的这种。特别是和buju混合之后就总是乱乱的。 直到今天无意中看了另外一位大佬写的专栏，然后有一点明白这个流程是怎么样的。 这里引用文章里的一句话，很好的总结了daily note的作用：
+当下的我们需要做的，是那些只有现在能做，而且有意义的事情，「每天坚持积累」正是这样的事，而「整理得井井有条」并不是，这才是快速无压记录的真正核心。
+作者的观念是，daily note适合做收集，只是要加上合适的tag活着链接，那么下次整理的时候就能吧所有相关的议题都包含进来。 而所谓创作其实包含两部分，一部分是知识&#x2F;创意收集，另外一部分才是整理。当我打开了一个文档做笔记的时候，其实很多时候是将这两部分一起执行的，只是很多时候这个方式是增加了很多的压力，毕竟只有有一定的理解了之 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/27/2022-01-26-Proposal/" title="Proposal">Proposal</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-27T06:57:10.000Z" title="发表于 2022-01-26 22:57:10">2022-01-26</time></span></div><div class="content">今天老董打电话来问开题报告的事情，我和他说我这周给他。
 如果回头看看过去的两三周，其实我基本上就没怎么动过开题报告。今天下午感觉写了一会儿，但是看了一下记录也就半个小时的样子。一天的有效工作时间也就40分钟左右。哎
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2022/01/27/2022-01-26-Proposal/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2022/01/18/ 聊聊自卑吧/">聊聊自卑吧</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-01-18T07:45:00.000Z" itemprop="datePublished">
-          2022-01-17
-      </time>
-    
-    
-    | 
-    <a href='/tags/随想录/'>随想录</a>,
-    
-    <a href='/tags/无处安放/'>无处安放</a>,
-    
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        差不多是睡觉的时间了，只是看到一个博客，突然就就觉得很有意思。有一点感触的吧。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/18/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/" title="聊聊自卑吧">聊聊自卑吧</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-18T07:45:00.000Z" title="发表于 2022-01-17 23:45:00">2022-01-17</time></span></div><div class="content">差不多是睡觉的时间了，只是看到一个博客，突然就就觉得很有意思。有一点感触的吧。
 聊聊自卑吧
-情绪是很能影响一个人的，尤其是自卑带给人的情绪。我已经记不清楚自信和自卑交替的这种情绪伴随我多长时间了，但就像蔡康永说的，要做好一个人，做自己，这最重要。时刻辨认当下自己的情绪，知道他们由哪儿来，可以放到哪儿去。当你发现自己有自卑、不自信、焦虑等消极情绪是，记得跳出来，看看自己身上有哪些标签，有别人贴给你的，有自己贴给自己的。把那些标签丢掉，只留
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2022/01/18/ 聊聊自卑吧/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2022/01/11/2022-01-11-不开心/">不开心</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2022-01-11T23:09:00.000Z" itemprop="datePublished">
-          2022-01-11
-      </time>
-    
-    
-    | 
-    <a href='/tags/随想录/'>随想录</a>,
-    
-    <a href='/tags/无处安放/'>无处安放</a>,
-    
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        现在一直不开心。
+情绪是很能影响一个人的，尤其是自卑带给人的情绪。我已经记不清楚自信和自卑交替的这种情绪伴随我多长时间了，但就像蔡康永说的，要做好一个人，做自己，这最重要。时刻辨认当下自己的情绪，知道他们由哪儿来，可以放到哪儿去。当你发现自己有自卑、不自信、焦虑等消极情绪是，记得跳出来，看看自己身上有哪些标签，有别人贴给你的，有自己贴给自己的。把那些标签丢掉，只留下几个自己认为重要的标签，留下来，把它做好，别再为了一个不想干的人丢给你的标签，毁了你的整个生活。
+时刻辨认当下自己的情绪 是一个很重要的能力。感觉曾经的我可以做到这种事情，但是慢慢的由于某些原因，逐渐的失去的这个能力。
+每次看到那种自信的人，都是极为的羡慕。可以说，每次看到这种人的时候，都觉得他们整个人都在放光。
+还是记得刚来的时候也是踌躇满志，只是现实很快就破了一盆又一盆的冷水，觉得自己很周围的很多人有差距。。然后慢慢的又往另外一个极端去了。慢慢的就变的拖延，佛系，而这个差距也越来越大；自然而然的，也越来越自卑。周围的人可能大概率不会觉得我是一个自卑 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/11/2022-01-11-%E4%B8%8D%E5%BC%80%E5%BF%83/" title="不开心">不开心</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-11T23:09:00.000Z" title="发表于 2022-01-11 15:09:00">2022-01-11</time></span></div><div class="content">现在一直不开心。
 很难说到底是为什么，
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2022/01/11/2022-01-11-不开心/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2021/11/29/2021-11-29-恐惧/">恐惧</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-11-29T08:06:01.000Z" itemprop="datePublished">
-          2021-11-29
-      </time>
-    
-    
-    | 
-    <a href='/tags/无处安放/'>无处安放</a>,
-    
-    <a href='/tags/计划/'>计划</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        刚收到一封邮件，一组学生的模型还是没有跑通， 约了明天早上10点meeting。刚收到邮件的时候有一种莫名奇妙的慌张和恐惧，有一种我搞不定的感觉，但是其实也不可能搞不定啊。也不知道他们现在什么情况。只能说要冷静一点，然后看是什么情况，再
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/11/29/2021-11-29-%E6%81%90%E6%83%A7/" title="恐惧">恐惧</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-29T08:06:01.000Z" title="发表于 2021-11-29 00:06:01">2021-11-29</time></span></div><div class="content">刚收到一封邮件，一组学生的模型还是没有跑通， 约了明天早上10点meeting。刚收到邮件的时候有一种莫名奇妙的慌张和恐惧，有一种我搞不定的感觉，但是其实也不可能搞不定啊。也不知道他们现在什么情况。只能说要冷静一点，然后看是什么情况，再
 这周其实过的完全不是按照计划来的：计划中的8点起床完全没有实现。冥想和背单词也完全没有动手。封网站得赶紧动手，防止自己手软，然后以25分钟为一个模块，执行番茄计时。
-此外，要再思考一下buju的事情，现
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2021/11/29/2021-11-29-恐惧/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2021/11/17/2021-11-17-无题/">无题</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-11-17T23:09:00.000Z" itemprop="datePublished">
-          2021-11-17
-      </time>
-    
-    
-    | 
-    <a href='/tags/无处安放/'>无处安放</a>,
-    
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>,
-    
-    <a href='/tags/计划/'>计划</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        周一整个BC都瘫痪了，发大水什么的，只是岛上还是一如既往的最岁月静好，在考虑要不要去买点吃的，防止这两天断粮。。。。
+此外，要再思考一下buju的事情，现在用的这套系统虽然是无纸化的，便于检索，但是感觉作为每天的记录还是不太好用，经常用着用着就不用了，之前的notability感觉其实更加实用。
+Recall一下上这周的计划：
+
+8点起床。
+8点半出门；或者Keep拉伸一下，然后9点出门。
+路上整理一下今天要做的事情。
+到办公室以后先背半个小时单词
+
+每天争取读两篇论文
+
+中午出门走走，meditation！
+
+10点半洗澡，上床后手机放远处。
+
+
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/11/17/2021-11-17-%E6%97%A0%E9%A2%98/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-17T23:09:00.000Z" title="发表于 2021-11-17 15:09:00">2021-11-17</time></span></div><div class="content">周一整个BC都瘫痪了，发大水什么的，只是岛上还是一如既往的最岁月静好，在考虑要不要去买点吃的，防止这两天断粮。。。。
 最近总是懒得做很多事情，在lab的时候效率也很低，论文也看不下去，某种程度上是由于长期的熬夜，真的是不作死就不会死。这个学期刚开始的时候还还准备去健身房的，但是很快发现这个学期健身房关门了；有做keep的想法，但是一直没有实践。
-日记什么的也很久没有写了。感觉马上就要不用了。。。。不过键盘搞定了，基本上完全搞定了，划船机
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2021/11/17/2021-11-17-无题/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2021/08/31/2021-08-30-无处安放/">无处安放</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-08-31T01:28:10.000Z" itemprop="datePublished">
-          2021-08-30
-      </time>
-    
-    
-    | 
-    <a href='/tags/无处安放/'>无处安放</a>,
-    
-    <a href='/tags/计划/'>计划</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        很长的一段时间没有写一些没啥营养的废话了。今年年初的时候有那么一点抗拒写东西一直“宣称”自己很忙，当然实际上忙不忙其实也只有自己知道。先总结一下之前这半年吧：Done：
+日记什么的也很久没有写了。感觉马上就要不用了。。。。不过键盘搞定了，基本上完全搞定了，划船机还没买；椅子买好了，还没送到，tracking也没有更新，找Herman Miller的客服，结果给了错的tracking（寄到了ON，现实已签收。）
+现在也总是在床上玩手机，感觉必须要把手机放起来，省的一睡醒就玩手机。
+身体毕竟是本钱，要开始锻炼身体，恢复身体素质。（上周打球把脚皮磨掉了。。。。疼）
+每天的routine 要构建起来！
+
+8点起床。
+8点半出门；或者Keep拉伸一下，然后9点出门。
+路上整理一下今天要做的事情。
+每天争取读两篇论文
+中午出门走走。meditation！
+
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/08/31/2021-08-30-%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/" title="无处安放">无处安放</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-31T01:28:10.000Z" title="发表于 2021-08-30 18:28:10">2021-08-30</time></span></div><div class="content">很长的一段时间没有写一些没啥营养的废话了。今年年初的时候有那么一点抗拒写东西一直“宣称”自己很忙，当然实际上忙不忙其实也只有自己知道。先总结一下之前这半年吧：Done：
 
 课上完了。
 分体键盘搞好了Not Done：
@@ -1028,41 +338,8 @@ Research 基本上停滞了。
 每天阅读30分钟未达成
 2W词汇量未达成（2月份以后就没有背过单词了。。。）
 
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2021/08/31/2021-08-30-无处安放/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2021/01/11/2021-01-11-关于效率/">关于效率</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-01-11T23:09:00.000Z" itemprop="datePublished">
-          2021-01-11
-      </time>
-    
-    
-    | 
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        如果说，每天9半点开始干活，中午休息一个小时。到晚上6点，可以有至少6小时工作时间。
+有的时候真的很讨厌自己。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/01/11/2021-01-11-%E5%85%B3%E4%BA%8E%E6%95%88%E7%8E%87/" title="关于效率">关于效率</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-11T23:09:00.000Z" title="发表于 2021-01-11 15:09:00">2021-01-11</time></span></div><div class="content">如果说，每天9半点开始干活，中午休息一个小时。到晚上6点，可以有至少6小时工作时间。
 做饭吃饭2个小时，睡觉9小时，那么差不多可以有3个小时干其他事情.这个月开始实践一下吧! 毕竟现在是博士生了,要认真啊.时间总是不够的.
 
 08:30: 起床
@@ -1072,80 +349,13 @@ Research 基本上停滞了。
 10:30: Work (3h)
 13:30: Break
 15:00: Work (3h)
-18:00
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2021/01/11/2021-01-11-关于效率/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2021/01/04/2021-01-03-AI/">AI</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-01-04T05:39:15.000Z" itemprop="datePublished">
-          2021-01-03
-      </time>
-    
-    
-    | 
-    <a href='/tags/无处安放/'>无处安放</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        要爱自己啊。
+18:00: Break &amp; Dinner
+20:00: Reading a book (Do NOT watch Youtube&#x2F;Bilibili)
+22:30: Shower
 
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2021/01/04/2021-01-03-AI/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2021/01/01/2020-12-31-2020/">2020</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-01-01T07:50:15.000Z" itemprop="datePublished">
-          2020-12-31
-      </time>
-    
-    
-    | 
-    <a href='/tags/随想录/'>随想录</a>,
-    
-    <a href='/tags/计划/'>计划</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        2020!还没回顾自己的2020，某种程度上，又一次浑浑噩噩的过了一年。这一年的任务基本上都没有完成。
+加油！少年成为他想要模样，就是岁月最好奖赏！ 
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/01/04/2021-01-03-AI/" title="AI">AI</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-04T05:39:15.000Z" title="发表于 2021-01-03 21:39:15">2021-01-03</time></span></div><div class="content">要爱自己啊。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/01/01/2020-12-31-2020/" title="2020">2020</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-01T07:50:15.000Z" title="发表于 2020-12-31 23:50:15">2020-12-31</time></span></div><div class="content">2020!还没回顾自己的2020，某种程度上，又一次浑浑噩噩的过了一年。这一年的任务基本上都没有完成。
 
 Overall
 
@@ -1158,117 +368,49 @@ Machine Learning&#x2F;Data Mining 入门
 早睡早起，床上不玩手机,不看视频！
 每天阅读
 多运动，保持身体健康
-扩大社交圈，见更多人
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2021/01/01/2020-12-31-2020/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/09/28/2020-09-28-秋分已过，中秋降至/">秋分已过，中秋降至</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-28T07:36:07.000Z" itemprop="datePublished">
-          2020-09-28
-      </time>
-    
-    
-    | 
-    <a href='/tags/随想录/'>随想录</a>,
-    
-    <a href='/tags/计划/'>计划</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        今天，其实应该说是昨天（现在已经凌晨了）聚餐，提前欢送彪哥回国。
+扩大社交圈，见更多人、走更多路，提升自己的见识
+春天的时候拍樱花
+找到自己的routine，flow
+
+
+细节
+
+每天做bullet journal，列清单，持续复盘，让进步看得见，
+每周精读三篇论文
+
+
+Entertainment 
+
+弄完3D Printer
+Hydrofoil surfboard modleing2021年要加油啊！
+
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/28/2020-09-28-%E7%A7%8B%E5%88%86%E5%B7%B2%E8%BF%87%EF%BC%8C%E4%B8%AD%E7%A7%8B%E9%99%8D%E8%87%B3/" title="秋分已过，中秋降至">秋分已过，中秋降至</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-28T07:36:07.000Z" title="发表于 2020-09-28 00:36:07">2020-09-28</time></span></div><div class="content">今天，其实应该说是昨天（现在已经凌晨了）聚餐，提前欢送彪哥回国。
 认识彪哥很多年了，虽然很多事情都没有细谈，但是不得不说他是一个很有意思的人。不过这些都是别人，说说自己吧。
-这个学期上连续介质力学，这个课还是蛮难的，有一点跟不上进度，但是主要原因还是没有正确的花时间进去。之前找的参考书非常的好，讲解的也非常的详细，排版也很舒服，但是一只没有花时间进去看，导致现在有一点跟不上。至于老师推荐的那个书，其实也很不错，只是排版什么的比较难受，可
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/09/28/2020-09-28-秋分已过，中秋降至/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/09/14/2020-09-13-和时间做朋友/">和时间做朋友</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-14T06:45:24.000Z" itemprop="datePublished">
-          2020-09-13
-      </time>
-    
-    
-    | 
-    <a href='/tags/读书笔记/'>读书笔记</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-选择相反，直接的结果就是时间质量的不同——这不是所谓的“时间管理技巧”可以弥补的。制作一个“任务列表”，其实谁都会；分清楚“重要”与“次要”，或者“紧急”与“非紧急”也没有谁不会。因“不知道学习有什么用”而拒绝学习的人，会在接下来的日子里虚度无数光阴，哪怕他们天天“科学地”制定计划，编制“任务列表”。而与之相反，因“不知道学习有什么用”而选择努力学习的人，每时每刻都充满了收获，并且会在将来的某一天获得更多的“意外”收获，哪怕他们可能显
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/09/14/2020-09-13-和时间做朋友/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/09/11/2020-09-11-自用docker/">自用docker</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-09-11T21:47:45.000Z" itemprop="datePublished">
-          2020-09-11
-      </time>
-    
-    
-    | 
-    <a href='/tags/tech-收录/'>tech/收录</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        稍微记录一下自用的应用
+这个学期上连续介质力学，这个课还是蛮难的，有一点跟不上进度，但是主要原因还是没有正确的花时间进去。之前找的参考书非常的好，讲解的也非常的详细，排版也很舒服，但是一只没有花时间进去看，导致现在有一点跟不上。至于老师推荐的那个书，其实也很不错，只是排版什么的比较难受，可以作为强化思路的材料；优点是很薄。
+饭后聊天的时候，说起另外一个学生，彪哥说老板夸他认真仔细努力。
+哎，很长的一段时间里，我都是有一点自卑的吧，可能现在这个已经很影响我的观念，思想和行为了。
+曾经我也是很意气风发，只是哎
+希望少年成为他想要模样
+加油吧，已经老了的少年！
+对于拖延症：a. 避免去想完整的大任务，避免去想接下来自己要努力一星期甚至一个月、一年。这会让你觉得人生无望。b. 也不去管，1小时之后你是在学习，还是在玩手机，或者出去浪；我们的小目标，仅仅是管住自己1小时，这是绝对没问题的。
+给这1小时，赋予非常明确的任务，比如单纯地找资料、或者看1 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/14/2020-09-13-%E5%92%8C%E6%97%B6%E9%97%B4%E5%81%9A%E6%9C%8B%E5%8F%8B/" title="和时间做朋友">和时间做朋友</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-14T06:45:24.000Z" title="发表于 2020-09-13 23:45:24">2020-09-13</time></span></div><div class="content">
+选择相反，直接的结果就是时间质量的不同——这不是所谓的“时间管理技巧”可以弥补的。制作一个“任务列表”，其实谁都会；分清楚“重要”与“次要”，或者“紧急”与“非紧急”也没有谁不会。因“不知道学习有什么用”而拒绝学习的人，会在接下来的日子里虚度无数光阴，哪怕他们天天“科学地”制定计划，编制“任务列表”。而与之相反，因“不知道学习有什么用”而选择努力学习的人，每时每刻都充满了收获，并且会在将来的某一天获得更多的“意外”收获，哪怕他们可能显得“漫无目的”——结果真的是天壤之别
+
+“做好这件事情究竟对自己有没有意义？如果有，那就要努力做，直到做好为止——没有其他选择。”
+
+“不应该用别人的错误惩罚自己，那么做不仅不对，并且愚蠢。”
+
+随心所欲”只不过是幼年时的真实、少年时的幻想、成年时的苦恼，老年时的绝望。
+
+“心智开启”的起点是“意识到可以自律”，而心智发展的过程就是克服懒惰的过程。
+
+“最可怕的敌人就是你自己”，这句话如果有道理的话，那个“最可怕的敌人”实际上应该指的是“你那无法控制的懒惰”
+
+开始记录时间开销
+
+判断一项任务是否“真的重要”，其实只需要一个标准：就是看这项任务的完成是否 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/09/11/2020-09-11-%E8%87%AA%E7%94%A8docker/" title="自用docker">自用docker</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-11T21:47:45.000Z" title="发表于 2020-09-11 14:47:45">2020-09-11</time></span></div><div class="content">稍微记录一下自用的应用
 Docker
 portainer&#x2F;dockage
 
@@ -1294,37 +436,24 @@ Jellyfin
 
 UnblockNeteaseMusic
 
-dock
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/09/11/2020-09-11-自用docker/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/08/27/2020-08-26-七月流火，八月萑苇/">七月流火，八月萑苇</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-08-27T06:00:41.000Z" itemprop="datePublished">
-          2020-08-26
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        一不留神2020已经过去四分之三了。 回顾一下，这三个月没有做什么有效的事情，也就是蹲家里，打游戏，做做饭。看了一下RescueTime的记录，这个月至今总记录时间222h
+docker run –name unmusic -d -p 4567:8081 -p 4566:63455 nondanee&#x2F;unblockneteasemusic -p 63455:8081
+
+
+pihole&#x2F;AdGuard
+
+
+
+计划ingwakapi: 📊 , Wakapi – Coding Statistics官网
+
+mealie
+
+Dashboard：
+
+Organizr – Forget Bookmarks
+Homedash2
+
+Filestash — Self-hosted client for your data
+Wayn ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/08/27/2020-08-26-%E4%B8%83%E6%9C%88%E6%B5%81%E7%81%AB%EF%BC%8C%E5%85%AB%E6%9C%88%E8%90%91%E8%8B%87/" title="七月流火，八月萑苇">七月流火，八月萑苇</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-27T06:00:41.000Z" title="发表于 2020-08-26 23:00:41">2020-08-26</time></span></div><div class="content">一不留神2020已经过去四分之三了。 回顾一下，这三个月没有做什么有效的事情，也就是蹲家里，打游戏，做做饭。看了一下RescueTime的记录，这个月至今总记录时间222h
 
 
 
@@ -1349,81 +478,14 @@ Starcraft&#x2F;Build&amp;shoot
 11
 
 
-其他零零散散的时间先不算，光这些就已经
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/08/27/2020-08-26-七月流火，八月萑苇/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/06/28/2020-06-28-6月Review/">6月Review</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-06-28T22:24:14.000Z" itemprop="datePublished">
-          2020-06-28
-      </time>
-    
-    
-    | 
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
+其他零零散散的时间先不算，光这些就已经超过一半了。
+影响我效率的原因有很多，但是最主要的还是自己的心态。计划背单词的，貌似上个月开始就完全没有进展了，锻炼身体跳绳什么的也完全没有执行。想要做什么呢？Atomic habits上有说过，首先是想明白想要成为什么样的人，然后知道成为这样的人需要做什么，最好才是去执行。
+那么，我想成为什么样的人呢？
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/06/28/2020-06-28-6%E6%9C%88Review/" title="6月Review">6月Review</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-28T22:24:14.000Z" title="发表于 2020-06-28 15:24:14">2020-06-28</time></span></div><div class="content">
 君不见黄河之水天上来，奔流到海不复还。君不见高堂明镜悲白发，朝如青丝暮成雪。
 时光流逝一去不复返。
 一直对 ‘李白’ 的将进酒有一种莫名的感觉
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/06/28/2020-06-28-6月Review/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/06/18/2020-06-18-PhD-第一个月/">PhD 第一个月</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-06-18T22:12:46.000Z" itemprop="datePublished">
-          2020-06-18
-      </time>
-    
-    
-    | 
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/06/18/2020-06-18-PhD-%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%88/" title="PhD 第一个月">PhD 第一个月</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-18T22:12:46.000Z" title="发表于 2020-06-18 15:12:46">2020-06-18</time></span></div><div class="content">
 最近一段效率很低。稍微总结一下主要是两个原因：
 
 睡得太晚，上床以后经常玩手机，2AM才睡觉；晌午才起来。
@@ -1434,152 +496,77 @@ Starcraft&#x2F;Build&amp;shoot
 晚上睡觉前不带手机上床
 每日review &#x2F; 每周review &#x2F; Bullet journal 重新一下。
 
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/06/18/2020-06-18-PhD-第一个月/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/04/30/2020-04-29-手帐和日程/">手帐和日程</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-04-30T20:11:55.000Z" itemprop="datePublished">
-          2020-04-30
-      </time>
-    
-    
-    | 
-    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        拖延症一段时间有在用手帐。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/04/30/2020-04-29-%E6%89%8B%E5%B8%90%E5%92%8C%E6%97%A5%E7%A8%8B/" title="手帐和日程">手帐和日程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-30T20:11:55.000Z" title="发表于 2020-04-30 13:11:55">2020-04-30</time></span></div><div class="content">拖延症一段时间有在用手帐。
 手帐的作用其实蛮明显的，特别是对于我这样子缺乏自控力的人。只是也存在缺点，自制力还是不够， 有的时候会懒得用，或者有的时候制定了计划，但是却不去执行拖拉。
 最近一段时间看见一些关于执行力的文章，有一些建设性意见：
 
 制定计划
 执行计划要先从复杂的，困难的先开始。
 
-这两条结合起来效果不错，特别是第二条。很多时候，我会沉迷于简单&#x2F;重复的工作。比如高三的的时候，我特别喜欢做化学题，而且是那种没有特别创新
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/04/30/2020-04-29-手帐和日程/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          <a class="pull-right" href="/page/2/">Older Posts →</a>
-        </nav>
-    </div>
-</section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
+这两条结合起来效果不错，特别是第二条。很多时候，我会沉迷于简单&#x2F;重复的工作。比如高三的的时候，我特别喜欢做化学题，而且是那种没有特别创新的，没有特别难的化学题。这导致了两个问题：浪费了精力，以及没有取得进步, 没有收获。然后一直以来我都没有意识到这个问题。这个会衍生出我的另外一个问题：不愿走出comfort zone
+在接下来的一段时间，暂定30天，要每天都制定计划，按照优先级以及重要性排序，不能选择简单的任务先执行。
+软件的选择用了一段时间的goodnote 5，Notability和一直使用的onenote。简单比较一下：
 
-      
-<!-- ============================ Footer =========================== -->
+Goodnote 5:
+Pos: 
 
-<footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Haijia Alex Zhu. All Rights Reserved.
-                </p>
-                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-</footer>
+界面更加美观，各种key更便利，封面功能很棒。
+内置模板众多
+稳定
+写出来的字好看
 
-<!-- ============================ END Footer =========================== -->
-      <!-- Load our scripts -->
-<!-- Resizable 'on-demand' full-height hero -->
-<script type="text/javascript">
-    var resizeHero = function () {
-        var hero = $(".cover,.heightblock"),
-            window1 = $(window);
-        hero.css({
-            "height": window1.height()
-        });
-    };
+Con:
 
-    resizeHero();
+不支持Windows，没 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Haijia Alex Zhu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">96</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/11/9999-Template-Copy/" title="template">template</a><time datetime="2024-04-11T22:09:00.000Z" title="发表于 2024-04-11 15:09:00">2024-04-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/25/2024-02-25-Poor-Man-s-Synology/" title="Poor Man's Synology (Xpenology)">Poor Man's Synology (Xpenology)</a><time datetime="2024-02-25T21:35:53.000Z" title="发表于 2024-02-25 13:35:53">2024-02-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/" title="Poor Man's Jellfin">Poor Man's Jellfin</a><time datetime="2023-12-09T21:35:53.000Z" title="发表于 2023-12-09 13:35:53">2023-12-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/2023-12-07-Poor-Man-s-Jellfin-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" title="Poor Man's Jellfin 反向代理">Poor Man's Jellfin 反向代理</a><time datetime="2023-12-07T22:24:30.000Z" title="发表于 2023-12-07 14:24:30">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/02/2023-012-07-DIY%E9%A4%90%E6%A1%8C-Part-2/" title="DIY餐桌 Part 2">DIY餐桌 Part 2</a><time datetime="2023-11-02T06:09:10.000Z" title="发表于 2023-11-01 23:09:10">2023-11-01</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%91%A8%E6%9C%AB%E9%97%B2%E8%B0%88/" style="font-size: 1.1em; color: #999">周末闲谈</a> <a href="/tags/tech-%E6%94%B6%E5%BD%95/" style="font-size: 1.23em; color: #999ea6">tech/收录</a> <a href="/tags/Homebuild/" style="font-size: 1.17em; color: #999c9f">Homebuild</a> <a href="/tags/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/" style="font-size: 1.37em; color: #99a4b2">无处安放</a> <a href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" style="font-size: 1.5em; color: #99a9bf">随想录</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 1.3em; color: #99a1ac">计划</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 1.1em; color: #999">读书笔记</a> <a href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" style="font-size: 1.43em; color: #99a6b9">絮絮叨叨</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">96</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-04-12T01:01:52.468Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Haijia Alex Zhu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.14.0-b2"></script><script src="/js/main.js?v=4.14.0-b2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = (ele) => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
 
-    $(window).resize(function () {
-        resizeHero();
-    });
-</script>
-<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
-<script src="/js/scripts.js"></script><!-- Theme scripts -->
+    Array.from(ele).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
 
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$('#intro').find('img').each(function(){
-  var alt = this.alt;
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
 
-  if (alt){
-    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
   }
 
-  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
-});
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+    
+    codeMermaidEle.forEach(ele => {
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.innerHTML = `<pre class="mermaid-src" hidden>${ele.textContent}</pre>`
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
 
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
 
-
-      
-</body>
-</html>
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+  
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
