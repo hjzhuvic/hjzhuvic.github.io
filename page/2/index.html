@@ -1,1154 +1,1476 @@
 <!DOCTYPE html>
-<html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********  Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="theme-color" content="#33474d">
-	<title>花开彼岸天</title>
-	<link rel="stylesheet" href="/css/style.css" />
-	
-      <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
+  <title>花开彼岸天</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="花开彼岸天">
+    <meta name="author" content="Haijia Alex Zhu">
+    <meta name="description" content="鱼跃此时海" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
     
-<meta name="generator" content="Hexo 7.1.1"></head>
-
-<body>
-
-	<header class="header">
-		<nav class="header__nav">
-			
-				<a href="/" class="header__link">Home</a>
-			
-				<a href="/wish" class="header__link">Wishes</a>
-			
-				<a href="/man" class="header__link">MAN</a>
-			
-				<a href="/archives" class="header__link">Archive</a>
-			
-				<a href="/tags" class="header__link">Tags</a>
-			
-				<a href="/books" class="header__link">Books</a>
-			
-				<a href="/movies" class="header__link">Movies</a>
-			
-		</nav>
-		<h1 class="header__title"><a href="/">花开彼岸天</a></h1>
-		<h2 class="header__subtitle">鱼跃此时海</h2>
-	</header>
-
-	<main>
-		
-	<span class="different-posts different-posts_earlier">📖 <a href="/">earlier posts</a> 📖</span>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2020/04/29/2020-04-29-四月天/">四月天</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2020-04-29</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>四月再见。</p>
-<p>五月你好。</p>
-<h2 id="答辩"><a href="#答辩" class="headerlink" title="答辩"></a>答辩</h2><p>论文交掉了。基本上告一段落。</p>
-<p>先说说答辩的情况把。还是<del>年少</del>轻狂，小看了老师，也高估了自己。总的来说答辩的时候不是特别好，很多时候没有抓到committee的重点，一些自己觉得很简单的事情，对于他们而言不是那么的直接，论文里面也没有直接的解释。</p>
-<p>没答好的几个问题：</p>
-<ol>
-<li><p>BSFC一系列。</p>
-<p>回答的时候没有理解他们没有看懂这个图。</p>
-</li>
-<li><p>BSFC为什么不用数学模型。</p>
-<p>但是大脑当机了</p>
-</li>
-<li><p>全局最优解能否确保这个是全局最优解吗</p>
-<p>其实，这个问题是我最没有回答好的。回答的不算错，只是没有回答全。</p>
-</li>
-</ol>
-<p>说说这个没回答好的问题，这个问题的其实比较tricky，理论上这类算法无法保证找到的解是全局最优解，只能说是最优解。但是，对于一个工程问题，理论上不一定存在全局最优解，或者存在最优解，但是不一定找得到。那么stochastic global optimization algorithm 找到的算全局最优解吗？</p>
-<p><code>答案是&quot;算&quot;！ 这类算法通过搜索整个design space，几乎是遍历的所有可能的解，找到的解当然是最优的（基于统计学）。这也引入了这类算法的普遍缺点，比较耗时（computational intensive）。 为了解决这个比较耗时的问题，我们引入的surrogate model 来加快这个过程。</code></p>
-<p>这个也说明了自己存在的一些问题，特别是自己思维上的问题。我一直都知道这类<em><strong>全局最优算法</strong></em>找不到正真的<em><strong>全局</strong></em>最优解，但是却一直没有提出这个问题：</p>
-<p><code>为什么这类全局最优算法明明不能找到真正的全局最优解，但是却被称为global optimization？</code></p>
-<p><strong>思维定势啊！！</strong> 以后要多思考，不要陷入这类陷阱。多问为什么！</p>
-<h2 id="答辩后的生活"><a href="#答辩后的生活" class="headerlink" title="答辩后的生活"></a>答辩后的生活</h2><p>答辩以后每天都是上上网随便逛逛。没有做什么正经事。。。接下来有一些事情需要完成。</p>
-<ul>
-<li>Submit study permit by April 30</li>
-<li>Organize all the code and model, setup version control and create a actual library</li>
-<li>3D printer 搞起来 （PPE要跟上）</li>
-<li>整理一下自己的routine</li>
-<li>READ: Fuel cell engine</li>
-</ul>
-<p><strong>少年成为他想要模样，就是岁月最好奖赏</strong></p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2020/04/19/2020-04-19-四月随想/">四月随想</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2020-04-19</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>建立了页面但是没有写。。。</p>
-<p>唉</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2020/01/03/2020-01-03-少年成为他想要模样，就是岁月最好奖赏/">少年成为他想要模样，就是岁月最好奖赏</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2020-01-03</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p><strong>少年成为他想要模样，就是岁月最好奖赏</strong></p>
-<p><em><strong>你好2020</strong></em></p>
-<p>看了一下去年&#x2F;前年&#x2F;大大前年的年度展望，没有什么营养，也没有什么作用。</p>
-<p>做事情还是懒懒散散的。</p>
-<p>之前看见一句话叫做：人做事有三重境界：谋定而后动或后不动，边动边谋，光谋不动。</p>
-<p>对于我而言，绝大部分都处在光谋不动。</p>
-<p>有的是畏惧；有的是懒，好高骛远。</p>
-<hr>
-<p>之前没有写完，继续写，晚上打了很久的游戏，今天也是，只是今天的到学校的时候就已经决定了今天要任性的玩最后的几把。然后就把游戏删了。</p>
-<p>之前也都删过好多次，最后都装回来了，这次要把持住鸭。</p>
-<p>继续说之前的，宋小姐送我的新年寄语是<em>少年成为他想要模样，就是岁月最好奖赏</em>。其实蛮有感觉的。的确，不管愿不愿意，人一定会成为某一个样子，而这个模样是由在过去的岁月中慢慢积累，不管喜欢与否。</p>
-<p>回过头来说，这个月定一个主题吧：</p>
-<p><em><strong>谋且动</strong></em></p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/11/12/2019-10-30-效率2/">效率-2</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-11-12</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<h2 id="效率"><a href="#效率" class="headerlink" title="效率"></a>效率</h2><p>最近有一段时间的效率还比较可以，但是很严重的问题就是不能持久。有三个原因：</p>
-<ol>
-<li>Starcraft 2 打的有点多, 这个月已经打了 21h 14m 了。</li>
-<li>虽然知乎什么上的少了，但是实际上总时间还是挺多的 4h。</li>
-<li>拖延症。<br>解决方法其实很简单。<br>首先，删星际。虽然我觉得我可能很快又会把这个装回来，但是现在先删。ManicTime装一下吧，这个软件比Rescue Time复杂，但是稍微研究一下应该是ok的。<br>至于拖延症，其实没有什么好方法，本身的习惯其实也有问题。番茄时间用起来，以及，take a break。 其实一直埋头写写写看看看不是一个好习惯。要定期休息一下。</li>
-</ol>
-<h2 id="有朋自远方来"><a href="#有朋自远方来" class="headerlink" title="有朋自远方来"></a>有朋自远方来</h2><p>这周末，朱幸雨突然跑到加拿大来了。自己也比较忙，然后其实也有一些其他的原因，没有带她逛逛，没有好好招待她。只是约她吃了一个饭。其实感觉她成熟了很多啊。对比我，我真的自愧不如。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/10/17/2019-10-16-效率/">效率</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-10-17</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>这两天论文有在改，只是效率很低。<br>手头上的工作整理一下：</p>
-<ul>
-<li>论文revision。</li>
-<li>模型修bug。</li>
-<li>测试修改完的模型。</li>
-<li>模型重新跑一下，出一下数据。</li>
-<li>DP调试，动态规划那个一直没有测试。我感觉我都要忘记当时是怎么写代码的了。</li>
-<li>全局优化的作业。。。。还有两个一个月就due了。。。。但是一个都没有写。。。</li>
-</ul>
-<p>其实有很多事情的。所以其实没有时间闲逛知乎之类的。但是实际上每天还是有大量时间用于闲逛，比如逛知乎虎嗅ifanr之类的。心理学上说人面对要紧的急迫的事情都会有一种短期逃避，长期后悔的情绪，逃避这类事情会给人带来一种短期的心理上的愉悦，仿佛这个问题不存在了；但是事后会不断的懊悔，对自己产生质疑。然后不断产生一个正反馈，直到最后问题越来越严重。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/10/04/2019-10-03-向前走，不要停/">向前走，不要停</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-10-04</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>其实在取题目的时候有点犹豫，应该取名为送父亲母亲还是取一个和俞jy有关的标题。想了一会儿，还是决定写一些她吧。<br>刚刚发了一个朋友圈:<br><em><strong>向前走，不要停。</strong></em><br>是啊，人总是要向前走，不能停下来，我已经原地踏步了很久，久到我自己都没有意识到已经这么久了。<br>今天送父母走。他们明天早上的飞机，只是我明天下午需要给学生带实验课，不得以，只得今天提前回去。好在酒店有免费的大巴车到机场，而且YVR机场中国人很多，机场内中文标识也很多。可以稍微放心。这次他们待了两周半，不得不感慨时间很快。不知道为什么有一种感觉，以后这种时光会很少了。老爸也一直说很多年没有这么没有心事放松了。<br>说说她吧，我貌似从大学开始喜欢她的。也许就是所谓得不到的就是最好的把。一直都对她那么一点意思。其实我很早就明白我们不是一路人。也许，她知道我喜欢她吧，也许不知道。但是又能如何呢。昨天蚂蚁森林偷了一下她能量，难得的发现她能量很多。WeChat上调侃了她一句她走的挺多啊，然后突然意识到国庆节了。早上的时候她回了我，(不知是不是)很认真的回复了我：<br><code>我和我男朋友这两天在外面玩，所以走的比较多。</code><br>说真的，看到的时候五味杂陈。之前她分手的时候我还很渣的暗中窃喜。猝不及防她又有新欢了。虽然自从几个月前不理我了之后，冥冥中有预感。<br>只是我也没有资格去找她罢了。<br>哎。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/09/03/2019-08-20-秋高气爽/">秋高气爽</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-09-03</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>新生入学了</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/08/21/2019-08-20-择偶标准/">择偶标准</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-08-21</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>前两天看到有一个知乎的问题叫做“在加拿大的你，择偶标准是怎样的？”。<br>这是一个很有意思的问题。稍微思考了一下，其实很简单，能共患难，能同富贵。<br>具体而言，其实很复杂。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/06/10/2019-06-10-强关系弱关系，以及七年/">强关系弱关系，以及七年</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-06-10</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>昨天很生气，我现在也还是很生气。但是也麻木了，做人做到这份上没什么意思。</p>
-<p>今天看了一个视频，是我一直很喜欢的一个UP主，Ivy，一个北大出来的女孩子。 她对很多事情都有不错的见解，也很乐于分享自己的经验。她的视频里你可以看到她的迷茫，她的困惑以及她的求索之道。换成人话就是：她在视频里展示出了一个普通的挣扎与进步而不是一个各方面吊打你的学霸。。。。。。她最近的一个视频里讲了和朋友的关系，并且指出重点。</p>
-<p>的确，很多时候人与人之间的社交都是无效的。首先强关系下的人与人一定是高度近似的（人以群分，物以类聚）。而弱连接才是有效的：所谓的弱关系，圈子里的异质性会比较多，而这（“物种”多样性）才能让人不断的学习到不同的知识、理念。</p>
-<p>此外，每个人的时间，精力都是有限的。 所以如果浪费很多时间在无效的社交上，也就是在浪费生命吧。所以，不需要想着让弱关系升级，不用惦记着升级弱关系。不要试着去讨好别人。 LOVE YOURSELF.</p>
-<p>最近在ftchinses上又看到BBC的一个纪录片的新闻，《人生七年》。不得不说这是一个很有意思的纪录片，我并没有看过，但是看看它的简介就会忍不住发出感慨。一方面感慨作为中国人赶上了好时代；另外一方面又会有什么感慨。</p>
-<p>曾经非常喜欢的一个博客主xuying曾经写过一篇《人生七年》的观后感，当时我应该是刚上大学，看完以后特别的震撼。只可惜，这位博客主已经不再更新，网络上再也找不到她的痕迹。</p>
-<p>哎。</p>
-<p>七年那么长，怎么能随便过。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/05/24/2019-05-24-复盘与健身/">复盘与健身</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-05-24</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<h2 id="复盘的意义"><a href="#复盘的意义" class="headerlink" title="复盘的意义"></a>复盘的意义</h2><p>说起来好久没有写博客了。上个月10号准备写的时候，不知道为什么写了一句话就没有写下去了，好像是因为办公室有人，还是说每次想写的时候都是晚上准备回家的时候。。。</p>
-<p>最近怎么说呢，反正有种这个月也写不完thesis了啊。</p>
-<p>先说点好消息吧，现在慢慢的，有的时候能把自己按下来写东西了。虽然说效率还是很低，但是至少说开始写起来了。差不多这周写了2000字吧， 上周基本上没有怎么写。上上周貌似有写一点。哎</p>
-<p>总的来说效率还是太低，但是至少开始动起来了。昨天一个人坐在椅子上思考了一会儿，感觉曾经的我不是不是这样子的，不知道从某一天开始我慢慢的开始不再思考；我意识到这个问题其实有一段时间了，但是一直没有没有心来调整。或者说生活中有太多其他的事情来打扰，然后慢慢的生活的重心开始偏移。原来的时候虽然有的时候也蛮不认真的，但是经常会自我反思，当失去这个以后，慢慢的“被生活磨平了棱角”。。。。</p>
-<p>所以！！！我决定了，<del>我要开始再次重新做人。</del>开始每日&#x2F;每周复盘。</p>
-<p>我预计复盘是一种很痛苦的事情，毕竟之前做过，也明白。但是复盘的意义再与：能够明白自己最初的想法，中间的过程，影响行为的因素，能够发现自己改进的方向。最重要的是能够站在一个全局的角度看待问题与局势。<strong>不识庐山真面目，只缘身在此山中。</strong>每个人都会碰到当局者迷的情况，只有<em><strong>整理、回顾、反思后再行进</strong></em>才会心之笃定和坦然，不会迷失在表象里，活在真实的世界中。</p>
-<p><strong>所以每隔段时间就做下总结，问问自己：</strong></p>
-<p>- 今天学到了什么新东西？</p>
-<p>- 今天完成了什么？推迟了哪些事情？</p>
-<p>- 接下来做什么？哪些是可以直接行动的？</p>
-<p>- 都处理了哪些问题，这个问题是什么原因所导致的？有没有更加好的解决方式?</p>
-<p>- 怎么才能避免再次遇到问题？</p>
-<p>- 今天的有效工作时间是多少？哪些因素影响了有效工作时间。</p>
-<p>- 对于影响自己效率的事情，该如何处理与改进？</p>
-<h2 id="关于运动"><a href="#关于运动" class="headerlink" title="关于运动"></a>关于运动</h2><p>运动有很多好处，就个人而言，很多时候没有精神的原因就是运动少了。之前有一段时间开始运动了，一周三天，但是貌似也就坚持了一周多。。。</p>
-<p>今天无意中看到一篇文章，觉得蛮好的，与诸君共勉：</p>
-<p>作者核心提出来每天都要运动，而不要计划着一周运动几次，当你做好了一周去几次的计划以后，经常会碰到周以不想去，那么改成周二&#x2F;三&#x2F;四 etc. ，最好的方式就是，不要纠结那一天去，每天都要去。</p>
-<p>我看到这里的时候觉得作者说的挺有道理的。就慢慢把这篇文章看完了,核心思想就是 ：</p>
-<ol>
-<li>找一个开始的理由。</li>
-<li>每天同一时刻锻炼，形成日常习惯。</li>
-<li>运动强度不要太高。</li>
-<li>逐步提高运动强度。</li>
-<li>健康的饮食，记录&#x2F;了解摄入的能量VS运动消耗的能量。了解营养学。。。</li>
-<li>偶尔可以偷懒，但尽量完成定下的目标。</li>
-<li>做运动记录。</li>
-</ol>
-<p>文章源地址：<a target="_blank" rel="noopener" href="https://dariusforoux.com/exercise-312-times-year/">https://dariusforoux.com/exercise-312-times-year/</a></p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/04/11/2019-04-10-四月半/">四月半</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-04-11</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>四月过了一半了。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/03/12/2019-03-11-疯魔/">疯魔</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-03-12</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>最近几天有点疯魔了。<br>一天到晚看那个咖啡机。整个人都有点不在状态，论文也不写了。正经事也不干，就是一天到晚逛知乎，刷论坛看咖啡机。也有点无语，只是有点咽不下这口气。所以准备几天先找那个人看下机器还在嘛，如果在的话就直接拿下，过两天去取。只是有点怀疑已经没了。但是先问下呗。如果没有了，那么准备这周直接买一个Gaggia Claaic。等彪哥回来了，找个时间动手加一个PID。<br>其他的，也没有什么好说的。很多事情需要自己明白，这些问题都只有自己能改过来。如果不愿意谁都没有办法挽回。<br>接下来对自己的要求就是整理好自己的心态：心态要posotive；对自己负责，别对自己做的事情后悔。不知道从什么时候整个人开始变得懒懒散散的，比如说定下计划，3点出去看樱花，但到了时间以后，却懒得出门，懒得执行计划。此外就是多出去走走。<br><code>改变需要从小事开始。在正确的时间做正确的事情。</code><br>还有一个事情，我们明天开组会，然后我自己比较虚。再想要不要和老董明天提前先meeting一下然后下午的组会就不过去了。只是还是有点虚，不太敢。。。。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/03/01/2019-03-01-三月随想/">三月随想</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-03-01</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>突然想起来之前的没写完，想了想还是算了，就那样吧。</p>
-<p>今天是三月的第一天，论文没有写完。</p>
-<p>昨天的时候，YJy和我说了它最近谈了一个对象，其实当时还是蛮不好说的。有一种遗憾吧，但是貌似也很快就转换好了心态，祝福她吧。</p>
-<p>这两天稍微开始写一点东西，另外仿真也在跑着。</p>
-<p>先说说论文吧，现在在补充之前写的东西。主要是数据采集那边的完成度很低。然后EMS那一章也需要补充挺多东西的。模型的那一章，主要是电池那边缺挺多东西的，还需要补充一下。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/02/21/2019-02-21-二月随想/">二月随想</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-02-21</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>二月也过了三分之二</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/02/09/2019-02-09-生日快乐/">2019生日快乐</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-02-09</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<h1 id="生日快乐"><a href="#生日快乐" class="headerlink" title="生日快乐"></a>生日快乐</h1><p>先祝我自己生日快乐and新年快乐。</p>
-<p>这个文档其实是好几天前建立的，但是一直都没有写，生日也过了好几天了。主要是觉得没什么好写的。</p>
-<p>这一年，怎么说呢，其实是一言难尽啊。</p>
-<p>算起来，我已经28周岁，30虚岁了。</p>
-<p>孔子曾经说过：<br><code>吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲不逾矩。</code></p>
-<p>说的就是人到了三十岁，人生观世界观价值观已经“立”，不动摇。或者放到现在的社会要求，人到30，应当能够独立于世，就现阶段来说：我并没有做到。</p>
-<p>人的环境和处境真的很能影响三观，我一直以为自己的三观已经基本上固化，觉得自己很有底线，但是现在看来我还是在不断的改变，不断的突破自己的下限。</p>
-<p>突破自己的底线是从两方面的，但是这个先不谈，下次有时间再谈。先谈谈最近一年的情况吧，或者说这两年的情况：</p>
-<ol>
-<li>年度计划从来都没有完成过；月计划从来没有完成过；季度计划从来都没有完成过。自然，日计划也没有完成过。行动力很低，虽然明白应该做的事情，比如说最近最最应该做的事情是写论文，但是总时不愿意写，花很多时间去做那些不要紧的，无意义的事情：比如刷知乎。</li>
-<li>很多事情都不愿意做了，比如说刷牙。。。每次刷牙都要磨磨蹭蹭的。说起来真的很搞笑，但是有的时候真的觉得自己很奇怪。</li>
-<li>懒了。原来的时候虽然算不上一个勤快的人，但是很多事情也都是收拾的干干净净的。</li>
-<li>一直没有踏出自己的comfort zone，当然主要也是懒。。。</li>
-</ol>
-<p>为了避免这个变成有一个自我批评的奇怪画风，还是就此打住吧。对未来的期望什么也免了~</p>
-<p>现在的生活比较单调无聊，早上懒懒散散的起床，磨磨蹭蹭去学校，在学校懒散的上上网刷刷刷刷刷微博知乎ifanr少数派数字尾巴fb之类的，时间差不多就回家做饭吃饭，吃完饭睡觉，然后一天<del>愉快的</del>过去了。既没有出去散散步散散心。</p>
-<p>哎就这样吧，<del>迟到的</del>生日快乐<br><code>BE A BETTER MAN!</code></p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2019/01/03/2019-01-02-2019新年展望/">2019新年展望</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2019-01-03</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<h1 id="年度展望"><a href="#年度展望" class="headerlink" title="年度展望"></a>年度展望</h1><p>2019年到了， 希望我能成为一个不一样的人。</p>
-<ul>
-<li>多给爸妈打电话</li>
-<li>每天喝够8杯水</li>
-<li>学会管理情绪</li>
-<li>做回真正的自己</li>
-<li>练一手好看的字</li>
-<li>Get 游泳技能</li>
-<li>每天做一件让自己开心的事</li>
-<li>多吃水果和蔬菜</li>
-<li>做一个自律的人</li>
-<li>睡前不玩手机</li>
-<li>绝对不熬夜了</li>
-<li>早起早睡</li>
-<li>周末不宅在家</li>
-<li>每周去3次健身房</li>
-<li>看极光</li>
-<li>愿世界和平！</li>
-</ul>
-<h1 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h1><p>Thesis 还没有写完，12月其实也没有写多少。这个不应该这样子。接下来要认真写。</p>
-<h1 id="那么接下来是一月份的月度计划"><a href="#那么接下来是一月份的月度计划" class="headerlink" title="那么接下来是一月份的月度计划"></a>那么接下来是一月份的月度计划</h1><ul>
-<li>减肥，每天饮食控制。</li>
-<li>每天看论文一篇。</li>
-<li>每天写论文。</li>
-<li>删软件和游戏</li>
-</ul>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2018/11/19/2018-11-19-周一总结与开始/">周一总结与开始</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2018-11-19</span><br />
-		
-		
-	</div>
-
-	
-
-	
-		<p>又一个周一了。。。。。</p>
-<p>好吧，已经落后于进度了。按照原来的计划， 我是要在昨天完成这一章的，但是实际的情况是，周末浪，上周五浪，上周四浪。。。。shit<br>没什么好说的，要认真啊少年。 争取两天内写完，毕竟这些内容不需要什么实验数据之类的，就是写写写。！！！</p>
-<p>有的人让人心寒啊</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2018/11/02/2018-11-01-十二月展望/">十二月展望</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2018-11-02</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<h1 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h1><p>论文第二张争取这周写完。基本上大框架好了，但是还有细节的地方要补充和修改。<br>写论文最主要的问题是语言，以及懒。<br>拖延症真的有毒啊，拖着拖着好像就轻松了，但是，实际上并没有，焦虑只会越积累越多，摸摸头。。。<br>所以啊，要认真去做，在正确的时间做正确的事情。不要一天到晚看视频，zhihu什么的以后一到办公室就应该直接SR掉的。番茄时间用起来。</p>
-<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><p>其实很久没有认真坐下来看看书了，这次找到一本可能会让我很难受的书，Emotional Blackmail，但是就慢慢看看吧。之前还有一本书叫做 zero to one， 还有那本讲Google的 I’m feeling lucky 也还没看完。 都慢慢看起来吧。如果合适，明年可以考虑买一个10寸以上的e-ink阅读器。 当然ppi至少300吧，现在的kindle 分辨率还是有点低，看起来有的时候有点难受的。还有就是论语，好久没看了。</p>
-<h1 id="财务情况"><a href="#财务情况" class="headerlink" title="财务情况"></a>财务情况</h1><p>反正这次不能找家里了的。这是底线。</p>
-<h1 id="月度计划"><a href="#月度计划" class="headerlink" title="月度计划"></a>月度计划</h1><ul>
-<li>减肥，每天饮食控制。</li>
-<li>回归正常作息，11点准备洗澡睡觉，8点起床。</li>
-<li>锻炼：暂时看来做不到每天，先从每周3天开始吧。这个必须和每天的作息配合，早上早点去学校才能晚上早点去健身房。然后回家做饭吃饭。</li>
-<li>多和家里聊聊</li>
-<li>每天看论文一篇。</li>
-<li>每天写论文。</li>
-<li>删软件</li>
-</ul>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2018/10/23/2018-10-23-快要11月了/">快要十一月了</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2018-10-23</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>其实呢，这个文章标题是一周前创建的，最初创建的时间还要早，在国庆前后，在回来的路上（一路睡回来的。。。）建立的，但是一个字都没写。。。。</p>
-<p>现在已经是十月底了， 论文的进度还是非常的感人。 主要原因还是自己，没有一点自控能力，不愿意写， 懒得写，总是在应该写东西的时候，逛知乎，看视频，逛淘宝、amazon、ebay之类的。不过，昨天的组会上牛逼已经吹出去了~这周写完第二章，然后下周搞定第三章的一半。</p>
-<p>继续写吧。现在是十一月一号…昨天没有写任何东西，今天到现在为止也没有写任何东西。<br>心情不好，没什么心情写东西。今天准备早点回去，然后吃完饭再过来，少在家里待着。</p>
-<p>今天看到一本书，看了一下简介和部分章节，整个人都不太好，叫做《情感勒索》。 看的时候，整个人都是非常愤怒的，甚至无法继续看下去。<br><em>这就是发生在我身边的事情。</em><br>总的来说，我还是一个比较心软<del>软弱</del>的人吧。</p>
-<p>Be a better man.</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2018/09/10/2018-09-09-new-term/">new term</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2018-09-10</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>2018年 winter term 的第一周结束了。我还是没有改变啊。</p>
-<p>先说一下这周的总结吧： 看视频逛知乎看小说，正经事没做多少。</p>
-<p>前两天还和一个小朋友讲了一堆大道理，但是放到自己身上的时候，却又显示出自己就像是无法改变的，但是这不应该是我啊!</p>
-<p>不管如何，首先要做好自己的每日总结，回顾每天的行程，安排第二天的计划。同时，每周progress report也要重新搞起来。</p>
-<ul>
-<li>调整作息习惯，正常时间睡觉，正常时间起床.</li>
-<li>保持桌面整洁，每天都收拾.</li>
-<li>每天看论文，写一些thesis的内容；认真思考如何写论文.</li>
-<li>坚持锻炼，身体是革命的本钱，同时注意能量摄入，减肥！！</li>
-<li>删了那些没用的手机游戏软件，特指 <em>绝地求生</em> 和 <em>即刻</em> .</li>
-</ul>
-<p>最后的最后，BE A BETTER MAN.</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2018/09/06/2018-09-05-比较尴尬了的/">比较尴尬了的</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2018-09-06</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>这两天感冒了。</p>
-<p>先说说上个月吧。</p>
-<p>完全就是渣渣，什么都没有改变，还是那副鸟样。</p>
-<p>这个月不能这样子了。要开始好好弄，论文要写起来，thesis也是。</p>
-<p>接下来这个月的计划：</p>
-<ul>
-<li>调整作息习惯，正常时间睡觉，正常时间起床</li>
-<li>整理桌子</li>
-<li>每天看论文，写一些thesis的内容</li>
-<li>认真思考如何写论文</li>
-<li>坚持锻炼</li>
-<li>删了那些没用的手机游戏软件</li>
-</ul>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2018/08/12/2018-08-12-现在的我/">现在的我</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2018-08-12</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>现在是8月了。 其实这个还是蛮让人失望的， 我现在的状态就是自己很混乱。 </p>
-<p>我是一个自觉性很差的人，自控能力很差。容易受到周围的东西的影响。有的时候也很没有时间观念。我也曾经花了很多时间来改善我自己的问题。只是，在这两年，慢慢的我失去了这个能力，自我反思的能力，慢慢的失去了自我改正的能力。有的时候也不愿意思考。我也明白我的执行力是不够的，有的时候想着，但是去不愿意去动手。</p>
-<p>接下来几天的计划：</p>
-<ul>
-<li><p>改完报告。周一搞定全部的内容。然后发给老董</p>
-</li>
-<li><p>调整作息习惯，正常时间睡觉，正常时间起床</p>
-</li>
-<li><p>重装系统，禁止安装游戏，只安装和学习工作有关的</p>
-</li>
-<li><p>每天看论文，写一些thesis的内容</p>
-</li>
-<li><p>认真思考如何写论文</p>
-</li>
-<li><p>坚持锻炼</p>
-</li>
-<li><p>删了那些没用的手机游戏软件</p>
-</li>
-</ul>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2018/08/10/2018-08-10-这是标题/">这是标题~~~</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2018-08-10</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>终于搞定了Hexo，但是还是没有明白为什么之前的都是有问题的。<br>只要设置一下root地址，如果带XXX.XXX的貌似都不能正常工作，应该是生成页面的时候css没有正确链接。但是不管了，随便换一个名字，就可以了。说起来找个问题找了超级就，网上的教程都是错的。我也不知道这群人是怎么配置成功的，不过换个方向考虑，这也说明了Hexo的不流行。。。<br>总之，现在可以在撸github羊毛了。<br>wordpress 备份真是硬伤，但是这个东西其实也有好的地方，毕竟那样子文件不会存在本地。好处是永远不会丢失。 然后Markdown的语法已经完全忘记了额。 ST3和中文输入发的兼容性也是让人迷醉。接下来能会换别的。<br>还有一个就是如果转载别人的东西，那么格式得自己调整过。 或者直接粘贴图片？ 总是不是那么好用。<br>轻量化VS好用<br>反正先用着呗。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2014/10/20/2014-10-20/">你当年是怎么错过爱情的？</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2014-10-20</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/" rel="tag">无处安放</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p><a target="_blank" rel="noopener" href="http://www.zhihu.com/question/26057138">你当年是怎么错过爱情的？</a><br>我不知道这是不是爱情。</p>
-<hr>
-<p>和她是高中同学。大学在一个学校。初中是一个学校的，但是她认识我，我不认识她，不要误会，当年我是体育课代表，出操的时候站在最前面，而我们班级又是离操场最近的，所以她每次都能看见我，加上我比较黑。。。。</p>
-<hr>
-<p>我这个人呢，比较懒散，懒得交际。像一般的人，高三毕业，肯定都在相互打听自己和哪些同学是在同一个城市，同一个学校的，有的老早就加了新生群。但是，我比较孤僻吧，我是到了进了学校，第二天，在寝室走廊上才发现，原来我居然是有高中同学在同一个学校的啊～然后，那个同学就陆陆续续告诉了我还有哪几个也在这个学校的。<br>她也在这个学校。<br>但是这个时候，我们还不是很熟。不过他和我的高中关系不错的一个哥们儿挺熟的，同桌。不过说起来，也挺搞笑的，他们的身高差了10cm不到一点吧～，小姑娘身高要高，小伙子…………，在这种情况下，居然能成为同桌。。。。<br>大一的某一次，下午，我回寝室，在寝室楼边上的路上，碰到了她，和一个汉子A，应该是出去吃饭。她笑的那个哟，眼睛都快眯的不见了。<br>我不是很好意思打招呼，稍微笑笑就走了，然后上寝室楼的时候，这边先插一个，我们寝室楼非常不合理啊！！！！！7楼啊！！！！没有电梯啊！！！！楼梯还比较陡！！！！很累的啊！！！！！<br>好的，在楼梯上的时候，就随便调侃一下，问：“男朋友？”<br>她回的很快：“同班的啦，有同学请吃饭，就一起出去。”<br>然后就稍微聊聊。但是，我很清楚的记得当时的时候，我还没有对人家有什么想法。就是看见女孩子嘛，就调戏调戏聊聊天罗……<br>后来不知道什么时候开始的，晚上一起去吃夜宵，其实也没有吃几次，但是我就是记住了。呵呵我还记得有一天那家奶茶店开业多少周年庆，买一送一；我还记得她很认真的啃着鸡翅，一边对我说鸡翅多吃不好，最多一个星期吃一次，但是第二天我们又去了；我还记得某一天送她回寝室，她请我喝奶茶，喝的是5块钱的芒果蛋蜜；我还记得，某一次图书馆一起自习，中午去吃饭，吃完后去喝奶茶，老板问我：“她是你女朋友吗？” 我和她异口同声的说不是……<br>那个时候，还是秋天。但是我对她已经有点不一样了。<br>某天，她和她的小伙伴在讨论织围巾的事情，我脸皮很厚的凑上去，说要不给我也来一个。她白了我一眼。<br>有后来的某一天，她说给她妈织的围巾还差一点线，然后就一起去店里面，他的小伙伴和她再加上我，三个人屁颠屁颠的跑过去。<br>那个时候，我已经发现我喜欢上了她。<br>在店里面，她突然问我，你想要什么颜色的围巾。<br>我当时就慌了，真的。原谅我从没谈过恋爱，和不熟的女孩子聊天都会脸红……我当时真的慌了，我连我后面怎么回答的都忘记了。<br>然后，我好像是说，我和你玩笑的啦，你真的准备帮我织围巾啊。<br>她很认真的说：你赶紧选一个啊，我觉得这个颜色挺不错的。</p>
-<hr>
-<p>我不想写下去了。<br>哪天心情好了在打吧。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2014/07/16/2014-04-15/">总结吧</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2014-07-16</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>其实，之前就准备写一个回顾和总结了。懒懒散散的，一直都没有写而已。</p>
-<p>或者说，其实，考完最后一次托福以后，就一直很松懈，早上懒懒散散，晚上到很晚才睡觉。早上起来以后，又是磨磨蹭蹭，看个小说，看个视屏，逛一下知乎什么的。而曾经的计划，都已抛之脑后。厂里面的事情，也懒得管。整个人都是变得很懒散。</p>
-<p>感觉整个人的主旋律就是懒散。</p>
-<p>在毕业前，有计划，练字，编程，STM32，背单词。后来，又计划早起。只是，我都已经不知道有多久没有上四点网了。呵呵呵。</p>
-<p>那么就当现在是回顾和总结吧。</p>
-<p>一直安慰自己说，存在问题并不可怕，只要能够认识问题，解决问题就可以。但是，现在的我是发现错误，然后告诉自己，我发现了错误，但是却一直不会改。一直会告诉自己，有一个问题，然后，一直会任由问题的存在。</p>
-<p>到了最后，问题还是会一直存在。而唯一和大学里面有差别是，我不再特别的关心这些问题，因为貌似我不再需要这么奋斗了。</p>
-<p>那么我需要奋斗吗？还是说我现在我现在只是就这么浑浑噩噩。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2014/04/25/2014-03-25/">时间去哪儿</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2014-04-25</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>今天，7点半就醒了，然后磨磨蹭蹭的到了9点出门，吃过早饭，上个网，溜达一下，吃个零食，oh，该吃午饭了，磨磨蹭蹭去吃个午饭，饭后逛逛聊个天，然后老师那边去溜达一下，交个东西，发现手机忘记拿，落在了教室，然后去拿，然后看会儿小说，逛个论坛。看看时间，饭点到了诶，吃完饭操你妈。<br>7点起床，7点半出门，省的被某人吹头发吵得心情很差。<br>吃早饭的时候，计划下一天的安排。大致如下：<br>7点50<del>11点，背单词，30分钟为一个周期。拓词两个小时，朗读写作词汇一个小时<br>11点</del>11点半，口语，模板准备。<br>12点<del>3点，阅读，精读。<br>3点半</del>5点半，写作。<br>5点半<del>6点半，shadowing，听力。熟悉一下单词，分类词汇。<br>7点半</del>9点，写作或者网课。<br>9点上床，看下各种模板。<br><em><del>一天那么长怎么能浪费</del></em></p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2014/04/25/2014-04-08/">【转】二十岁时候的你在想些什么？</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2014-04-25</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<h1 id="【转】二十岁时候的你在想些什么？"><a href="#【转】二十岁时候的你在想些什么？" class="headerlink" title="【转】二十岁时候的你在想些什么？"></a>【转】二十岁时候的你在想些什么？</h1><p>by <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/snowyang/activities"><strong>羊小雪</strong></a><strong>，不如我們同歸於盡。</strong></p>
-<p>生命的前十八年里，我什么都想要，什么都输不起。<br>我一边身在强化班，一边鄙视那些认真做题的好学生；不交作业跟老师吵架，一边考得太好让他无可奈何；拿奖学金刚升完旗，就躲在小卖部后面抽了第一根烟；我男生缘不错，却很少被女生背后碎嘴；我认识考试接近满分的学霸，也认识所谓混出了道儿的小痞子；毕业了几年的学长都知道我，同时也听说有学妹在桌子上写我名字当作人生楷模。<br>那时我知道得要搞定一件事情，才有谈论它的资格。于是我毫不费力地得到了这么些小东西，然后装作什么都不在乎的样子。<br>非常浅薄，非常幼稚，我既然说出来，就不怕你们笑。<br>年轻的时候，我什么都想要，什么都不放在眼里。现在我依然年轻，所以我依旧是这样。可这中间相差的，大概不仅仅是几年的不足道的眼界和阅历，不仅是知道不费力气得来的不会是好东西，不仅是知道你过得怎样其实没人在乎，也不仅仅是发现，你拼尽力气去争取的东西还是有可能会不留情面地开你个玩笑，再给你一个耳光。<br>那天下午我在房间里哭得喘不上气，Carla在来找我的路上发了一堆短信，其中有一句说，<strong>I know it will sound cheesy, but everything happens for a reason, and most of the times, a good reason.</strong><br>这话别人说我兴许会觉得无聊，而她说，却让我觉得稳妥。在她那个全民狂欢的国度，我相信她也曾是个要钱有钱要地位有地位要爱有爱的遭人嫉妒的女青年，而在本该是最好的时光里，她的丈夫突然出车祸去世，她把自己关在房间里暴饮暴食，抑郁了整整一年半。一年半后她走出那个房间，申到奖学金然后来念了这个一直想学的专业，并且在一帮小她十来岁的小蠢逼中间，完全是个整天在大笑的知心姐姐。<br>她的这句话在后来的很多时刻，都是给我勇气的定心丸。<br>有段话是这样的，<br><em>那一天我二十一岁，在我一生的黄金时代。我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云。后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消失，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。</em><br>在我二十一岁生日的时候，就算有人把这一点明着告诉我，我还是会怀抱着很多很多的奢望，对着迎面挥来的锤子眨一下眼睛。就算知道最后可能被扇一个耳光，我还是会竭尽所能去追。就算知道热情会被耗尽，还是要趁着这一刻奋力地跳起来。我什么都想要，那就先随便来一个，试试看好了，你说万一最后什么都没有，怕什么，我才二十一岁啊。<br>这个题目下面的大多数答案我都很想赞。二十岁左右的少年，其实有多相似啊。<br>提到未来，大家都瞬间焦虑起来，然后重重叹一口气；有人把自己搞得很忙什么都不肯错过，不忙的人也在拼命转着脑筋，想了很多很多没用的东西；每个人都在假装自己干了跟别人不一样的事情，显得很牛逼的样子；每个人都在伤脑筋，在踌躇，有时雄心壮志地立誓，有时是及时行乐麾下狗；我们谈恋爱，吵架，摔东西，坐在楼梯上哭；我们学外语，找实习，考前通宵背书，考完通宵喝酒；我们第一次被欺骗，第一次被背叛，第一次面试，第一次上床，第一次自己去旅行心砰砰跳地打印攻略，第一次穿高跟鞋心惊胆战地挤地铁。<br>每个人都是一身用不完的力气，没有方向地这里甩一点，那里甩一点。你有时失望，有时害怕，有时讨厌自己，有时恨不得自杀，没关系，这就是二十岁啊。<br>单是想想有这么多少年在跟你一样地上蹿下跳，就觉得很奇妙呢。<br>我现在也不是很老，但如果要回头跟二十岁的自己说点什么，我会想说，二十岁，是无论如何都不可以保守的年纪呢。<br>会想说，<strong>你可以迷茫，但不可以因为迷茫就踌躇无为，可以害怕，但不可以因为害怕就畏缩不前。</strong><br>二十岁，还没到时候因为「没有结果」这种理由而去逃避喜欢的人，用不着因为「没有用」这种理由而逃避想学的东西，也不应该因为怕自己忙不过来就放弃各种有趣的事情啊。<br>你干嘛要计较着没有时间，没有钱，没有希望，没有精力，拜托你才二十岁诶。<br>是不是张爱玲说的来着，年轻时的弯路是非走不可的。我确实就是这样的人，前面有路口，我就想走过去看看拐了弯是什么样子，前面有座山，我就想爬上去看看山后面是什么，你说山后面没什么好玩的，哈我就是要自己看一下再决定你说得对不对。很多时候路的尽头确实是死胡同，山后面的狗东西也确实很吓人，但更让人开心的，其实是走路和爬山的过程啊。<br>最怕就是听说山后面没什么好的，于是觉得还是过两天爬别的山好了，听说这条路的尽头不好看，就想着要么别走这条路了，不值得。<br>一心想着走最快捷的路，看最好的风景，想着用最少的付出换最牛逼的收益，这么迷茫来迷茫去，只怕最后路也走不动，山也不会爬了。<br>计较个什么，你才二十岁，起码能再生猛个十年，什么也锤不了你。<br>转自：<a target="_blank" rel="noopener" href="http://www.zhihu.com/question/23312072/answer/24218182">http://www.zhihu.com/question/23312072/answer/24218182</a></p>
-<hr>
-<p><em><strong>你可以迷茫，但不可以因为迷茫就踌躇无为，可以害怕，但不可以因为害怕就畏缩不前。</strong></em><br><strong>自勉。</strong></p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2014/04/13/2014-04-13/">我是个傻逼</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2014-04-13</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>我是个傻逼。</p>
-<p>是个傻逼</p>
-<p>个傻逼</p>
-<p>傻逼</p>
-<p>傻逼啊</p>
-<hr>
-<p>时间观念啊时间观念</p>
-<p>7点起床。不赖床，咖啡+早餐，7点35到图书馆</p>
-<p>背单词到10点，然后开始看读口语1个小时+阅读1个小时，估计2篇吧</p>
-<p>然后吃午饭</p>
-<p>1点开始继续看阅读，大概3点可以看完</p>
-<p>然后写作文1篇，一个半小时</p>
-<p>写作文前先花半个小时看定语从句的语法</p>
-<p>然后吃完饭</p>
-<p>吃完晚饭5点半的样子，开始分析阅读</p>
-<p>2个小时2篇的样子，应该是要的</p>
-<p>8点开始写作文，写完回寝室</p>
-<p>继续看570单词</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2014/03/12/2014-03-12/">做什么？</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2014-03-12</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>某些时候，我会不知道我是不是还正常，或者说有的时候，表现的简直就是废物，真正的废物。<br>我不知道自己在什么，我不知道该如何和别人说这件事情。浪费自己的时间。<br>过年前，1月12号考完第二次托福，想着说，那次不怎么好，下次努力，回家好好复习，结果，年前没看。过完年，从海南回来，还是没怎么看，然后，说去硖石一个人好好复习。但是在那边你干了什么呢？红色警戒？然后回到了学校，天天都是睡到9点多，然后11点多起床，磨蹭到下午慢慢看书，想着反正三月1好那次考试感觉还不错。<br><em><strong>“就差那么一点了~~”</strong></em><br>就差那么一点了。。。。今天成绩出来了，78(21,29,19,18)。<br>准备4月中再考最后一次，最后一次。<br>“就差”&#x3D;“没有”<br>“就差一点点就成功了”&#x3D;“失败”<br>不要用这种词汇给自己心理安慰。<br> 没有多余的机会了。<br>时间安排<br>8点-10点，单词，四级词汇<br>10点半-11点半，一篇写作，<br>12点半-3点半，阅读，3篇。精读，词汇整理。<br>3点半-6点，口语。<br>7点-8点，写作，改一下，发给老师<a href="mailto:&#x34;&#54;&#x36;&#x33;&#x32;&#50;&#56;&#x33;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;">&#x34;&#54;&#x36;&#x33;&#x32;&#50;&#56;&#x33;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;</a>。<br>8点-10点，分类词汇。<br>10点-11点，kindle
- </p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2013/11/27/2012-11-11/">无语</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2013-11-27</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/" rel="tag">随想录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p>下午是2012-2013年度表彰大会的彩排，现在是正式的。<br>在台下看着的时候还是非常难过的，明明应该可以拿到的，但是却就这么眼睁睁的坐在台下看着。就这么在台下看着。</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-
-	<span class="different-posts">📖 <a href="/page/3">more posts</a> 📖</span>
-
-
-
-	</main>
-
-	<footer class="footer">
-	<div class="footer-content">
-		
-	      <div class="footer__element">
-	<p>我，<br />自钱塘江边,<br />这里是我观察和思考的窗口,<br />愿我成为一个不平凡的人。<br />以上！</p>
-</div>
-
-	    
-	      <div class="footer__element">
-	<h5>Check out</h5>
-	<ul class="footer-links">
-		<li class="footer-links__link"><a href="/about">About</a></li>
-		<li class="footer-links__link"><a href="/archives">Archive</a></li>
-		<li class="footer-links__link"><a href="/tags">Tags</a></li>
-		<li class="footer-links__link"><a href="/categories">Categories</a></li>
-		
-		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
-	    
-
-	</ul>
-</div>
-
-	    
-
-		<div class="footer-credit">
-			<span>© 2024 Haijia Alex Zhu | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
-		</div>
-
-	</div>
-
-
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="home-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">花开彼岸天</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <!-- // .col-md-12 -->
+        </div>
+        <div class="herofade beige-dk"></div>
+    </div>
+</section>
+
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
+
+<!-- ============================ END Hero Image =========================== -->
+<!-- ============================ Content =========================== -->
+
+<section id="intro">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2020/04/29/2020-04-29-四月天/">四月天</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-04-29T18:51:26.000Z" itemprop="datePublished">
+          2020-04-29
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        四月再见。
+五月你好。
+答辩论文交掉了。基本上告一段落。
+先说说答辩的情况把。还是年少轻狂，小看了老师，也高估了自己。总的来说答辩的时候不是特别好，很多时候没有抓到committee的重点，一些自己觉得很简单的事情，对于他们而言不是那么的直接，论文里面也没有直接的解释。
+没答好的几个问题：
+
+BSFC一系列。
+回答的时候没有理解他们没有看懂这个图。
+
+BSFC为什么不用数学模型。
+但是大脑当机了
+
+全局最优解能否确保这个是全局最优解吗
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2020/04/29/2020-04-29-四月天/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2020/04/19/2020-04-19-四月随想/">四月随想</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-04-19T19:16:59.000Z" itemprop="datePublished">
+          2020-04-19
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        建立了页面但是没有写。。。
+唉
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2020/04/19/2020-04-19-四月随想/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2020/01/03/2020-01-03-少年成为他想要模样，就是岁月最好奖赏/">少年成为他想要模样，就是岁月最好奖赏</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-01-03T23:13:13.000Z" itemprop="datePublished">
+          2020-01-03
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        少年成为他想要模样，就是岁月最好奖赏
+你好2020
+看了一下去年&#x2F;前年&#x2F;大大前年的年度展望，没有什么营养，也没有什么作用。
+做事情还是懒懒散散的。
+之前看见一句话叫做：人做事有三重境界：谋定而后动或后不动，边动边谋，光谋不动。
+对于我而言，绝大部分都处在光谋不动。
+有的是畏惧；有的是懒，好高骛远。
+
+之前没有写完，继续写，晚上打了很久的游戏，今天也是，只是今天的到学校的时候就已经决定了今天要任性的玩最后的几把。然后就
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2020/01/03/2020-01-03-少年成为他想要模样，就是岁月最好奖赏/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/11/12/2019-10-30-效率2/">效率-2</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-11-12T00:58:11.000Z" itemprop="datePublished">
+          2019-11-11
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        效率最近有一段时间的效率还比较可以，但是很严重的问题就是不能持久。有三个原因：
+
+Starcraft 2 打的有点多, 这个月已经打了 21h 14m 了。
+虽然知乎什么上的少了，但是实际上总时间还是挺多的 4h。
+拖延症。解决方法其实很简单。首先，删星际。虽然我觉得我可能很快又会把这个装回来，但是现在先删。ManicTime装一下吧，这个软件比Rescue Time复杂，但是稍微研究一下应该是ok的。至于拖延症，其实没有什么好方法，本
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/11/12/2019-10-30-效率2/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/10/17/2019-10-16-效率/">效率</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-10-17T01:56:00.000Z" itemprop="datePublished">
+          2019-10-16
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        这两天论文有在改，只是效率很低。手头上的工作整理一下：
+
+论文revision。
+模型修bug。
+测试修改完的模型。
+模型重新跑一下，出一下数据。
+DP调试，动态规划那个一直没有测试。我感觉我都要忘记当时是怎么写代码的了。
+全局优化的作业。。。。还有两个一个月就due了。。。。但是一个都没有写。。。
+
+其实有很多事情的。所以其实没有时间闲逛知乎之类的。但是实际上每天还是有大量时间用于闲逛，比如逛知乎虎嗅ifanr之类的。心理学上说人面对
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/10/17/2019-10-16-效率/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/10/04/2019-10-03-向前走，不要停/">向前走，不要停</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-10-04T01:56:00.000Z" itemprop="datePublished">
+          2019-10-03
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        其实在取题目的时候有点犹豫，应该取名为送父亲母亲还是取一个和俞jy有关的标题。想了一会儿，还是决定写一些她吧。刚刚发了一个朋友圈:向前走，不要停。是啊，人总是要向前走，不能停下来，我已经原地踏步了很久，久到我自己都没有意识到已经这么久了。今天送父母走。他们明天早上的飞机，只是我明天下午需要给学生带实验课，不得以，只得今天提前回去。好在酒店有免费的大巴车到机场，而且YVR机场中国人很多，机场内中文标识也很多。可以稍微放心。这次他们待了两周
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/10/04/2019-10-03-向前走，不要停/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/09/03/2019-08-20-秋高气爽/">秋高气爽</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-09-03T04:42:00.000Z" itemprop="datePublished">
+          2019-09-02
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        新生入学了
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/09/03/2019-08-20-秋高气爽/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/08/21/2019-08-20-择偶标准/">择偶标准</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-08-21T04:18:00.000Z" itemprop="datePublished">
+          2019-08-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        前两天看到有一个知乎的问题叫做“在加拿大的你，择偶标准是怎样的？”。这是一个很有意思的问题。稍微思考了一下，其实很简单，能共患难，能同富贵。具体而言，其实很复杂。
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/08/21/2019-08-20-择偶标准/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/06/10/2019-06-10-强关系弱关系，以及七年/">强关系弱关系，以及七年</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-06-10T23:41:00.000Z" itemprop="datePublished">
+          2019-06-10
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        昨天很生气，我现在也还是很生气。但是也麻木了，做人做到这份上没什么意思。
+今天看了一个视频，是我一直很喜欢的一个UP主，Ivy，一个北大出来的女孩子。 她对很多事情都有不错的见解，也很乐于分享自己的经验。她的视频里你可以看到她的迷茫，她的困惑以及她的求索之道。换成人话就是：她在视频里展示出了一个普通的挣扎与进步而不是一个各方面吊打你的学霸。。。。。。她最近的一个视频里讲了和朋友的关系，并且指出重点。
+的确，很多时候人与人之间的社交都是无
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/06/10/2019-06-10-强关系弱关系，以及七年/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/05/24/2019-05-24-复盘与健身/">复盘与健身</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-05-24T22:57:37.000Z" itemprop="datePublished">
+          2019-05-24
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        复盘的意义说起来好久没有写博客了。上个月10号准备写的时候，不知道为什么写了一句话就没有写下去了，好像是因为办公室有人，还是说每次想写的时候都是晚上准备回家的时候。。。
+最近怎么说呢，反正有种这个月也写不完thesis了啊。
+先说点好消息吧，现在慢慢的，有的时候能把自己按下来写东西了。虽然说效率还是很低，但是至少说开始写起来了。差不多这周写了2000字吧， 上周基本上没有怎么写。上上周貌似有写一点。哎
+总的来说效率还是太低，但是至少开始
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/05/24/2019-05-24-复盘与健身/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/04/11/2019-04-10-四月半/">四月半</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-04-11T00:05:37.000Z" itemprop="datePublished">
+          2019-04-10
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        四月过了一半了。
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/04/11/2019-04-10-四月半/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/03/12/2019-03-11-疯魔/">疯魔</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-03-12T00:05:37.000Z" itemprop="datePublished">
+          2019-03-11
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        最近几天有点疯魔了。一天到晚看那个咖啡机。整个人都有点不在状态，论文也不写了。正经事也不干，就是一天到晚逛知乎，刷论坛看咖啡机。也有点无语，只是有点咽不下这口气。所以准备几天先找那个人看下机器还在嘛，如果在的话就直接拿下，过两天去取。只是有点怀疑已经没了。但是先问下呗。如果没有了，那么准备这周直接买一个Gaggia Claaic。等彪哥回来了，找个时间动手加一个PID。其他的，也没有什么好说的。很多事情需要自己明白，这些问题都只有自己能
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/03/12/2019-03-11-疯魔/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/03/01/2019-03-01-三月随想/">三月随想</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-03-01T20:21:30.000Z" itemprop="datePublished">
+          2019-03-01
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        突然想起来之前的没写完，想了想还是算了，就那样吧。
+今天是三月的第一天，论文没有写完。
+昨天的时候，YJy和我说了它最近谈了一个对象，其实当时还是蛮不好说的。有一种遗憾吧，但是貌似也很快就转换好了心态，祝福她吧。
+这两天稍微开始写一点东西，另外仿真也在跑着。
+先说说论文吧，现在在补充之前写的东西。主要是数据采集那边的完成度很低。然后EMS那一章也需要补充挺多东西的。模型的那一章，主要是电池那边缺挺多东西的，还需要补充一下。
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/03/01/2019-03-01-三月随想/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/02/21/2019-02-21-二月随想/">二月随想</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-02-21T22:21:30.000Z" itemprop="datePublished">
+          2019-02-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        二月也过了三分之二
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/02/21/2019-02-21-二月随想/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/02/09/2019-02-09-生日快乐/">2019生日快乐</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-02-09T01:23:10.000Z" itemprop="datePublished">
+          2019-02-08
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        生日快乐先祝我自己生日快乐and新年快乐。
+这个文档其实是好几天前建立的，但是一直都没有写，生日也过了好几天了。主要是觉得没什么好写的。
+这一年，怎么说呢，其实是一言难尽啊。
+算起来，我已经28周岁，30虚岁了。
+孔子曾经说过：吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲不逾矩。
+说的就是人到了三十岁，人生观世界观价值观已经“立”，不动摇。或者放到现在的社会要求，人到30，应当能够独立于世，就现阶段来
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/02/09/2019-02-09-生日快乐/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2019/01/03/2019-01-02-2019新年展望/">2019新年展望</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2019-01-03T03:42:00.000Z" itemprop="datePublished">
+          2019-01-02
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        年度展望2019年到了， 希望我能成为一个不一样的人。
+
+多给爸妈打电话
+每天喝够8杯水
+学会管理情绪
+做回真正的自己
+练一手好看的字
+Get 游泳技能
+每天做一件让自己开心的事
+多吃水果和蔬菜
+做一个自律的人
+睡前不玩手机
+绝对不熬夜了
+早起早睡
+周末不宅在家
+每周去3次健身房
+看极光
+愿世界和平！
+
+论文Thesis 还没有写完，12月其实也没有写多少。这个不应该这样子。接下来要认真写。
+那么接下来是一月份的月度计划
+减肥，每天饮食
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2019/01/03/2019-01-02-2019新年展望/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/11/19/2018-11-19-周一总结与开始/">周一总结与开始</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-11-19T22:33:26.000Z" itemprop="datePublished">
+          2018-11-19
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        又一个周一了。。。。。
+好吧，已经落后于进度了。按照原来的计划， 我是要在昨天完成这一章的，但是实际的情况是，周末浪，上周五浪，上周四浪。。。。shit没什么好说的，要认真啊少年。 争取两天内写完，毕竟这些内容不需要什么实验数据之类的，就是写写写。！！！
+有的人让人心寒啊
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/11/19/2018-11-19-周一总结与开始/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/11/02/2018-11-01-十二月展望/">十二月展望</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-11-02T00:17:14.000Z" itemprop="datePublished">
+          2018-11-01
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        论文论文第二张争取这周写完。基本上大框架好了，但是还有细节的地方要补充和修改。写论文最主要的问题是语言，以及懒。拖延症真的有毒啊，拖着拖着好像就轻松了，但是，实际上并没有，焦虑只会越积累越多，摸摸头。。。所以啊，要认真去做，在正确的时间做正确的事情。不要一天到晚看视频，zhihu什么的以后一到办公室就应该直接SR掉的。番茄时间用起来。
+思考其实很久没有认真坐下来看看书了，这次找到一本可能会让我很难受的书，Emotional Blackm
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/11/02/2018-11-01-十二月展望/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/10/23/2018-10-23-快要11月了/">快要十一月了</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-10-23T22:48:07.000Z" itemprop="datePublished">
+          2018-10-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        其实呢，这个文章标题是一周前创建的，最初创建的时间还要早，在国庆前后，在回来的路上（一路睡回来的。。。）建立的，但是一个字都没写。。。。
+现在已经是十月底了， 论文的进度还是非常的感人。 主要原因还是自己，没有一点自控能力，不愿意写， 懒得写，总是在应该写东西的时候，逛知乎，看视频，逛淘宝、amazon、ebay之类的。不过，昨天的组会上牛逼已经吹出去了~这周写完第二章，然后下周搞定第三章的一半。
+继续写吧。现在是十一月一号…昨天没有写
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/10/23/2018-10-23-快要11月了/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/09/10/2018-09-09-new-term/">new term</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-09-10T00:52:59.000Z" itemprop="datePublished">
+          2018-09-09
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        2018年 winter term 的第一周结束了。我还是没有改变啊。
+先说一下这周的总结吧： 看视频逛知乎看小说，正经事没做多少。
+前两天还和一个小朋友讲了一堆大道理，但是放到自己身上的时候，却又显示出自己就像是无法改变的，但是这不应该是我啊!
+不管如何，首先要做好自己的每日总结，回顾每天的行程，安排第二天的计划。同时，每周progress report也要重新搞起来。
+
+调整作息习惯，正常时间睡觉，正常时间起床.
+保持桌面整洁，每天
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/09/10/2018-09-09-new-term/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/09/06/2018-09-05-比较尴尬了的/">比较尴尬了的</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-09-06T00:30:12.000Z" itemprop="datePublished">
+          2018-09-05
+      </time>
+    
+    
+    | 
+    <a href='/tags/计划/'>计划</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        这两天感冒了。
+先说说上个月吧。
+完全就是渣渣，什么都没有改变，还是那副鸟样。
+这个月不能这样子了。要开始好好弄，论文要写起来，thesis也是。
+接下来这个月的计划：
+
+调整作息习惯，正常时间睡觉，正常时间起床
+整理桌子
+每天看论文，写一些thesis的内容
+认真思考如何写论文
+坚持锻炼
+删了那些没用的手机游戏软件
+
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/09/06/2018-09-05-比较尴尬了的/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/08/12/2018-08-12-现在的我/">现在的我</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-08-12T23:48:27.000Z" itemprop="datePublished">
+          2018-08-12
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        现在是8月了。 其实这个还是蛮让人失望的， 我现在的状态就是自己很混乱。 
+我是一个自觉性很差的人，自控能力很差。容易受到周围的东西的影响。有的时候也很没有时间观念。我也曾经花了很多时间来改善我自己的问题。只是，在这两年，慢慢的我失去了这个能力，自我反思的能力，慢慢的失去了自我改正的能力。有的时候也不愿意思考。我也明白我的执行力是不够的，有的时候想着，但是去不愿意去动手。
+接下来几天的计划：
+
+改完报告。周一搞定全部的内容。然后发给老董
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/08/12/2018-08-12-现在的我/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/08/10/2018-08-10-这是标题/">这是标题~~~</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-08-10T23:16:27.000Z" itemprop="datePublished">
+          2018-08-10
+      </time>
+    
+    
+    | 
+    <a href='/tags/絮絮叨叨/'>絮絮叨叨</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        终于搞定了Hexo，但是还是没有明白为什么之前的都是有问题的。只要设置一下root地址，如果带XXX.XXX的貌似都不能正常工作，应该是生成页面的时候css没有正确链接。但是不管了，随便换一个名字，就可以了。说起来找个问题找了超级就，网上的教程都是错的。我也不知道这群人是怎么配置成功的，不过换个方向考虑，这也说明了Hexo的不流行。。。总之，现在可以在撸github羊毛了。wordpress 备份真是硬伤，但是这个东西其实也有好的地方，
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/08/10/2018-08-10-这是标题/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2014/10/20/2014-10-20/">你当年是怎么错过爱情的？</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2014-10-20T07:00:01.000Z" itemprop="datePublished">
+          2014-10-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/无处安放/'>无处安放</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        你当年是怎么错过爱情的？我不知道这是不是爱情。
+
+和她是高中同学。大学在一个学校。初中是一个学校的，但是她认识我，我不认识她，不要误会，当年我是体育课代表，出操的时候站在最前面，而我们班级又是离操场最近的，所以她每次都能看见我，加上我比较黑。。。。
+
+我这个人呢，比较懒散，懒得交际。像一般的人，高三毕业，肯定都在相互打听自己和哪些同学是在同一个城市，同一个学校的，有的老早就加了新生群。但是，我比较孤僻吧，我是到了进了学校，第二天，在寝室
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2014/10/20/2014-10-20/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2014/07/16/2014-04-15/">总结吧</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2014-07-16T07:00:01.000Z" itemprop="datePublished">
+          2014-07-16
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        其实，之前就准备写一个回顾和总结了。懒懒散散的，一直都没有写而已。
+或者说，其实，考完最后一次托福以后，就一直很松懈，早上懒懒散散，晚上到很晚才睡觉。早上起来以后，又是磨磨蹭蹭，看个小说，看个视屏，逛一下知乎什么的。而曾经的计划，都已抛之脑后。厂里面的事情，也懒得管。整个人都是变得很懒散。
+感觉整个人的主旋律就是懒散。
+在毕业前，有计划，练字，编程，STM32，背单词。后来，又计划早起。只是，我都已经不知道有多久没有上四点网了。呵呵呵。
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2014/07/16/2014-04-15/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2014/04/25/2014-03-25/">时间去哪儿</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2014-04-25T07:00:01.000Z" itemprop="datePublished">
+          2014-04-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        今天，7点半就醒了，然后磨磨蹭蹭的到了9点出门，吃过早饭，上个网，溜达一下，吃个零食，oh，该吃午饭了，磨磨蹭蹭去吃个午饭，饭后逛逛聊个天，然后老师那边去溜达一下，交个东西，发现手机忘记拿，落在了教室，然后去拿，然后看会儿小说，逛个论坛。看看时间，饭点到了诶，吃完饭操你妈。7点起床，7点半出门，省的被某人吹头发吵得心情很差。吃早饭的时候，计划下一天的安排。大致如下：7点5011点，背单词，30分钟为一个周期。拓词两个小时，朗读写作词汇一
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2014/04/25/2014-03-25/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2014/04/25/2014-04-08/">【转】二十岁时候的你在想些什么？</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2014-04-25T07:00:01.000Z" itemprop="datePublished">
+          2014-04-25
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        【转】二十岁时候的你在想些什么？by 羊小雪，不如我們同歸於盡。
+生命的前十八年里，我什么都想要，什么都输不起。我一边身在强化班，一边鄙视那些认真做题的好学生；不交作业跟老师吵架，一边考得太好让他无可奈何；拿奖学金刚升完旗，就躲在小卖部后面抽了第一根烟；我男生缘不错，却很少被女生背后碎嘴；我认识考试接近满分的学霸，也认识所谓混出了道儿的小痞子；毕业了几年的学长都知道我，同时也听说有学妹在桌子上写我名字当作人生楷模。那时我知道得要搞定一件
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2014/04/25/2014-04-08/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2014/04/13/2014-04-13/">我是个傻逼</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2014-04-13T07:00:01.000Z" itemprop="datePublished">
+          2014-04-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        我是个傻逼。
+是个傻逼
+个傻逼
+傻逼
+傻逼啊
+
+时间观念啊时间观念
+7点起床。不赖床，咖啡+早餐，7点35到图书馆
+背单词到10点，然后开始看读口语1个小时+阅读1个小时，估计2篇吧
+然后吃午饭
+1点开始继续看阅读，大概3点可以看完
+然后写作文1篇，一个半小时
+写作文前先花半个小时看定语从句的语法
+然后吃完饭
+吃完晚饭5点半的样子，开始分析阅读
+2个小时2篇的样子，应该是要的
+8点开始写作文，写完回寝室
+继续看570单词
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2014/04/13/2014-04-13/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2014/03/12/2014-03-12/">做什么？</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2014-03-12T07:00:01.000Z" itemprop="datePublished">
+          2014-03-12
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        某些时候，我会不知道我是不是还正常，或者说有的时候，表现的简直就是废物，真正的废物。我不知道自己在什么，我不知道该如何和别人说这件事情。浪费自己的时间。过年前，1月12号考完第二次托福，想着说，那次不怎么好，下次努力，回家好好复习，结果，年前没看。过完年，从海南回来，还是没怎么看，然后，说去硖石一个人好好复习。但是在那边你干了什么呢？红色警戒？然后回到了学校，天天都是睡到9点多，然后11点多起床，磨蹭到下午慢慢看书，想着反正三月1好那次
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2014/03/12/2014-03-12/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2013/11/27/2012-11-11/">无语</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2013-11-27T08:00:01.000Z" itemprop="datePublished">
+          2013-11-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/随想录/'>随想录</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        下午是2012-2013年度表彰大会的彩排，现在是正式的。在台下看着的时候还是非常难过的，明明应该可以拿到的，但是却就这么眼睁睁的坐在台下看着。就这么在台下看着。
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2013/11/27/2012-11-11/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <nav class="pagination" role="pagination">
+          <a class="pull-left" href="/">← Newer Posts</a>
+          <a class="pull-right" href="/page/3/">Older Posts →</a>
+        </nav>
+    </div>
+</section>
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
+<!-- ============================ END Content =========================== -->
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Haijia Alex Zhu. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
 </footer>
 
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
 
 
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
 </body>
-
 </html>
