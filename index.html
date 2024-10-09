@@ -43,6 +43,64 @@
 
 	<article>
 	
+		<h1><a href="/2024/10/09/2024-10-08-PVE中扩展lvm-thin逻辑卷和相应的存储空间/">PVE中扩展lvm-thin逻辑卷和相应的存储空间</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2024-10-09</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-none-link" href="/tags/Homebuild/" rel="tag">Homebuild</a> <a class="article__tag-none-link" href="/tags/tech-%E6%94%B6%E5%BD%95/" rel="tag">tech/收录</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>如果你当前有一个lvm-thin的逻辑卷，且Volume Group为nas，你可以按照以下步骤扩展这个lvm-thin逻辑卷的大小：<br>假设情况：</p>
+<ul>
+<li>你的Volume Group叫做nas。</li>
+<li>你已经有新的磁盘或未分配的空间，可以用于扩展。</li>
+</ul>
+<p>步骤：</p>
+<ol>
+<li>查看当前的VG状态：</li>
+</ol>
+<p>首先，查看nas卷组的状态，了解当前的可用空间和卷组信息。</p>
+<p><code>vgs</code></p>
+<p>这将显示所有卷组的信息，重点是nas卷组的Free字段，表示还可以使用的空间。<br>2. 确认逻辑卷类型为lvm-thin：</p>
+<p>使用以下命令查看逻辑卷的信息，确保你要操作的卷是lvm-thin类型：</p>
+<p><code>lvdisplay nas</code></p>
+<h3 id="扩展Physical-Volume（如果有新磁盘要添加）："><a href="#扩展Physical-Volume（如果有新磁盘要添加）：" class="headerlink" title="扩展Physical Volume（如果有新磁盘要添加）："></a>扩展Physical Volume（如果有新磁盘要添加）：</h3><p>如果有新的物理磁盘可以添加到卷组中，你可以首先创建一个物理卷（PV），然后将其添加到卷组nas中。<br>&#96;&#96;</p>
+<h1 id="创建物理卷："><a href="#创建物理卷：" class="headerlink" title="创建物理卷："></a>创建物理卷：</h1><p>pvcreate &#x2F;dev&#x2F;sdx  # 替换为你的磁盘路径</p>
+<h1 id="将物理卷扩展到卷组nas："><a href="#将物理卷扩展到卷组nas：" class="headerlink" title="将物理卷扩展到卷组nas："></a>将物理卷扩展到卷组nas：</h1><p>vgextend nas &#x2F;dev&#x2F;sdx<br>&#96;&#96;</p>
+<h3 id="扩展lvm-thin的存储池："><a href="#扩展lvm-thin的存储池：" class="headerlink" title="扩展lvm-thin的存储池："></a>扩展lvm-thin的存储池：</h3><p>扩展lvm-thin类型的逻辑卷与普通逻辑卷略有不同。lvm-thin的逻辑卷实际上包含两个部分，一个是thin pool（存储池），另一个是具体的逻辑卷。你需要先扩展thin pool，然后再扩展其上的逻辑卷。</p>
+<ol>
+<li>先扩展thin pool：</li>
+</ol>
+<p>查看当前thin pool的信息：<br><code>lvs --segments -o+seg_monitor</code><br>假设你的thin pool名为nas-thinpool，你可以通过以下命令扩展它（假设扩展100G）：</p>
+<p><code>lvextend -L +100G nas/nas-thinpool</code></p>
+<ol start="2">
+<li>扩展thin volume：</li>
+</ol>
+<p>如果你有在thin pool之上的逻辑卷（如nas-vmdata），可以通过以下命令扩展它：</p>
+<pre><code>lvextend -L +50G nas/nas-vmdata
+</code></pre>
+<h3 id="检查扩展："><a href="#检查扩展：" class="headerlink" title="检查扩展："></a>检查扩展：</h3><p>&#96;&#96;<br>lvdisplay nas # 检查扩展是否成功</p>
+<p>df -h # 检查文件系统的使用情况<br>&#96;&#96;</p>
+
+	
+
+	
+
+</article>
+
+
+
+
+	<article>
+	
 		<h1><a href="/2024/04/12/2024-04-12-Server-Rebuild/">Server Rebuild</a></h1>
 	
 	<div class="article__infos">
@@ -65,18 +123,17 @@
 </ul>
 </li>
 <li>New Machine<ul>
-<li>再整理一下，准备启用dockage和runtipi。</li>
+<li>再整理一下，准备启用dockage<del>和runtipi</del>。</li>
 </ul>
 </li>
 <li>P50S<ul>
-<li>作为NVR设备，<a target="_blank" rel="noopener" href="https://github.com/blakeblackshear/frigate">frigate</a> ，硬盘用机械硬盘。</li>
-<li>HomeAssistatn</li>
+<li>下线</li>
 </ul>
 </li>
 </ul>
 <h2 id="Self-host-AIO"><a href="#Self-host-AIO" class="headerlink" title="Self-host (AIO)"></a>Self-host (AIO)</h2><ul>
-<li><h2 id="群晖-Jellyfin-AutoBann-刮削etc。。。-database-联系人-Office-Drive-Moment"><a href="#群晖-Jellyfin-AutoBann-刮削etc。。。-database-联系人-Office-Drive-Moment" class="headerlink" title="群晖  - Jellyfin      - AutoBann, 刮削etc。。。  - database  - 联系人  - Office  - Drive  - Moment"></a>群晖<br>  - <a target="_blank" rel="noopener" href="https://hub.docker.com/r/jellyfin/jellyfin">Jellyfin</a><br>      - AutoBann, 刮削etc。。。<br>  - database<br>  - 联系人<br>  - Office<br>  - Drive<br>  - Moment</h2></li>
-<li>docker &#x2F; runtipi<ul>
+<li><h2 id="群晖-Jellyfin-AutoBann-刮削etc。。。-联系人-Office-Drive-Moment"><a href="#群晖-Jellyfin-AutoBann-刮削etc。。。-联系人-Office-Drive-Moment" class="headerlink" title="群晖  - Jellyfin      - AutoBann, 刮削etc。。。  - 联系人  - Office  - Drive  - Moment"></a>群晖<br>  - <a target="_blank" rel="noopener" href="https://hub.docker.com/r/jellyfin/jellyfin">Jellyfin</a><br>      - AutoBann, 刮削etc。。。<br>  - 联系人<br>  - Office<br>  - Drive<br>  - Moment</h2></li>
+<li>docker<ul>
 <li>RssHub &#x2F; FreshRS</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/KUNzfw/KindleEar-Docker">KindleEar-Docker</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/slurdge/goeland">goeland</a></li>
@@ -85,19 +142,13 @@
 <li><a target="_blank" rel="noopener" href="http://wind4.github.io/vlmcsd/">vlmcsd</a></li>
 </ul>
 </li>
-<li>Aliyun-webdav</li>
+<li>Aliyun-webdav &#x2F; Alist</li>
 <li>momes</li>
-<li>copilot-gpt4-service</li>
 <li><a target="_blank" rel="noopener" href="https://invoiceninja.github.io/en/self-host-installation/">Invoice Ninja</a></li>
-<li><a target="_blank" rel="noopener" href="https://n8n.io/">n8n</a></li>
 <li><a target="_blank" rel="noopener" href="https://erpnext.com/">ERPNext</a></li>
 <li>SpeedTest</li>
-<li>Pdf software</li>
 <li>WireGuard Easy</li>
 <li>Actual-budget &#x2F; Ghostfolio &#x2F;  Beancount</li>
-<li>Lucky666</li>
-<li>uptime kuma</li>
-<li>flatnote</li>
 </ul>
 </li>
 <li><a target="_blank" rel="noopener" href="https://github.com/jonaswinkler/paperless-ng">paperless-ng</a></li>
@@ -136,12 +187,12 @@
 <ol>
 <li>创建虚拟机。选择intel E1000 网卡。</li>
 <li>添加启动盘，<a target="_blank" rel="noopener" href="https://github.com/AuxXxilium/arc">Arc loader</a>，下载下来的是img，无法直接添加到VM中，使用 qm importdisk 命令添加<br><code>qm importdisk 101 /var/lib/vz/template/iso/arc.img local-lvm</code></li>
-<li>添加硬盘。由于有一个比较大的18T的硬盘，所以直接passthrough，这样子性能比较好。另外两个硬盘直接作为ssd缓存 #TODO</li>
+<li>添加硬盘。由于有一个比较大的18T的硬盘，所以直接passthrough，这样子性能比较好。另外两个硬盘直接作为ssd缓存</li>
 </ol>
 <h2 id="硬盘直通："><a href="#硬盘直通：" class="headerlink" title="硬盘直通："></a>硬盘直通：</h2><p>裸磁盘映射，将单个硬盘或者分区，通过qemu进行映射到虚拟机。通过这种方式，硬盘会在虚拟机内会认为是一个qemu-hdd。</p>
-<h2 id="SATA控制器直通"><a href="#SATA控制器直通" class="headerlink" title="SATA控制器直通"></a>SATA控制器直通</h2><p>VM系统直通SATA Controller(SATA 控制器)，会把整个SATA总线全部直通过去，就是直接将sata总线直通，那么有些主板sata接口就会全部被直通。性能等于裸机， 需要IOMMU.</p>
-<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>迁移最方便的还是用hypber backup，在新主机上安装hypber backup vault， 然后在source上启动备份。#WIP<br>备份完成后，在新主机上释放备份就可以。</p>
-<h2 id="Passthrough-iGPU"><a href="#Passthrough-iGPU" class="headerlink" title="Passthrough iGPU"></a>Passthrough iGPU</h2><p>直通iGPU的原因是考虑到Jellfin和Moment的需求。 虽然貌似也可以用CPU，但是iGPU更加方便，特别是Jellfin那边。 #TODO</p>
+<h2 id="SATA控制器直通"><a href="#SATA控制器直通" class="headerlink" title="SATA控制器直通"></a>SATA控制器直通</h2><p><del>VM系统直通SATA Controller(SATA 控制器)，会把整个SATA总线全部直通过去，就是直接将sata总线直通，那么有些主板sata接口就会全部被直通。性能等于裸机， 需要IOMMU.</del><br>PVE管理数据备份之类的</p>
+<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>迁移最方便的还是用hypber backup，在新主机上安装hypber backup vault， 然后在source上启动备份。<br>备份完成后，在新主机上释放备份就可以。</p>
+<h2 id="Passthrough-iGPU"><a href="#Passthrough-iGPU" class="headerlink" title="Passthrough iGPU"></a>Passthrough iGPU</h2><p>~~直通iGPU的原因是考虑到Jellfin和Moment的需求。 虽然貌似也可以用CPU，但是iGPU更加方便，特别是Jellfin那边。 ~~ </p>
 <h2 id="其他各种hack"><a href="#其他各种hack" class="headerlink" title="其他各种hack"></a>其他各种hack</h2><p>其他的就是添加各种支持，hack。<br><a target="_blank" rel="noopener" href="https://xpenology.com/forum/topic/65643-ame-30-patcher/">Advanced Media Extensions 3.0</a></p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)">https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)</a><br><a target="_blank" rel="noopener" href="https://pve.proxmox.com/wiki/Performance_Tweaks#Disk_Cache">https://pve.proxmox.com/wiki/Performance_Tweaks#Disk_Cache</a><br><a target="_blank" rel="noopener" href="https://optimus-xs.github.io/posts/passthrough-hard-drive-in-proxmox-ve/">https://optimus-xs.github.io/posts/passthrough-hard-drive-in-proxmox-ve/</a></p>
 
@@ -225,16 +276,13 @@
 
 	
 		<ol>
-<li>设置群晖反向代理.</li>
-<li>设置路由器端口转发</li>
-<li>配置证书</li>
-<li>Comment</li>
+<li>创建Zoraxy LXC</li>
+<li>设置路由器端口转发 Zoraxy</li>
+<li>Zoraxy中创建代理规则</li>
 </ol>
-<h2 id="设置群晖反向代理"><a href="#设置群晖反向代理" class="headerlink" title="设置群晖反向代理"></a>设置群晖反向代理</h2><p>设置 → 登陆门户 → 高级 → 反向代理服务器</p>
-<p>记得用SSL</p>
-<h2 id="OpenWRT端口转发"><a href="#OpenWRT端口转发" class="headerlink" title="OpenWRT端口转发"></a>OpenWRT端口转发</h2><p>理论上不需要做端口转发了. 直接指向端口转发服务器就可以啊.<br>所以我选择暴露443端口, 80 的全部都block掉.</p>
-<h2 id="配置证书"><a href="#配置证书" class="headerlink" title="配置证书"></a>配置证书</h2><p>ACME很好用. 这边使用的是群晖自带的 Let’s Encrypt. 需要注意的是记得把所有的二级域名都要加进去.…<br>Let’s Encrypt 不能自动包含二级域名,只能手动加.</p>
-<h2 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h2><p>群晖自带的反向代理工具其实基本上够用了.唯一存在的问题就是会经常唤醒<br>有一个项目叫做lucky，感觉挺好的，需要再评估一下。</p>
+<h2 id="创建Zoraxy-LXC"><a href="#创建Zoraxy-LXC" class="headerlink" title="创建Zoraxy LXC"></a>创建Zoraxy LXC</h2><p>PVE真的是个好东西。 <a target="_blank" rel="noopener" href="https://tteck.github.io/Proxmox/#zoraxy-lxc">PVE Scripts Helper</a> 更是好东西。</p>
+<h2 id="OpenWRT端口转发"><a href="#OpenWRT端口转发" class="headerlink" title="OpenWRT端口转发"></a>OpenWRT端口转发</h2><p>理论上不需要做端口转发了. 直接指向端口转发服务器就可以啊.<br>80端口是给ACME申请证书用的。<br>除此之外，群晖的drive需要暴露一个端口给pc端用。 Wireguard 暴露一个端口。</p>
+<h2 id="Zoraxy中创建代理规则"><a href="#Zoraxy中创建代理规则" class="headerlink" title="Zoraxy中创建代理规则"></a>Zoraxy中创建代理规则</h2><p>配置代理规则，自动申请证书</p>
 
 	
 
@@ -1383,44 +1431,6 @@
 <p>君不见黄河之水天上来，奔流到海不复还。<br>君不见高堂明镜悲白发，朝如青丝暮成雪。</p>
 <p>时光流逝一去不复返。</p>
 <p>一直对 ‘李白’ 的将进酒有一种莫名的感觉</p>
-
-	
-
-	
-
-</article>
-
-
-
-
-	<article>
-	
-		<h1><a href="/2020/06/18/2020-06-18-PhD-第一个月/">PhD 第一个月</a></h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2020-06-18</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/" rel="tag">絮絮叨叨</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<p><figure class="figure"><img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/img/flower.jpg" alt="Flower"><figcaption class="figure__caption">Flower</figcaption></figure></p>
-<p>最近一段效率很低。稍微总结一下主要是两个原因：</p>
-<ol>
-<li>睡得太晚，上床以后经常玩手机，2AM才睡觉；晌午才起来。</li>
-<li>很多的时间都用在娱乐，比如看视频&#x2F;zhihu</li>
-</ol>
-<p>解决方法：</p>
-<ul>
-<li>晚上睡觉前不带手机上床</li>
-<li>每日review &#x2F; 每周review &#x2F; Bullet journal 重新一下。</li>
-</ul>
 
 	
 

@@ -55,16 +55,13 @@
 
 	
 		<ol>
-<li>设置群晖反向代理.</li>
-<li>设置路由器端口转发</li>
-<li>配置证书</li>
-<li>Comment</li>
+<li>创建Zoraxy LXC</li>
+<li>设置路由器端口转发 Zoraxy</li>
+<li>Zoraxy中创建代理规则</li>
 </ol>
-<h2 id="设置群晖反向代理"><a href="#设置群晖反向代理" class="headerlink" title="设置群晖反向代理"></a>设置群晖反向代理</h2><p>设置 → 登陆门户 → 高级 → 反向代理服务器</p>
-<p>记得用SSL</p>
-<h2 id="OpenWRT端口转发"><a href="#OpenWRT端口转发" class="headerlink" title="OpenWRT端口转发"></a>OpenWRT端口转发</h2><p>理论上不需要做端口转发了. 直接指向端口转发服务器就可以啊.<br>所以我选择暴露443端口, 80 的全部都block掉.</p>
-<h2 id="配置证书"><a href="#配置证书" class="headerlink" title="配置证书"></a>配置证书</h2><p>ACME很好用. 这边使用的是群晖自带的 Let’s Encrypt. 需要注意的是记得把所有的二级域名都要加进去.…<br>Let’s Encrypt 不能自动包含二级域名,只能手动加.</p>
-<h2 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h2><p>群晖自带的反向代理工具其实基本上够用了.唯一存在的问题就是会经常唤醒<br>有一个项目叫做lucky，感觉挺好的，需要再评估一下。</p>
+<h2 id="创建Zoraxy-LXC"><a href="#创建Zoraxy-LXC" class="headerlink" title="创建Zoraxy LXC"></a>创建Zoraxy LXC</h2><p>PVE真的是个好东西。 <a target="_blank" rel="noopener" href="https://tteck.github.io/Proxmox/#zoraxy-lxc">PVE Scripts Helper</a> 更是好东西。</p>
+<h2 id="OpenWRT端口转发"><a href="#OpenWRT端口转发" class="headerlink" title="OpenWRT端口转发"></a>OpenWRT端口转发</h2><p>理论上不需要做端口转发了. 直接指向端口转发服务器就可以啊.<br>80端口是给ACME申请证书用的。<br>除此之外，群晖的drive需要暴露一个端口给pc端用。 Wireguard 暴露一个端口。</p>
+<h2 id="Zoraxy中创建代理规则"><a href="#Zoraxy中创建代理规则" class="headerlink" title="Zoraxy中创建代理规则"></a>Zoraxy中创建代理规则</h2><p>配置代理规则，自动申请证书</p>
 
 	
 

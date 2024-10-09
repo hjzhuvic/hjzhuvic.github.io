@@ -58,12 +58,12 @@
 <ol>
 <li>创建虚拟机。选择intel E1000 网卡。</li>
 <li>添加启动盘，<a target="_blank" rel="noopener" href="https://github.com/AuxXxilium/arc">Arc loader</a>，下载下来的是img，无法直接添加到VM中，使用 qm importdisk 命令添加<br><code>qm importdisk 101 /var/lib/vz/template/iso/arc.img local-lvm</code></li>
-<li>添加硬盘。由于有一个比较大的18T的硬盘，所以直接passthrough，这样子性能比较好。另外两个硬盘直接作为ssd缓存 #TODO</li>
+<li>添加硬盘。由于有一个比较大的18T的硬盘，所以直接passthrough，这样子性能比较好。另外两个硬盘直接作为ssd缓存</li>
 </ol>
 <h2 id="硬盘直通："><a href="#硬盘直通：" class="headerlink" title="硬盘直通："></a>硬盘直通：</h2><p>裸磁盘映射，将单个硬盘或者分区，通过qemu进行映射到虚拟机。通过这种方式，硬盘会在虚拟机内会认为是一个qemu-hdd。</p>
-<h2 id="SATA控制器直通"><a href="#SATA控制器直通" class="headerlink" title="SATA控制器直通"></a>SATA控制器直通</h2><p>VM系统直通SATA Controller(SATA 控制器)，会把整个SATA总线全部直通过去，就是直接将sata总线直通，那么有些主板sata接口就会全部被直通。性能等于裸机， 需要IOMMU.</p>
-<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>迁移最方便的还是用hypber backup，在新主机上安装hypber backup vault， 然后在source上启动备份。#WIP<br>备份完成后，在新主机上释放备份就可以。</p>
-<h2 id="Passthrough-iGPU"><a href="#Passthrough-iGPU" class="headerlink" title="Passthrough iGPU"></a>Passthrough iGPU</h2><p>直通iGPU的原因是考虑到Jellfin和Moment的需求。 虽然貌似也可以用CPU，但是iGPU更加方便，特别是Jellfin那边。 #TODO</p>
+<h2 id="SATA控制器直通"><a href="#SATA控制器直通" class="headerlink" title="SATA控制器直通"></a>SATA控制器直通</h2><p><del>VM系统直通SATA Controller(SATA 控制器)，会把整个SATA总线全部直通过去，就是直接将sata总线直通，那么有些主板sata接口就会全部被直通。性能等于裸机， 需要IOMMU.</del><br>PVE管理数据备份之类的</p>
+<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><p>迁移最方便的还是用hypber backup，在新主机上安装hypber backup vault， 然后在source上启动备份。<br>备份完成后，在新主机上释放备份就可以。</p>
+<h2 id="Passthrough-iGPU"><a href="#Passthrough-iGPU" class="headerlink" title="Passthrough iGPU"></a>Passthrough iGPU</h2><p>~~直通iGPU的原因是考虑到Jellfin和Moment的需求。 虽然貌似也可以用CPU，但是iGPU更加方便，特别是Jellfin那边。 ~~ </p>
 <h2 id="其他各种hack"><a href="#其他各种hack" class="headerlink" title="其他各种hack"></a>其他各种hack</h2><p>其他的就是添加各种支持，hack。<br><a target="_blank" rel="noopener" href="https://xpenology.com/forum/topic/65643-ame-30-patcher/">Advanced Media Extensions 3.0</a></p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)">https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)</a><br><a target="_blank" rel="noopener" href="https://pve.proxmox.com/wiki/Performance_Tweaks#Disk_Cache">https://pve.proxmox.com/wiki/Performance_Tweaks#Disk_Cache</a><br><a target="_blank" rel="noopener" href="https://optimus-xs.github.io/posts/passthrough-hard-drive-in-proxmox-ve/">https://optimus-xs.github.io/posts/passthrough-hard-drive-in-proxmox-ve/</a></p>
 
