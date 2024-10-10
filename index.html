@@ -70,25 +70,18 @@
 <p>首先，查看nas卷组的状态，了解当前的可用空间和卷组信息。</p>
 <p><code>vgs</code></p>
 <p>这将显示所有卷组的信息，重点是nas卷组的Free字段，表示还可以使用的空间。<br>2. 确认逻辑卷类型为lvm-thin：</p>
-<p>使用以下命令查看逻辑卷的信息，确保你要操作的卷是lvm-thin类型：</p>
-<p><code>lvdisplay nas</code></p>
-<h3 id="扩展Physical-Volume（如果有新磁盘要添加）："><a href="#扩展Physical-Volume（如果有新磁盘要添加）：" class="headerlink" title="扩展Physical Volume（如果有新磁盘要添加）："></a>扩展Physical Volume（如果有新磁盘要添加）：</h3><p>如果有新的物理磁盘可以添加到卷组中，你可以首先创建一个物理卷（PV），然后将其添加到卷组nas中。<br>&#96;&#96;</p>
-<h1 id="创建物理卷："><a href="#创建物理卷：" class="headerlink" title="创建物理卷："></a>创建物理卷：</h1><p>pvcreate &#x2F;dev&#x2F;sdx  # 替换为你的磁盘路径</p>
-<h1 id="将物理卷扩展到卷组nas："><a href="#将物理卷扩展到卷组nas：" class="headerlink" title="将物理卷扩展到卷组nas："></a>将物理卷扩展到卷组nas：</h1><p>vgextend nas &#x2F;dev&#x2F;sdx<br>&#96;&#96;</p>
-<h3 id="扩展lvm-thin的存储池："><a href="#扩展lvm-thin的存储池：" class="headerlink" title="扩展lvm-thin的存储池："></a>扩展lvm-thin的存储池：</h3><p>扩展lvm-thin类型的逻辑卷与普通逻辑卷略有不同。lvm-thin的逻辑卷实际上包含两个部分，一个是thin pool（存储池），另一个是具体的逻辑卷。你需要先扩展thin pool，然后再扩展其上的逻辑卷。</p>
+<p>使用以下命令查看逻辑卷的信息，确保你要操作的卷是lvm-thin类型：<br><code>lvdisplay nas</code></p>
+<h4 id="扩展Physical-Volume（如果有新磁盘要添加）："><a href="#扩展Physical-Volume（如果有新磁盘要添加）：" class="headerlink" title="扩展Physical Volume（如果有新磁盘要添加）："></a>扩展Physical Volume（如果有新磁盘要添加）：</h4><p>如果有新的物理磁盘可以添加到卷组中，你可以首先创建一个物理卷（PV），然后将其添加到卷组nas中。<br><code>#创建物理卷： pvcreate /dev/sdx  # 替换为你的磁盘路径 #将物理卷扩展到卷组nas： vgextend nas /dev/sdx</code></p>
+<h4 id="扩展lvm-thin的存储池："><a href="#扩展lvm-thin的存储池：" class="headerlink" title="扩展lvm-thin的存储池："></a>扩展lvm-thin的存储池：</h4><p>扩展lvm-thin类型的逻辑卷与普通逻辑卷略有不同。lvm-thin的逻辑卷实际上包含两个部分，一个是thin pool（存储池），另一个是具体的逻辑卷。你需要先扩展thin pool，然后再扩展其上的逻辑卷。</p>
 <ol>
 <li>先扩展thin pool：</li>
 </ol>
-<p>查看当前thin pool的信息：<br><code>lvs --segments -o+seg_monitor</code><br>假设你的thin pool名为nas-thinpool，你可以通过以下命令扩展它（假设扩展100G）：</p>
-<p><code>lvextend -L +100G nas/nas-thinpool</code></p>
+<p>查看当前thin pool的信息：<br><code>lvs --segments -o+seg_monitor</code><br>假设你的thin pool名为nas-thinpool，你可以通过以下命令扩展它（假设扩展100G）：<br><code>lvextend -L +100G nas/nas-thinpool</code></p>
 <ol start="2">
 <li>扩展thin volume：</li>
 </ol>
-<p>如果你有在thin pool之上的逻辑卷（如nas-vmdata），可以通过以下命令扩展它：</p>
-<pre><code>lvextend -L +50G nas/nas-vmdata
-</code></pre>
-<h3 id="检查扩展："><a href="#检查扩展：" class="headerlink" title="检查扩展："></a>检查扩展：</h3><p>&#96;&#96;<br>lvdisplay nas # 检查扩展是否成功</p>
-<p>df -h # 检查文件系统的使用情况<br>&#96;&#96;</p>
+<p>如果你有在thin pool之上的逻辑卷（如nas-vmdata），可以通过以下命令扩展它：<br><code>lvextend -L +50G nas/nas-vmdata</code></p>
+<h4 id="检查扩展："><a href="#检查扩展：" class="headerlink" title="检查扩展："></a>检查扩展：</h4><p><code>lvdisplay nas # 扩展完成后，使用以下命令检查扩展是否成功： df -h # 以及检查文件系统的使用情况：</code></p>
 
 	
 
