@@ -1,60 +1,91 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-CN">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="theme-color" content="#33474d">
-	<title>Thunberbird MCP 加持的 Hermes | 花开彼岸天</title>
-	<link rel="stylesheet" href="/css/style.css" />
-	
-      <link rel="alternate" href="/atom.xml" title="花开彼岸天" type="application/atom+xml">
-    
-<meta name="generator" content="Hexo 7.1.1"></head>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Thunberbird MCP 加持的 Hermes | 花开彼岸天
+  </title>
+  <link rel="icon" href="/imgs/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/plugins/highlight/styles/atom-one-dark.css">
+  
+    <link rel="alternate" type="application/atom+xml" title="花开彼岸天" href="/atom.xml">
+  
+  <!-- Gitalk -->
+  
+<meta name="generator" content="Hexo 8.1.2"></head>
 <body>
+    <nav>
+  <div class="nav-item logo">
+    <a href="/">
+      <button class="btn btn-hover">
+        <span>
+          花开彼岸天
+        </span>
+      </button>
+    </a>
+  </div>
+  
+    <div class="nav-item"><a href="/">
+        主页
+      </a></div>
+    
+    <div class="nav-item"><a href="/archives/">
+        时间轴
+      </a></div>
+    
+    <div class="nav-item"><a href="/tags/">
+        标签
+      </a></div>
+    
+    <div class="nav-item"><a href="/about/">
+        关于
+      </a></div>
+    
+    <div class="nav-item"><a href="/wish/">
+        心愿
+      </a></div>
+    
+    <div class="nav-item"><a href="/man/">
+        MAN
+      </a></div>
+    
+    <div class="nav-item"><a href="/categories/">
+        分类
+      </a></div>
+    
+    <div class="nav-item"><a href="/books/">
+        书单
+      </a></div>
+    
+    <div class="nav-item"><a href="/movies/">
+        影单
+      </a></div>
+    
+</nav>
+    <main>
+        <div class="post">
+    <article class="card post-article">
+  
+              
+                  <h3 class="article-title-detail"><span>
+                      Thunberbird MCP 加持的 Hermes
+                    </span></h3>
+                  
+                  <div class="posted-on-detail">『26年07月30日』</div>
+                  
+                  
+                    
+                      <div class="article-top-meta">
+                        
+                      </div>
+                      
 
-	<header class="header">
-		<nav class="header__nav">
-			
-				<a href="/" class="header__link">Home</a>
-			
-				<a href="/wish" class="header__link">Wishes</a>
-			
-				<a href="/man" class="header__link">MAN</a>
-			
-				<a href="/archives" class="header__link">Archive</a>
-			
-				<a href="/tags" class="header__link">Tags</a>
-			
-				<a href="/books" class="header__link">Books</a>
-			
-				<a href="/movies" class="header__link">Movies</a>
-			
-		</nav>
-		<h1 class="header__title"><a href="/">花开彼岸天</a></h1>
-		<h2 class="header__subtitle">鱼跃此时海</h2>
-	</header>
-
-	<main>
-		<article>
-	
-		<h1>Thunberbird MCP 加持的 Hermes</h1>
-	
-	<div class="article__infos">
-		<span class="article__date">2026-07-30</span><br />
-		
-		
-			<span class="article__tags">
-			  	<a class="article__tag-none-link" href="/tags/tech-%E6%94%B6%E5%BD%95/" rel="tag">tech/收录</a>
-			</span>
-		
-	</div>
-
-	
-
-	
-		<h1 id="Thunderbird-MCP-Hermes"><a href="#Thunderbird-MCP-Hermes" class="headerlink" title="Thunderbird MCP + Hermes"></a>Thunderbird MCP + Hermes</h1><p>最近想把Thunderbird接到Hermes里面，主要是为了直接让Hermes帮我搜邮件、看邮件、查日历什么的。之前虽然也能用其他方式处理邮箱，但是总觉得不够顺手, 特别是用imap-mcp 访问阿里云邮箱时，总是有很多限制，既然Thunderbird这边已经有MCP了，那就接上试一下。</p>
+                          <div class="article-content">
+                            <div class="entry">
+                              
+                                    <h1 id="Thunderbird-MCP-Hermes"><a href="#Thunderbird-MCP-Hermes" class="headerlink" title="Thunderbird MCP + Hermes"></a>Thunderbird MCP + Hermes</h1><p>最近想把Thunderbird接到Hermes里面，主要是为了直接让Hermes帮我搜邮件、看邮件、查日历什么的。之前虽然也能用其他方式处理邮箱，但是总觉得不够顺手, 特别是用imap-mcp 访问阿里云邮箱时，总是有很多限制，既然Thunderbird这边已经有MCP了，那就接上试一下。</p>
 <p>这个东西其实不复杂，主要就是两部分：</p>
 <ol>
 <li>Thunderbird container；</li>
@@ -63,7 +94,7 @@
 <p>基本流程如下。</p>
 <h2 id="Thunderbird-container"><a href="#Thunderbird-container" class="headerlink" title="Thunderbird container"></a>Thunderbird container</h2><p>我这里不是单独起一个MCP container，而是在Thunderbird的container里面提供MCP服务。用的是<a target="_blank" rel="noopener" href="https://hub.docker.com/r/jlesage/thunderbird">jlesage&#x2F;thunderbird</a>。</p>
 <p>现在的配置大概是这样：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">thunderbird:</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">thunderbird</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jlesage/thunderbird</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;5800:5800&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8765:8765&quot;</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">LANG=zh_CN.UTF-8</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=America/Vancouver</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">ENABLE_CJK_FONT=1</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">KEEP_APP_RUNNING=1</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">WEB_FILE_MANAGER=1</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">WEB_FILE_MANAGER_ALLOWED_PATHS=&quot;/tmp&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">WEB_TERMINAL=1</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./thunderbird:/config:rw</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">thunderbird:</span><br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">thunderbird</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">jlesage/thunderbird</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;5800:5800&quot;</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;8765:8765&quot;</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">LANG=zh_CN.UTF-8</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">TZ=America/Vancouver</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">ENABLE_CJK_FONT=1</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">KEEP_APP_RUNNING=1</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">WEB_FILE_MANAGER=1</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">WEB_FILE_MANAGER_ALLOWED_PATHS=&quot;/tmp&quot;</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">WEB_TERMINAL=1</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./thunderbird:/config:rw</span><br></code></pre></td></tr></table></figure>
 
 <p>这里5800是Thunderbird的web界面，8765是MCP的HTTP端口。<code>/config</code>一定要挂载出来，不然container重建以后，Thunderbird里面的配置和扩展就没了。</p>
 <p><code>TZ</code>设置成温哥华，主要是为了邮件和日历时间看起来不要乱。<code>ENABLE_CJK_FONT</code>是中文字体。Web file manager和Web terminal我也开了，不过这个东西只适合放在自己的内网里面，没必要暴露到公网。</p>
@@ -71,7 +102,7 @@
 <p>认证方式是Bearer token。Hermes会把真正的凭据放到：</p>
 <p><code>~/.hermes/.env</code></p>
 <p>然后在<code>~/.hermes/config.yaml</code>里面保存MCP的基本设置和环境变量引用。逻辑上大概是这样：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mcp_servers:</span></span><br><span class="line">  <span class="attr">thunderbird:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;http://192.168.1.213:8765/&quot;</span></span><br><span class="line">    <span class="attr">connect_timeout:</span> <span class="number">10</span></span><br><span class="line">    <span class="attr">headers:</span></span><br><span class="line">      <span class="attr">Authorization:</span> <span class="string">&quot;Bearer $&#123;MCP_TOKEN_ENV_VAR&#125;&quot;</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">mcp_servers:</span><br>  <span class="hljs-attr">thunderbird:</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;http://192.168.1.213:8765/&quot;</span><br>    <span class="hljs-attr">connect_timeout:</span> <span class="hljs-number">10</span><br>    <span class="hljs-attr">headers:</span><br>      <span class="hljs-attr">Authorization:</span> <span class="hljs-string">&quot;Bearer $&#123;MCP_TOKEN_ENV_VAR&#125;&quot;</span><br>    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
 
 <p>这里的环境变量名称让Hermes自己管理就好，不需要自己猜。总之就是：配置放config，密码放<code>.env</code>。</p>
 <h3 id="5800和8765不要搞混"><a href="#5800和8765不要搞混" class="headerlink" title="5800和8765不要搞混"></a>5800和8765不要搞混</h3><p><code>5800</code>是Web界面，<code>8765</code>才是MCP。</p>
@@ -82,52 +113,59 @@
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>整体上这次还是比较顺利的。之前觉得Thunderbird MCP可能要折腾半天，结果真正麻烦的地方主要就是container启动顺序和网关重载，其他基本就是一条命令的事情。</p>
 <p>现在Hermes可以直接操作Thunderbird了，后面查邮件、整理客户往来、看日历都方便很多。</p>
 
-	
+                                      
+                            </div>
+                          </div>
+                          <div class="article-footer">
 
-	
-		<span class="different-posts"><a href="/2026/07/30/2026-07-30-Thunberbird-MCP-%E5%8A%A0%E6%8C%81%E7%9A%84-Hermes/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
-
-	
-
+                          </div>
 </article>
-
-	</main>
-
-	<footer class="footer">
-	<div class="footer-content">
-		
-	      <div class="footer__element">
-	<p>我，<br />自钱塘江边,<br />这里是我观察和思考的窗口,<br />愿我成为一个不平凡的人。<br />以上！</p>
+        
+</div>
+    </main>
+    <div class="footer">
+  <div class="copy">
+    &copy;
+      2026 Haijia Alex Zhu |
+        によって作成されたテーマ<a href="https://github.com/JackZong" target="_blank" title="Theme created by @J.zong">@J.zong</a>
+  </div>
+  <div class="hexo">
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+  </div>
+  <div class="hexo" title="Powered by Hexo">
+    搭載 <a href="http://hexo.io/" target="_blank">Hexo</a> | <a href="javascript:void(0);" id="bgToggle"> 背景画像 </a>
+  </div>
 </div>
 
-	    
-	      <div class="footer__element">
-	<h5>Check out</h5>
-	<ul class="footer-links">
-		<li class="footer-links__link"><a href="/about">About</a></li>
-		<li class="footer-links__link"><a href="/archives">Archive</a></li>
-		<li class="footer-links__link"><a href="/tags">Tags</a></li>
-		<li class="footer-links__link"><a href="/categories">Categories</a></li>
-		
-		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
-	    
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const withBg = localStorage.getItem('withBg');
+    if (withBg === 'true') {
+      document.body.classList.add('with-bg');
+      document.getElementById('bgToggle').classList.add('active');
+    }
 
-	</ul>
-</div>
-
-	    
-
-		<div class="footer-credit">
-			<span>© 2026 Haijia Alex Zhu | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
-		</div>
-
-	</div>
-
-
-</footer>
+    document.getElementById('bgToggle').addEventListener('click', function (e) {
+      e.preventDefault();
+      const withBg = localStorage.getItem('withBg');
+      if (withBg === 'true') {
+        localStorage.setItem('withBg', 'false');
+        document.body.classList.remove('with-bg');
+        document.getElementById('bgToggle').classList.remove('active');
+      } else {
+        localStorage.setItem('withBg', 'true');
+        document.body.classList.add('with-bg');
+        document.getElementById('bgToggle').classList.add('active');
+      }
+    })
+  });
+</script>
 
 
+
+    
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
 
 </body>
-
 </html>
