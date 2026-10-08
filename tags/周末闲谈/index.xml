@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>周末闲谈 on 花开彼岸天</title><link>https://hzhu.win/tags/%E5%91%A8%E6%9C%AB%E9%97%B2%E8%B0%88/</link><description>Recent content in 周末闲谈 on 花开彼岸天</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 12 Apr 2024 15:39:00 -0700</lastBuildDate><atom:link href="https://hzhu.win/tags/%E5%91%A8%E6%9C%AB%E9%97%B2%E8%B0%88/index.xml" rel="self" type="application/rss+xml"/><item><title>Server Rebuild</title><link>https://hzhu.win/2024/04/12/2024-04-12-Server-Rebuild/</link><pubDate>Fri, 12 Apr 2024 15:39:00 -0700</pubDate><guid>https://hzhu.win/2024/04/12/2024-04-12-Server-Rebuild/</guid><description>&lt;h2 id="nas-分配"&gt;#NAS 分配&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;这几天准备把NAS 彻底的迁移一下，现在有三个主机。&lt;/li&gt;
+&lt;li&gt;Old NAS
+&lt;ul&gt;
+&lt;li&gt;迁移RSS, 然后下线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;New Machine
+&lt;ul&gt;
+&lt;li&gt;再整理一下，准备启用dockage&lt;del&gt;和runtipi&lt;/del&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;P50S
+&lt;ul&gt;
+&lt;li&gt;下线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="self-host-aio"&gt;Self-host (AIO)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;群晖
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://hub.docker.com/r/jellyfin/jellyfin"&gt;Jellyfin&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;AutoBann, 刮削etc。。。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;联系人&lt;/li&gt;
+&lt;li&gt;Office&lt;/li&gt;
+&lt;li&gt;Drive&lt;/li&gt;
+&lt;li&gt;Moment&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;docker
+&lt;ul&gt;
+&lt;li&gt;RssHub / FreshRS&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/KUNzfw/KindleEar-Docker"&gt;KindleEar-Docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/slurdge/goeland"&gt;goeland&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[KMS 激活服务器]
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://hub.docker.com/r/teddysun/kms"&gt;teddysun/kms (docker.com)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wind4.github.io/vlmcsd/"&gt;vlmcsd&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Aliyun-webdav / Alist&lt;/li&gt;
+&lt;li&gt;momes&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://invoiceninja.github.io/en/self-host-installation/"&gt;Invoice Ninja&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://erpnext.com/"&gt;ERPNext&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SpeedTest&lt;/li&gt;
+&lt;li&gt;WireGuard Easy&lt;/li&gt;
+&lt;li&gt;Actual-budget / Ghostfolio / Beancount&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/jonaswinkler/paperless-ng"&gt;paperless-ng&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;HomeAssistant&lt;/li&gt;
+&lt;li&gt;Hacktionish&lt;/li&gt;
+&lt;li&gt;PVE 备份&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>展望2023</title><link>https://hzhu.win/2023/01/03/2023-01-03-%E5%B1%95%E6%9C%9B2023/</link><pubDate>Tue, 03 Jan 2023 15:22:00 -0800</pubDate><guid>https://hzhu.win/2023/01/03/2023-01-03-%E5%B1%95%E6%9C%9B2023/</guid><description>&lt;p&gt;今天算是正式过完年的第一个工作日。只是我不是很有心思干活。或者说最近一段时间都是这样子。&lt;/p&gt;
+&lt;p&gt;回头看看，感觉proposal真的拖了很久，我自己都不知道再干什么了。论文也没有什么进度，看看小伙伴们感觉自己简直就是。。。。&lt;/p&gt;</description></item><item><title>时间</title><link>https://hzhu.win/2022/05/15/2022-05-15-%E6%97%B6%E9%97%B4/</link><pubDate>Sun, 15 May 2022 15:53:00 -0700</pubDate><guid>https://hzhu.win/2022/05/15/2022-05-15-%E6%97%B6%E9%97%B4/</guid><description>&lt;p&gt;又到了周末，又是一个什么事情都没有做的周末。周六爬起来打羽毛球，现在浑身上下都是酸疼。。。
+现在的感觉就是自己浪，不注意身体，熬夜过度，掏空了身子的感觉 -_- 精神也不太好。起来以后，中午基本上就很累了。下午非常的没有精神。 这个问题现在以及很严重的影响了日常的生活，只是一直都没有办法调整过来，主要的问题是晚上上床太晚，玩手机；早上醒来玩手机，磨蹭一个小时才起床。&lt;/p&gt;</description></item><item><title>template</title><link>https://hzhu.win/2000/01/11/9999-Template/</link><pubDate>Tue, 11 Jan 2000 15:09:00 -0800</pubDate><guid>https://hzhu.win/2000/01/11/9999-Template/</guid><description/></item></channel></rss>

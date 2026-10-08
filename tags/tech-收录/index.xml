@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>tech/收录 on 花开彼岸天</title><link>https://hzhu.win/tags/tech-%E6%94%B6%E5%BD%95/</link><description>Recent content in tech/收录 on 花开彼岸天</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 30 Jul 2026 12:15:00 -0700</lastBuildDate><atom:link href="https://hzhu.win/tags/tech-%E6%94%B6%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>Thunberbird MCP 加持的 Hermes</title><link>https://hzhu.win/2026/07/30/2026-07-30-Thunberbird-MCP-%E5%8A%A0%E6%8C%81%E7%9A%84-Hermes/</link><pubDate>Thu, 30 Jul 2026 12:15:00 -0700</pubDate><guid>https://hzhu.win/2026/07/30/2026-07-30-Thunberbird-MCP-%E5%8A%A0%E6%8C%81%E7%9A%84-Hermes/</guid><description>&lt;h1 id="thunderbird-mcp--hermes"&gt;Thunderbird MCP + Hermes&lt;/h1&gt;
+&lt;p&gt;最近想把Thunderbird接到Hermes里面，主要是为了直接让Hermes帮我搜邮件、看邮件、查日历什么的。之前虽然也能用其他方式处理邮箱，但是总觉得不够顺手, 特别是用imap-mcp 访问阿里云邮箱时，总是有很多限制，既然Thunderbird这边已经有MCP了，那就接上试一下。&lt;/p&gt;</description></item><item><title>Vibe Coding</title><link>https://hzhu.win/2026/07/01/2026-07-01-Vibe-Coding/</link><pubDate>Wed, 01 Jul 2026 23:59:11 -0700</pubDate><guid>https://hzhu.win/2026/07/01/2026-07-01-Vibe-Coding/</guid><description>&lt;p&gt;今天下午临时想要做一个之前想了很久的基于加速度计的espresso shot timer， 不得不说vibe coding 简直太好用了，也就大概几个小时，一个像模像样的代码已经搞定了，剩下的也就是做一个外壳，然后3D 打印一下。昨天的话搞了一个基于nrf52的一个有线/无线Mouse Mover， 大概用了一个小时，50行左右的代码。 这两个都是用opencode 做的，QWEN3.7-Max + kimi2.6 + deepseek V4-flash。 事实证明还是很能打的。&lt;/p&gt;</description></item><item><title>PVE中扩展lvm-thin逻辑卷和相应的存储空间</title><link>https://hzhu.win/2024/10/08/2024-10-08-PVE%E4%B8%AD%E6%89%A9%E5%B1%95lvm-thin%E9%80%BB%E8%BE%91%E5%8D%B7%E5%92%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/</link><pubDate>Tue, 08 Oct 2024 21:52:00 -0700</pubDate><guid>https://hzhu.win/2024/10/08/2024-10-08-PVE%E4%B8%AD%E6%89%A9%E5%B1%95lvm-thin%E9%80%BB%E8%BE%91%E5%8D%B7%E5%92%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/</guid><description>&lt;p&gt;如果你当前有一个lvm-thin的逻辑卷，且Volume Group为nas，你可以按照以下步骤扩展这个lvm-thin逻辑卷的大小：
+假设情况：&lt;/p&gt;</description></item><item><title>Poor Man's Synology (Xpenology)</title><link>https://hzhu.win/2024/02/25/2024-02-25-Poor-Man-s-Synology/</link><pubDate>Sun, 25 Feb 2024 13:35:53 -0800</pubDate><guid>https://hzhu.win/2024/02/25/2024-02-25-Poor-Man-s-Synology/</guid><description>&lt;p&gt;旧电脑准备退休了， 准备3D打印机修完以后重新搞一个机箱。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;创建虚拟机。选择intel E1000 网卡。&lt;/li&gt;
+&lt;li&gt;添加启动盘，&lt;a href="https://github.com/AuxXxilium/arc"&gt;Arc loader&lt;/a&gt;，下载下来的是img，无法直接添加到VM中，使用 qm importdisk 命令添加
+&lt;code&gt;qm importdisk 101 /var/lib/vz/template/iso/arc.img local-lvm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;添加硬盘。由于有一个比较大的18T的硬盘，所以直接passthrough，这样子性能比较好。另外两个硬盘直接作为ssd缓存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="硬盘直通"&gt;硬盘直通：&lt;/h2&gt;
+&lt;p&gt;裸磁盘映射，将单个硬盘或者分区，通过qemu进行映射到虚拟机。通过这种方式，硬盘会在虚拟机内会认为是一个qemu-hdd。&lt;/p&gt;</description></item><item><title>Poor Man's Jellfin</title><link>https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/</link><pubDate>Sat, 09 Dec 2023 13:35:53 -0800</pubDate><guid>https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/</guid><description>&lt;p&gt;基本流程如下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;备份&lt;/li&gt;
+&lt;li&gt;部署aliyun-webdav&lt;/li&gt;
+&lt;li&gt;部署rclone&lt;/li&gt;
+&lt;li&gt;配置Jelyfin
+&lt;a href="https://github.com/messense/aliyundrive-webdav"&gt;aliyundrive-webdav&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="https://messense-aliyundrive-webdav-backendrefresh-token-ucs0wn.streamlit.app/"&gt;通过在线工具获取 refresh token&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;暴露阿里云盘API 使得他能通过webdav的方式访问&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因为Jellyfin不支持直接访问WebDav, 所以需要中间层, 之前别人是通过rclone来实现的, 但是我觉得太复杂了, 后来看到了&lt;a href="https://messense.me/aliyundrive-fuse"&gt;aliyundrive-fuse&lt;/a&gt;, 但是阿里云盘改了API原作者懒得改了, 直接archive了项目. 所以又回到了rclone&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;群晖的奇怪设计导致rclone 总是起不来, 思索再三, 决定用虚拟机直接上一个.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Poor Man's Jellfin 反向代理</title><link>https://hzhu.win/2023/12/07/2023-12-07-Poor-Man-s-Jellfin-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link><pubDate>Thu, 07 Dec 2023 14:24:30 -0800</pubDate><guid>https://hzhu.win/2023/12/07/2023-12-07-Poor-Man-s-Jellfin-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid><description>&lt;ol&gt;
+&lt;li&gt;创建Zoraxy LXC&lt;/li&gt;
+&lt;li&gt;设置路由器端口转发 Zoraxy&lt;/li&gt;
+&lt;li&gt;Zoraxy中创建代理规则&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="创建zoraxy-lxc"&gt;创建Zoraxy LXC&lt;/h2&gt;
+&lt;p&gt;PVE真的是个好东西。 &lt;a href="https://tteck.github.io/Proxmox/#zoraxy-lxc"&gt;PVE Scripts Helper&lt;/a&gt; 更是好东西。&lt;/p&gt;
+&lt;h2 id="openwrt端口转发"&gt;OpenWRT端口转发&lt;/h2&gt;
+&lt;p&gt;理论上不需要做端口转发了. 直接指向端口转发服务器就可以啊.
+80端口是给ACME申请证书用的。
+除此之外，群晖的drive需要暴露一个端口给pc端用。 Wireguard 暴露一个端口。&lt;/p&gt;</description></item><item><title>小米AX9000折腾记录</title><link>https://hzhu.win/2023/06/21/2023-06-21-%E5%B0%8F%E7%B1%B3AX9000%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</link><pubDate>Wed, 21 Jun 2023 19:09:00 -0700</pubDate><guid>https://hzhu.win/2023/06/21/2023-06-21-%E5%B0%8F%E7%B1%B3AX9000%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</guid><description>&lt;p&gt;双分区固件的好处不会死&amp;hellip;… 用小米救砖工具能快速恢复分区表.&lt;/p&gt;
+&lt;h2 id="ssh"&gt;ssh&lt;/h2&gt;
+&lt;p&gt;基本原理就是利用另外一个OpenWrt通过中继进行注入攻击, 具体操作参考卡卡的视频. 他的视频是最无脑的.&lt;/p&gt;</description></item><item><title>Building stuffs-李笑来</title><link>https://hzhu.win/2023/04/03/2023-04-03-%E6%9D%8E%E7%AC%91%E6%9D%A5-Building-stuffs/</link><pubDate>Mon, 03 Apr 2023 13:23:12 -0700</pubDate><guid>https://hzhu.win/2023/04/03/2023-04-03-%E6%9D%8E%E7%AC%91%E6%9D%A5-Building-stuffs/</guid><description>&lt;h2 id="building-stuffs--做出东西来"&gt;Building stuffs — 做出东西来&lt;/h2&gt;
+&lt;p&gt;我个人最看中人的这个特质。人群中只有少数人最终能拿出完整的作品一人与人之间的差异是如此之大，乃至于少数人有作品，更少数人有好的作品，只极少数极少数人才可能作出传世的作品；而与此同时，绝大多数人（万分之九千九百九十九的人）一辈子都没有像样的作品，他们连一篇作文都写不明白。&lt;/p&gt;</description></item><item><title>展望2023</title><link>https://hzhu.win/2023/01/03/2023-01-03-%E5%B1%95%E6%9C%9B2023/</link><pubDate>Tue, 03 Jan 2023 15:22:00 -0800</pubDate><guid>https://hzhu.win/2023/01/03/2023-01-03-%E5%B1%95%E6%9C%9B2023/</guid><description>&lt;p&gt;今天算是正式过完年的第一个工作日。只是我不是很有心思干活。或者说最近一段时间都是这样子。&lt;/p&gt;
+&lt;p&gt;回头看看，感觉proposal真的拖了很久，我自己都不知道再干什么了。论文也没有什么进度，看看小伙伴们感觉自己简直就是。。。。&lt;/p&gt;</description></item><item><title>双链笔记daily note</title><link>https://hzhu.win/2022/02/23/2022-02-03-%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/</link><pubDate>Wed, 23 Feb 2022 20:39:00 -0800</pubDate><guid>https://hzhu.win/2022/02/23/2022-02-03-%E5%8F%8C%E9%93%BE%E7%AC%94%E8%AE%B0daily-note/</guid><description>&lt;p&gt;双链笔记真的是一个很有意思的东西， 有一段时间用双链笔记用的很起劲，特别是daily note 功能。只是某种程度上来说，这个东西很有迷惑性，因为它不太具有回顾的功能。特别是之前看了&lt;a href="https://www.bilibili.com/video/BV1hZ4y1V73k?spm_id_from=333.999.0.0"&gt;Struggle with me&lt;/a&gt; 的某次分享以后，直接套用了她的模版，但是一直用的很不顺手。不是说她们的方法不好，而是不适合我这种懒得回顾的这种。特别是和buju混合之后就总是乱乱的。 直到今天无意中看了另外一位大佬写的&lt;a href="https://www.yuque.com/deerain/gannbs/ffqk2e#cc42c80a"&gt;专栏&lt;/a&gt;，然后有一点明白这个流程是怎么样的。 这里引用文章里的一句话，很好的总结了daily note的作用：&lt;/p&gt;</description></item><item><title>自用软件收录</title><link>https://hzhu.win/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/</link><pubDate>Thu, 06 Jan 2022 11:01:00 -0800</pubDate><guid>https://hzhu.win/2022/01/06/2022-01-06-%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%94%B6%E5%BD%95/</guid><description>&lt;p&gt;收录自用软件和服务。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Research, Reading and Learning
+&lt;ul&gt;
+&lt;li&gt;Zotero&lt;/li&gt;
+&lt;li&gt;Harzing&amp;rsquo;s Publish or Perish&lt;/li&gt;
+&lt;li&gt;PDF 阅读器&lt;/li&gt;
+&lt;li&gt;Eudict&lt;/li&gt;
+&lt;li&gt;Anki
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/open-spaced-repetition/fsrs4anki"&gt;fsrs4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ankiweb.net/shared/info/1136455830"&gt;Advanced Review Bottom Bar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ankiweb.net/shared/info/1771074083"&gt;Review Heatmap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ankiweb.net/shared/info/817108664"&gt;Anki Simulator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;MarginNote 3&lt;/li&gt;
+&lt;li&gt;CiteSpace&lt;/li&gt;
+&lt;li&gt;VOSviewer
+&lt;ul&gt;
+&lt;li&gt;Learning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Web Plot Digitizer&lt;/li&gt;
+&lt;li&gt;语雀&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;编辑
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;Typora&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Zettlr&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;Logseq
+&lt;ul&gt;
+&lt;li&gt;好多的插件，需要下次找个时间整理一下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;MarkText&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;编程
+&lt;ul&gt;
+&lt;li&gt;Matlab&lt;/li&gt;
+&lt;li&gt;Github desktop/cli&lt;/li&gt;
+&lt;li&gt;Sublime Text/VSCode
+&lt;ul&gt;
+&lt;li&gt;Copilot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;系统/Utility
+&lt;ul&gt;
+&lt;li&gt;Everything for Windows&lt;/li&gt;
+&lt;li&gt;Keepass&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;KdeConnect&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Firefox&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;WeChat&lt;/li&gt;
+&lt;li&gt;WinDynamicDesktop&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;网易云音乐+unblock neatease music&lt;/del&gt; YesPlayMusic&lt;/li&gt;
+&lt;li&gt;obs&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;SmoothScroll&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;财务相关
+&lt;ul&gt;
+&lt;li&gt;Portfolio Performance&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;KMyMoney&lt;/del&gt; 需要开始找一个靠谱的软件&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Beancount&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Mint&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;个人管理
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;Pomotodo&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;Toggl&lt;/li&gt;
+&lt;li&gt;Todoist / &lt;del&gt;Microsoft Todo&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;Lark&lt;/li&gt;
+&lt;li&gt;Dida&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>自用self-host</title><link>https://hzhu.win/2020/09/11/2020-09-11-%E8%87%AA%E7%94%A8self-host/</link><pubDate>Fri, 11 Sep 2020 14:47:45 -0700</pubDate><guid>https://hzhu.win/2020/09/11/2020-09-11-%E8%87%AA%E7%94%A8self-host/</guid><description>&lt;p&gt;稍微记录一下自用的应用&lt;/p&gt;
+&lt;h2 id="openwrt"&gt;OpenWRT&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://pi-hole.net/"&gt;pihole/AdGuard on OpenWRT&lt;/a&gt; #网络&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="docker"&gt;Docker&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://dockge.kuma.pet/"&gt;dockge&lt;/a&gt; #自动化&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.rsshub.app/"&gt;RssHub&lt;/a&gt; #自动化&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tt-rss.org/wiki/InstallationNotes/"&gt;TTRSS&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/windows-server/get-started/kms-activation-planning?tabs=server25"&gt;KMS 激活服务器&lt;/a&gt; #自动化
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://hub.docker.com/r/teddysun/kms"&gt;teddysun/kms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wind4.github.io/vlmcsd/"&gt;vlmcsd&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://actualbudget.org/docs/install/docker/"&gt;Actual Budget&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://frigate.video/"&gt;Frigate NVR&lt;/a&gt; #自动化&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gotify.net/"&gt;Gotify&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://vikunja.io/"&gt;Vikunja&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.thunderbird.net/"&gt;Thunderbird&lt;/a&gt; #生产力
+&lt;ul&gt;
+&lt;li&gt;用于自动邮件分类，这样不用在不同电脑上重复设置，只需要维护一个分类规则即可
+&lt;ul&gt;
+&lt;li&gt;Could be a bad idea&amp;hellip;..&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pdf2zh.com/"&gt;PDFMathTranslate&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/WeeJeWel/wg-easy"&gt;wg-easy&lt;/a&gt; #网络&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.usememos.com/"&gt;memos&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://n8n.io/"&gt;n8n&lt;/a&gt; #自动化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="lxc"&gt;LXC&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.proxmox.com/en/proxmox-ve"&gt;Proxmox Virtual Environment&lt;/a&gt; #虚拟化&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/paperless-ngx/paperless-ngx"&gt;Paperless NGX&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/clusterzx/paperless-ai"&gt;Paperless-AI&lt;/a&gt; #自动化&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.docker.com/"&gt;Docker Server&lt;/a&gt; #自动化&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.fnnas.com"&gt;fnOS&lt;/a&gt; #NAS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="计划ing"&gt;计划ing&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/KUNzfw/KindleEar-Docker"&gt;KindleEar-Docker&lt;/a&gt; #媒体&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.mealie.io/"&gt;mealie&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/slurdge/goeland"&gt;goeland&lt;/a&gt; #自动化&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/nondanee/UnblockNeteaseMusic"&gt;UnblockNeteaseMusic&lt;/a&gt; #网络
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker run --name unmusic -d -p 4567:8081 -p 4566:63455 nondanee/unblockneteasemusic -p 63455:8081&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/EstrellaXD/Auto_Bangumi"&gt;Auto Bangumi&lt;/a&gt; #自动化&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://hub.docker.com/r/jellyfin/jellyfin"&gt;Jellyfin&lt;/a&gt; #媒体&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://caddyserver.com/"&gt;Caddy LXC&lt;/a&gt; #网络&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.openmediavault.org/"&gt;OpenMediaVault&lt;/a&gt; #存储
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/community-scripts/ProxmoxVE/discussions/175"&gt;添加挂载点&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="不用了"&gt;不用了&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://invoiceninja.github.io/en/self-host-installation/"&gt;Invoice Ninja&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://erpnext.com/"&gt;ERPNext&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://organizr.app/"&gt;Organizr&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lamarios.github.io/Homedash2/"&gt;Homedash2&lt;/a&gt; #生产力&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.filestash.app/pricing/"&gt;Filestash&lt;/a&gt; #存储&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="参考资料"&gt;参考资料：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://homelabos.com/docs/"&gt;HomelabOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/awesome-selfhosted/awesome-selfhosted"&gt;awesome-selfhosted&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>template</title><link>https://hzhu.win/2000/01/11/9999-Template/</link><pubDate>Tue, 11 Jan 2000 15:09:00 -0800</pubDate><guid>https://hzhu.win/2000/01/11/9999-Template/</guid><description/></item></channel></rss>

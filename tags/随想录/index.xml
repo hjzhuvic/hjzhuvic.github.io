@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>随想录 on 花开彼岸天</title><link>https://hzhu.win/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/</link><description>Recent content in 随想录 on 花开彼岸天</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 01 Jul 2026 23:59:11 -0700</lastBuildDate><atom:link href="https://hzhu.win/tags/%E9%9A%8F%E6%83%B3%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>Vibe Coding</title><link>https://hzhu.win/2026/07/01/2026-07-01-Vibe-Coding/</link><pubDate>Wed, 01 Jul 2026 23:59:11 -0700</pubDate><guid>https://hzhu.win/2026/07/01/2026-07-01-Vibe-Coding/</guid><description>&lt;p&gt;今天下午临时想要做一个之前想了很久的基于加速度计的espresso shot timer， 不得不说vibe coding 简直太好用了，也就大概几个小时，一个像模像样的代码已经搞定了，剩下的也就是做一个外壳，然后3D 打印一下。昨天的话搞了一个基于nrf52的一个有线/无线Mouse Mover， 大概用了一个小时，50行左右的代码。 这两个都是用opencode 做的，QWEN3.7-Max + kimi2.6 + deepseek V4-flash。 事实证明还是很能打的。&lt;/p&gt;</description></item><item><title>展望2023</title><link>https://hzhu.win/2023/01/03/2023-01-03-%E5%B1%95%E6%9C%9B2023/</link><pubDate>Tue, 03 Jan 2023 15:22:00 -0800</pubDate><guid>https://hzhu.win/2023/01/03/2023-01-03-%E5%B1%95%E6%9C%9B2023/</guid><description>&lt;p&gt;今天算是正式过完年的第一个工作日。只是我不是很有心思干活。或者说最近一段时间都是这样子。&lt;/p&gt;
+&lt;p&gt;回头看看，感觉proposal真的拖了很久，我自己都不知道再干什么了。论文也没有什么进度，看看小伙伴们感觉自己简直就是。。。。&lt;/p&gt;</description></item><item><title>聊聊自卑吧</title><link>https://hzhu.win/2022/01/17/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/</link><pubDate>Mon, 17 Jan 2022 23:45:00 -0800</pubDate><guid>https://hzhu.win/2022/01/17/%20%E8%81%8A%E8%81%8A%E8%87%AA%E5%8D%91%E5%90%A7/</guid><description>&lt;p&gt;差不多是睡觉的时间了，只是看到一个博客，突然就就觉得很有意思。有一点感触的吧。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.gaficat.com/posts/3e69c4c5.html"&gt;聊聊自卑吧&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;情绪是很能影响一个人的，尤其是自卑带给人的情绪。我已经记不清楚自信和自卑交替的这种情绪伴随我多长时间了，但就像蔡康永说的，要做好一个人，做自己，这最重要。时刻辨认当下自己的情绪，知道他们由哪儿来，可以放到哪儿去。当你发现自己有自卑、不自信、焦虑等消极情绪是，记得跳出来，看看自己身上有哪些标签，有别人贴给你的，有自己贴给自己的。把那些标签丢掉，只留下几个自己认为重要的标签，留下来，把它做好，别再为了一个不想干的人丢给你的标签，毁了你的整个生活。&lt;/code&gt;&lt;/p&gt;</description></item><item><title>不开心</title><link>https://hzhu.win/2022/01/11/2022-01-11-%E4%B8%8D%E5%BC%80%E5%BF%83/</link><pubDate>Tue, 11 Jan 2022 15:09:00 -0800</pubDate><guid>https://hzhu.win/2022/01/11/2022-01-11-%E4%B8%8D%E5%BC%80%E5%BF%83/</guid><description>&lt;p&gt;现在一直不开心。&lt;/p&gt;
+&lt;p&gt;很难说到底是为什么，&lt;/p&gt;</description></item><item><title>2020</title><link>https://hzhu.win/2020/12/31/2020-12-31-2020/</link><pubDate>Thu, 31 Dec 2020 23:50:15 -0800</pubDate><guid>https://hzhu.win/2020/12/31/2020-12-31-2020/</guid><description>&lt;p&gt;2020!
+还没回顾自己的2020，某种程度上，又一次浑浑噩噩的过了一年。
+这一年的任务基本上都没有完成。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Overall&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;词汇量1.5W&lt;/li&gt;
+&lt;li&gt;写完两篇论文&lt;/li&gt;
+&lt;li&gt;大论文开题&lt;/li&gt;
+&lt;li&gt;Machine Learning/Data Mining 入门&lt;/li&gt;
+&lt;li&gt;考证( Firearm License @ spring, 学会游泳，然后OWD license)&lt;/li&gt;
+&lt;li&gt;学一个乐器&lt;/li&gt;
+&lt;li&gt;早睡早起，床上不玩手机,不看视频！&lt;/li&gt;
+&lt;li&gt;每天阅读&lt;/li&gt;
+&lt;li&gt;多运动，保持身体健康&lt;/li&gt;
+&lt;li&gt;扩大社交圈，见更多人、走更多路，提升自己的见识&lt;/li&gt;
+&lt;li&gt;春天的时候拍樱花&lt;/li&gt;
+&lt;li&gt;找到自己的routine，flow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;细节&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每天做bullet journal，列清单，持续复盘，让进步看得见，&lt;/li&gt;
+&lt;li&gt;每周精读三篇论文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Entertainment&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;弄完3D Printer&lt;/li&gt;
+&lt;li&gt;Hydrofoil surfboard modleing
+2021年要加油啊！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>秋分已过，中秋降至</title><link>https://hzhu.win/2020/09/28/2020-09-28-%E7%A7%8B%E5%88%86%E5%B7%B2%E8%BF%87%EF%BC%8C%E4%B8%AD%E7%A7%8B%E9%99%8D%E8%87%B3/</link><pubDate>Mon, 28 Sep 2020 00:36:07 -0700</pubDate><guid>https://hzhu.win/2020/09/28/2020-09-28-%E7%A7%8B%E5%88%86%E5%B7%B2%E8%BF%87%EF%BC%8C%E4%B8%AD%E7%A7%8B%E9%99%8D%E8%87%B3/</guid><description>&lt;p&gt;今天，其实应该说是昨天（现在已经凌晨了）聚餐，提前欢送彪哥回国。&lt;/p&gt;
+&lt;p&gt;认识彪哥很多年了，虽然很多事情都没有细谈，但是不得不说他是一个很有意思的人。不过这些都是别人，说说自己吧。&lt;/p&gt;</description></item><item><title>四月天</title><link>https://hzhu.win/2020/04/29/2020-04-29-%E5%9B%9B%E6%9C%88%E5%A4%A9/</link><pubDate>Wed, 29 Apr 2020 11:51:26 -0700</pubDate><guid>https://hzhu.win/2020/04/29/2020-04-29-%E5%9B%9B%E6%9C%88%E5%A4%A9/</guid><description>&lt;p&gt;四月再见。&lt;/p&gt;
+&lt;p&gt;五月你好。&lt;/p&gt;
+&lt;h2 id="答辩"&gt;答辩&lt;/h2&gt;
+&lt;p&gt;论文交掉了。基本上告一段落。&lt;/p&gt;
+&lt;p&gt;先说说答辩的情况把。还是&lt;del&gt;年少&lt;/del&gt;轻狂，小看了老师，也高估了自己。总的来说答辩的时候不是特别好，很多时候没有抓到committee的重点，一些自己觉得很简单的事情，对于他们而言不是那么的直接，论文里面也没有直接的解释。&lt;/p&gt;</description></item><item><title>四月随想</title><link>https://hzhu.win/2020/04/19/2020-04-19-%E5%9B%9B%E6%9C%88%E9%9A%8F%E6%83%B3/</link><pubDate>Sun, 19 Apr 2020 12:16:59 -0700</pubDate><guid>https://hzhu.win/2020/04/19/2020-04-19-%E5%9B%9B%E6%9C%88%E9%9A%8F%E6%83%B3/</guid><description>&lt;p&gt;建立了页面但是没有写。。。&lt;/p&gt;
+&lt;p&gt;唉&lt;/p&gt;</description></item><item><title>少年成为他想要模样，就是岁月最好奖赏</title><link>https://hzhu.win/2020/01/03/2020-01-03-%E5%B0%91%E5%B9%B4%E6%88%90%E4%B8%BA%E4%BB%96%E6%83%B3%E8%A6%81%E6%A8%A1%E6%A0%B7%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%B2%81%E6%9C%88%E6%9C%80%E5%A5%BD%E5%A5%96%E8%B5%8F/</link><pubDate>Fri, 03 Jan 2020 15:13:13 -0800</pubDate><guid>https://hzhu.win/2020/01/03/2020-01-03-%E5%B0%91%E5%B9%B4%E6%88%90%E4%B8%BA%E4%BB%96%E6%83%B3%E8%A6%81%E6%A8%A1%E6%A0%B7%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%B2%81%E6%9C%88%E6%9C%80%E5%A5%BD%E5%A5%96%E8%B5%8F/</guid><description>&lt;p&gt;&lt;strong&gt;少年成为他想要模样，就是岁月最好奖赏&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;你好2020&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;看了一下去年/前年/大大前年的年度展望，没有什么营养，也没有什么作用。&lt;/p&gt;
+&lt;p&gt;做事情还是懒懒散散的。&lt;/p&gt;
+&lt;p&gt;之前看见一句话叫做：人做事有三重境界：谋定而后动或后不动，边动边谋，光谋不动。&lt;/p&gt;</description></item><item><title>效率-2</title><link>https://hzhu.win/2019/11/11/2019-10-30-%E6%95%88%E7%8E%872/</link><pubDate>Mon, 11 Nov 2019 16:58:11 -0800</pubDate><guid>https://hzhu.win/2019/11/11/2019-10-30-%E6%95%88%E7%8E%872/</guid><description>&lt;h2 id="效率"&gt;效率&lt;/h2&gt;
+&lt;p&gt;最近有一段时间的效率还比较可以，但是很严重的问题就是不能持久。有三个原因：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Starcraft 2 打的有点多, 这个月已经打了 21h 14m 了。&lt;/li&gt;
+&lt;li&gt;虽然知乎什么上的少了，但是实际上总时间还是挺多的 4h。&lt;/li&gt;
+&lt;li&gt;拖延症。
+解决方法其实很简单。
+首先，删星际。虽然我觉得我可能很快又会把这个装回来，但是现在先删。ManicTime装一下吧，这个软件比Rescue Time复杂，但是稍微研究一下应该是ok的。
+至于拖延症，其实没有什么好方法，本身的习惯其实也有问题。番茄时间用起来，以及，take a break。 其实一直埋头写写写看看看不是一个好习惯。要定期休息一下。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="有朋自远方来"&gt;有朋自远方来&lt;/h2&gt;
+&lt;p&gt;这周末，朱幸雨突然跑到加拿大来了。自己也比较忙，然后其实也有一些其他的原因，没有带她逛逛，没有好好招待她。只是约她吃了一个饭。其实感觉她成熟了很多啊。对比我，我真的自愧不如。&lt;/p&gt;</description></item><item><title>效率</title><link>https://hzhu.win/2019/10/16/2019-10-16-%E6%95%88%E7%8E%87/</link><pubDate>Wed, 16 Oct 2019 18:56:00 -0700</pubDate><guid>https://hzhu.win/2019/10/16/2019-10-16-%E6%95%88%E7%8E%87/</guid><description>&lt;p&gt;这两天论文有在改，只是效率很低。
+手头上的工作整理一下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;论文revision。&lt;/li&gt;
+&lt;li&gt;模型修bug。&lt;/li&gt;
+&lt;li&gt;测试修改完的模型。&lt;/li&gt;
+&lt;li&gt;模型重新跑一下，出一下数据。&lt;/li&gt;
+&lt;li&gt;DP调试，动态规划那个一直没有测试。我感觉我都要忘记当时是怎么写代码的了。&lt;/li&gt;
+&lt;li&gt;全局优化的作业。。。。还有两个一个月就due了。。。。但是一个都没有写。。。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其实有很多事情的。所以其实没有时间闲逛知乎之类的。但是实际上每天还是有大量时间用于闲逛，比如逛知乎虎嗅ifanr之类的。心理学上说人面对要紧的急迫的事情都会有一种短期逃避，长期后悔的情绪，逃避这类事情会给人带来一种短期的心理上的愉悦，仿佛这个问题不存在了；但是事后会不断的懊悔，对自己产生质疑。然后不断产生一个正反馈，直到最后问题越来越严重。&lt;/p&gt;</description></item><item><title>向前走，不要停</title><link>https://hzhu.win/2019/10/03/2019-10-03-%E5%90%91%E5%89%8D%E8%B5%B0%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%81%9C/</link><pubDate>Thu, 03 Oct 2019 18:56:00 -0700</pubDate><guid>https://hzhu.win/2019/10/03/2019-10-03-%E5%90%91%E5%89%8D%E8%B5%B0%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%81%9C/</guid><description>&lt;p&gt;其实在取题目的时候有点犹豫，应该取名为送父亲母亲还是取一个和俞jy有关的标题。想了一会儿，还是决定写一些她吧。
+刚刚发了一个朋友圈:
+&lt;em&gt;&lt;strong&gt;向前走，不要停。&lt;/strong&gt;&lt;/em&gt;
+是啊，人总是要向前走，不能停下来，我已经原地踏步了很久，久到我自己都没有意识到已经这么久了。
+今天送父母走。他们明天早上的飞机，只是我明天下午需要给学生带实验课，不得以，只得今天提前回去。好在酒店有免费的大巴车到机场，而且YVR机场中国人很多，机场内中文标识也很多。可以稍微放心。这次他们待了两周半，不得不感慨时间很快。不知道为什么有一种感觉，以后这种时光会很少了。老爸也一直说很多年没有这么没有心事放松了。
+说说她吧，我貌似从大学开始喜欢她的。也许就是所谓得不到的就是最好的把。一直都对她那么一点意思。其实我很早就明白我们不是一路人。也许，她知道我喜欢她吧，也许不知道。但是又能如何呢。昨天蚂蚁森林偷了一下她能量，难得的发现她能量很多。WeChat上调侃了她一句她走的挺多啊，然后突然意识到国庆节了。早上的时候她回了我，(不知是不是)很认真的回复了我：
+&lt;code&gt;我和我男朋友这两天在外面玩，所以走的比较多。&lt;/code&gt;
+说真的，看到的时候五味杂陈。之前她分手的时候我还很渣的暗中窃喜。猝不及防她又有新欢了。虽然自从几个月前不理我了之后，冥冥中有预感。
+只是我也没有资格去找她罢了。
+哎。&lt;/p&gt;</description></item><item><title>秋高气爽</title><link>https://hzhu.win/2019/09/02/2019-08-20-%E7%A7%8B%E9%AB%98%E6%B0%94%E7%88%BD/</link><pubDate>Mon, 02 Sep 2019 21:42:00 -0700</pubDate><guid>https://hzhu.win/2019/09/02/2019-08-20-%E7%A7%8B%E9%AB%98%E6%B0%94%E7%88%BD/</guid><description>&lt;p&gt;新生入学了&lt;/p&gt;</description></item><item><title>择偶标准</title><link>https://hzhu.win/2019/08/20/2019-08-20-%E6%8B%A9%E5%81%B6%E6%A0%87%E5%87%86/</link><pubDate>Tue, 20 Aug 2019 21:18:00 -0700</pubDate><guid>https://hzhu.win/2019/08/20/2019-08-20-%E6%8B%A9%E5%81%B6%E6%A0%87%E5%87%86/</guid><description>&lt;p&gt;前两天看到有一个知乎的问题叫做“在加拿大的你，择偶标准是怎样的？”。
+这是一个很有意思的问题。稍微思考了一下，其实很简单，能共患难，能同富贵。
+具体而言，其实很复杂。&lt;/p&gt;</description></item><item><title>强关系弱关系，以及七年</title><link>https://hzhu.win/2019/06/10/2019-06-10-%E5%BC%BA%E5%85%B3%E7%B3%BB%E5%BC%B1%E5%85%B3%E7%B3%BB%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%B8%83%E5%B9%B4/</link><pubDate>Mon, 10 Jun 2019 16:41:00 -0700</pubDate><guid>https://hzhu.win/2019/06/10/2019-06-10-%E5%BC%BA%E5%85%B3%E7%B3%BB%E5%BC%B1%E5%85%B3%E7%B3%BB%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%B8%83%E5%B9%B4/</guid><description>&lt;p&gt;昨天很生气，我现在也还是很生气。但是也麻木了，做人做到这份上没什么意思。&lt;/p&gt;
+&lt;p&gt;今天看了一个视频，是我一直很喜欢的一个UP主，Ivy，一个北大出来的女孩子。 她对很多事情都有不错的见解，也很乐于分享自己的经验。她的视频里你可以看到她的迷茫，她的困惑以及她的求索之道。换成人话就是：她在视频里展示出了一个普通的挣扎与进步而不是一个各方面吊打你的学霸。。。。。。她最近的一个视频里讲了和朋友的关系，并且指出重点。&lt;/p&gt;</description></item><item><title>四月半</title><link>https://hzhu.win/2019/04/10/2019-04-10-%E5%9B%9B%E6%9C%88%E5%8D%8A/</link><pubDate>Wed, 10 Apr 2019 17:05:37 -0700</pubDate><guid>https://hzhu.win/2019/04/10/2019-04-10-%E5%9B%9B%E6%9C%88%E5%8D%8A/</guid><description>&lt;p&gt;四月过了一半了。&lt;/p&gt;</description></item><item><title>总结吧</title><link>https://hzhu.win/2014/07/16/2014-04-15/</link><pubDate>Wed, 16 Jul 2014 00:00:01 -0700</pubDate><guid>https://hzhu.win/2014/07/16/2014-04-15/</guid><description>&lt;p&gt;其实，之前就准备写一个回顾和总结了。懒懒散散的，一直都没有写而已。&lt;/p&gt;
+&lt;p&gt;或者说，其实，考完最后一次托福以后，就一直很松懈，早上懒懒散散，晚上到很晚才睡觉。早上起来以后，又是磨磨蹭蹭，看个小说，看个视屏，逛一下知乎什么的。而曾经的计划，都已抛之脑后。厂里面的事情，也懒得管。整个人都是变得很懒散。&lt;/p&gt;</description></item><item><title>【转】二十岁时候的你在想些什么？</title><link>https://hzhu.win/2014/04/25/2014-04-08/</link><pubDate>Fri, 25 Apr 2014 00:00:01 -0700</pubDate><guid>https://hzhu.win/2014/04/25/2014-04-08/</guid><description>&lt;h1 id="转二十岁时候的你在想些什么"&gt;【转】二十岁时候的你在想些什么？&lt;/h1&gt;
+&lt;p&gt;by &lt;a href="https://www.zhihu.com/people/snowyang/activities"&gt;&lt;strong&gt;羊小雪&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;，不如我們同歸於盡。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;生命的前十八年里，我什么都想要，什么都输不起。
+我一边身在强化班，一边鄙视那些认真做题的好学生；不交作业跟老师吵架，一边考得太好让他无可奈何；拿奖学金刚升完旗，就躲在小卖部后面抽了第一根烟；我男生缘不错，却很少被女生背后碎嘴；我认识考试接近满分的学霸，也认识所谓混出了道儿的小痞子；毕业了几年的学长都知道我，同时也听说有学妹在桌子上写我名字当作人生楷模。
+那时我知道得要搞定一件事情，才有谈论它的资格。于是我毫不费力地得到了这么些小东西，然后装作什么都不在乎的样子。
+非常浅薄，非常幼稚，我既然说出来，就不怕你们笑。
+年轻的时候，我什么都想要，什么都不放在眼里。现在我依然年轻，所以我依旧是这样。可这中间相差的，大概不仅仅是几年的不足道的眼界和阅历，不仅是知道不费力气得来的不会是好东西，不仅是知道你过得怎样其实没人在乎，也不仅仅是发现，你拼尽力气去争取的东西还是有可能会不留情面地开你个玩笑，再给你一个耳光。
+那天下午我在房间里哭得喘不上气，Carla在来找我的路上发了一堆短信，其中有一句说，&lt;strong&gt;I know it will sound cheesy, but everything happens for a reason, and most of the times, a good reason.&lt;/strong&gt;
+这话别人说我兴许会觉得无聊，而她说，却让我觉得稳妥。在她那个全民狂欢的国度，我相信她也曾是个要钱有钱要地位有地位要爱有爱的遭人嫉妒的女青年，而在本该是最好的时光里，她的丈夫突然出车祸去世，她把自己关在房间里暴饮暴食，抑郁了整整一年半。一年半后她走出那个房间，申到奖学金然后来念了这个一直想学的专业，并且在一帮小她十来岁的小蠢逼中间，完全是个整天在大笑的知心姐姐。
+她的这句话在后来的很多时刻，都是给我勇气的定心丸。
+有段话是这样的，
+&lt;em&gt;那一天我二十一岁，在我一生的黄金时代。我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云。后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消失，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。&lt;/em&gt;
+在我二十一岁生日的时候，就算有人把这一点明着告诉我，我还是会怀抱着很多很多的奢望，对着迎面挥来的锤子眨一下眼睛。就算知道最后可能被扇一个耳光，我还是会竭尽所能去追。就算知道热情会被耗尽，还是要趁着这一刻奋力地跳起来。我什么都想要，那就先随便来一个，试试看好了，你说万一最后什么都没有，怕什么，我才二十一岁啊。
+这个题目下面的大多数答案我都很想赞。二十岁左右的少年，其实有多相似啊。
+提到未来，大家都瞬间焦虑起来，然后重重叹一口气；有人把自己搞得很忙什么都不肯错过，不忙的人也在拼命转着脑筋，想了很多很多没用的东西；每个人都在假装自己干了跟别人不一样的事情，显得很牛逼的样子；每个人都在伤脑筋，在踌躇，有时雄心壮志地立誓，有时是及时行乐麾下狗；我们谈恋爱，吵架，摔东西，坐在楼梯上哭；我们学外语，找实习，考前通宵背书，考完通宵喝酒；我们第一次被欺骗，第一次被背叛，第一次面试，第一次上床，第一次自己去旅行心砰砰跳地打印攻略，第一次穿高跟鞋心惊胆战地挤地铁。
+每个人都是一身用不完的力气，没有方向地这里甩一点，那里甩一点。你有时失望，有时害怕，有时讨厌自己，有时恨不得自杀，没关系，这就是二十岁啊。
+单是想想有这么多少年在跟你一样地上蹿下跳，就觉得很奇妙呢。
+我现在也不是很老，但如果要回头跟二十岁的自己说点什么，我会想说，二十岁，是无论如何都不可以保守的年纪呢。
+会想说，&lt;strong&gt;你可以迷茫，但不可以因为迷茫就踌躇无为，可以害怕，但不可以因为害怕就畏缩不前。&lt;/strong&gt;
+二十岁，还没到时候因为「没有结果」这种理由而去逃避喜欢的人，用不着因为「没有用」这种理由而逃避想学的东西，也不应该因为怕自己忙不过来就放弃各种有趣的事情啊。
+你干嘛要计较着没有时间，没有钱，没有希望，没有精力，拜托你才二十岁诶。
+是不是张爱玲说的来着，年轻时的弯路是非走不可的。我确实就是这样的人，前面有路口，我就想走过去看看拐了弯是什么样子，前面有座山，我就想爬上去看看山后面是什么，你说山后面没什么好玩的，哈我就是要自己看一下再决定你说得对不对。很多时候路的尽头确实是死胡同，山后面的狗东西也确实很吓人，但更让人开心的，其实是走路和爬山的过程啊。
+最怕就是听说山后面没什么好的，于是觉得还是过两天爬别的山好了，听说这条路的尽头不好看，就想着要么别走这条路了，不值得。
+一心想着走最快捷的路，看最好的风景，想着用最少的付出换最牛逼的收益，这么迷茫来迷茫去，只怕最后路也走不动，山也不会爬了。
+计较个什么，你才二十岁，起码能再生猛个十年，什么也锤不了你。
+转自：http://www.zhihu.com/question/23312072/answer/24218182&lt;/p&gt;</description></item><item><title>时间去哪儿</title><link>https://hzhu.win/2014/04/25/2014-03-25/</link><pubDate>Fri, 25 Apr 2014 00:00:01 -0700</pubDate><guid>https://hzhu.win/2014/04/25/2014-03-25/</guid><description>&lt;p&gt;今天，7点半就醒了，然后磨磨蹭蹭的到了9点出门，吃过早饭，上个网，溜达一下，吃个零食，oh，该吃午饭了，磨磨蹭蹭去吃个午饭，饭后逛逛聊个天，然后老师那边去溜达一下，交个东西，发现手机忘记拿，落在了教室，然后去拿，然后看会儿小说，逛个论坛。看看时间，饭点到了诶，吃完饭操你妈。
+7点起床，7点半出门，省的被某人吹头发吵得心情很差。
+吃早饭的时候，计划下一天的安排。大致如下：
+7点50&lt;del&gt;11点，背单词，30分钟为一个周期。拓词两个小时，朗读写作词汇一个小时
+11点&lt;/del&gt;11点半，口语，模板准备。
+12点&lt;del&gt;3点，阅读，精读。
+3点半&lt;/del&gt;5点半，写作。
+5点半&lt;del&gt;6点半，shadowing，听力。熟悉一下单词，分类词汇。
+7点半&lt;/del&gt;9点，写作或者网课。
+9点上床，看下各种模板。
+&lt;em&gt;&lt;del&gt;一天那么长怎么能浪费&lt;/del&gt;&lt;/em&gt;&lt;/p&gt;</description></item><item><title>我是个傻逼</title><link>https://hzhu.win/2014/04/13/2014-04-13/</link><pubDate>Sun, 13 Apr 2014 00:00:01 -0700</pubDate><guid>https://hzhu.win/2014/04/13/2014-04-13/</guid><description>&lt;p&gt;我是个傻逼。&lt;/p&gt;
+&lt;p&gt;是个傻逼&lt;/p&gt;
+&lt;p&gt;个傻逼&lt;/p&gt;
+&lt;p&gt;傻逼&lt;/p&gt;
+&lt;p&gt;傻逼啊&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;时间观念啊时间观念&lt;/p&gt;
+&lt;p&gt;7点起床。不赖床，咖啡+早餐，7点35到图书馆&lt;/p&gt;
+&lt;p&gt;背单词到10点，然后开始看读口语1个小时+阅读1个小时，估计2篇吧&lt;/p&gt;</description></item></channel></rss>
