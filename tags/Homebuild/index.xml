@@ -31,7 +31,6 @@
 &lt;li&gt;Office&lt;/li&gt;
 &lt;li&gt;Drive&lt;/li&gt;
 &lt;li&gt;Moment&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;docker
@@ -39,7 +38,7 @@
 &lt;li&gt;RssHub / FreshRS&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/KUNzfw/KindleEar-Docker"&gt;KindleEar-Docker&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/slurdge/goeland"&gt;goeland&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;[KMS 激活服务器]
+&lt;li&gt;KMS 激活服务器
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://hub.docker.com/r/teddysun/kms"&gt;teddysun/kms (docker.com)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://wind4.github.io/vlmcsd/"&gt;vlmcsd&lt;/a&gt;&lt;/li&gt;
@@ -97,4 +96,4 @@
 80端口是给ACME申请证书用的。
 除此之外，群晖的drive需要暴露一个端口给pc端用。 Wireguard 暴露一个端口。&lt;/p&gt;</description></item><item><title>DIY餐桌 Part 2</title><link>https://hzhu.win/2023/11/01/2023-012-07-DIY%E9%A4%90%E6%A1%8C-Part-2/</link><pubDate>Wed, 01 Nov 2023 23:09:10 -0700</pubDate><guid>https://hzhu.win/2023/11/01/2023-012-07-DIY%E9%A4%90%E6%A1%8C-Part-2/</guid><description>&lt;p&gt;最终效果还ok, 但是有一个一开始就应该直接上一个planer. 选的木头有点不太平, 有sander打的有一点不平整. 除此之外上的油也有的不合适&amp;hellip;
 但是总的来说还是满意的.
-&lt;img loading="lazy" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2023/dinning%20table.jpg"&gt;&lt;/p&gt;</description></item><item><title>DIY餐桌 Part 1</title><link>https://hzhu.win/2023/05/01/2023-05-01-DIY%E9%A4%90%E6%A1%8C-Part-1/</link><pubDate>Mon, 01 May 2023 23:09:10 -0700</pubDate><guid>https://hzhu.win/2023/05/01/2023-05-01-DIY%E9%A4%90%E6%A1%8C-Part-1/</guid><description>&lt;p&gt;看了一眼餐桌的选项，貌似最合适的是DIY。房子买了，但是太贵了。差不多一点的桌子都要一千多，而且也不是多么的好的那种。 不知道为什么突然灵光一闪，可以用homedepot的成品countertop来弄啊。一对桌脚，差不多就是$200，那么搭配一些螺丝，seal，wood finish oil，砂纸之类的，应该在$700左右。&lt;/p&gt;</description></item><item><title>template</title><link>https://hzhu.win/2000/01/11/9999-Template/</link><pubDate>Tue, 11 Jan 2000 15:09:00 -0800</pubDate><guid>https://hzhu.win/2000/01/11/9999-Template/</guid><description/></item></channel></rss>
+&lt;img alt="DIY 餐桌成品" loading="lazy" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2023/dinning%20table.jpg"&gt;&lt;/p&gt;</description></item><item><title>DIY餐桌 Part 1</title><link>https://hzhu.win/2023/05/01/2023-05-01-DIY%E9%A4%90%E6%A1%8C-Part-1/</link><pubDate>Mon, 01 May 2023 23:09:10 -0700</pubDate><guid>https://hzhu.win/2023/05/01/2023-05-01-DIY%E9%A4%90%E6%A1%8C-Part-1/</guid><description>&lt;p&gt;看了一眼餐桌的选项，貌似最合适的是DIY。房子买了，但是太贵了。差不多一点的桌子都要一千多，而且也不是多么的好的那种。 不知道为什么突然灵光一闪，可以用homedepot的成品countertop来弄啊。一对桌脚，差不多就是$200，那么搭配一些螺丝，seal，wood finish oil，砂纸之类的，应该在$700左右。&lt;/p&gt;</description></item></channel></rss>

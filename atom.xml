@@ -350,43 +350,95 @@
 &lt;ol&gt;
 &lt;li&gt;查看当前的VG状态：&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;首先，查看nas卷组的状态，了解当前的可用空间和卷组信息。
-&lt;code&gt;vgs&lt;/code&gt;
-这将显示所有卷组的信息，重点是nas卷组的Free字段，表示还可以使用的空间。&lt;/p&gt;
+&lt;p&gt;首先，查看nas卷组的状态，了解当前的可用空间和卷组信息。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vgs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这将显示所有卷组的信息，重点是nas卷组的Free字段，表示还可以使用的空间。&lt;/p&gt;
 &lt;ol start="2"&gt;
 &lt;li&gt;确认逻辑卷类型为lvm-thin：
-使用以下命令查看逻辑卷的信息，确保你要操作的卷是lvm-thin类型：
-&lt;code&gt;lvdisplay nas&lt;/code&gt;&lt;/li&gt;
+使用以下命令查看逻辑卷的信息，确保你要操作的卷是lvm-thin类型：&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id="扩展physical-volume如果有新磁盘要添加"&gt;扩展Physical Volume（如果有新磁盘要添加）：&lt;/h4&gt;
-&lt;p&gt;如果有新的物理磁盘可以添加到卷组中，你可以首先创建一个物理卷（PV），然后将其添加到卷组nas中。
-``
-#创建物理卷：
-pvcreate /dev/sdx # 替换为你的磁盘路径&lt;/p&gt;
-&lt;p&gt;#将物理卷扩展到卷组nas：
-vgextend nas /dev/sdx
-``&lt;/p&gt;
-&lt;h4 id="扩展lvm-thin的存储池"&gt;扩展lvm-thin的存储池：&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lvdisplay nas
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="扩展physical-volume如果有新磁盘要添加"&gt;扩展Physical Volume（如果有新磁盘要添加）：&lt;/h2&gt;
+&lt;p&gt;如果有新的物理磁盘可以添加到卷组中，你可以首先创建一个物理卷（PV），然后将其添加到卷组nas中。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#创建物理卷：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pvcreate /dev/sdx &lt;span class="c1"&gt;# 替换为你的磁盘路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#将物理卷扩展到卷组nas：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vgextend nas /dev/sdx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="扩展lvm-thin的存储池"&gt;扩展lvm-thin的存储池：&lt;/h2&gt;
 &lt;p&gt;扩展lvm-thin类型的逻辑卷与普通逻辑卷略有不同。lvm-thin的逻辑卷实际上包含两个部分，一个是thin pool（存储池），另一个是具体的逻辑卷。你需要先扩展thin pool，然后再扩展其上的逻辑卷。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;先扩展thin pool：
-查看当前thin pool的信息：
-&lt;code&gt;lvs --segments -o+seg_monitor&lt;/code&gt;
-假设你的thin pool名为nas-thinpool，你可以通过以下命令扩展它（假设扩展100G）：
-&lt;code&gt;lvextend -L +100G nas/nas-thinpool&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;扩展thin volume：
-如果你有在thin pool之上的逻辑卷（如nas-vmdata），可以通过以下命令扩展它：
-&lt;code&gt;lvextend -L +50G nas/nas-vmdata&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;先扩展thin pool：
+查看当前thin pool的信息：&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="检查扩展"&gt;检查扩展：&lt;/h3&gt;
-&lt;p&gt;``
-lvdisplay nas # 扩展完成后，使用以下命令检查扩展是否成功&lt;/p&gt;
-&lt;p&gt;df -h # 以及检查文件系统的使用情况：
-``&lt;/p&gt;</content><category term="tech/收录"/><category term="Homebuild"/></entry><entry><title>Server Rebuild</title><link href="https://hzhu.win/2024/04/12/2024-04-12-Server-Rebuild/"/><id>https://hzhu.win/2024/04/12/2024-04-12-Server-Rebuild/</id><published>2024-04-12T15:39:00-07:00</published><updated>2024-04-12T15:39:00-07:00</updated><summary type="html">&lt;h2 id="nas-分配"&gt;#NAS 分配&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lvs --segments -o+seg_monitor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;假设你的thin pool名为nas-thinpool，你可以通过以下命令扩展它（假设扩展100G）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lvextend -L +100G nas/nas-thinpool
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="2"&gt;
+&lt;li&gt;扩展thin volume：
+如果你有在thin pool之上的逻辑卷（如nas-vmdata），可以通过以下命令扩展它：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lvextend -L +50G nas/nas-vmdata
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="检查扩展"&gt;检查扩展：&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lvdisplay nas &lt;span class="c1"&gt;# 扩展完成后，使用以下命令检查扩展是否成功&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;df -h &lt;span class="c1"&gt;# 以及检查文件系统的使用情况：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><category term="tech/收录"/><category term="Homebuild"/></entry><entry><title>Server Rebuild</title><link href="https://hzhu.win/2024/04/12/2024-04-12-Server-Rebuild/"/><id>https://hzhu.win/2024/04/12/2024-04-12-Server-Rebuild/</id><published>2024-04-12T15:39:00-07:00</published><updated>2024-04-12T15:39:00-07:00</updated><summary type="html">&lt;h2 id="nas-分配"&gt;#NAS 分配&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;这几天准备把NAS 彻底的迁移一下，现在有三个主机。&lt;/li&gt;
 &lt;li&gt;Old NAS
@@ -418,7 +470,6 @@ lvdisplay nas # 扩展完成后，使用以下命令检查扩展是否成功&lt;
 &lt;li&gt;Office&lt;/li&gt;
 &lt;li&gt;Drive&lt;/li&gt;
 &lt;li&gt;Moment&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;docker
@@ -426,7 +477,7 @@ lvdisplay nas # 扩展完成后，使用以下命令检查扩展是否成功&lt;
 &lt;li&gt;RssHub / FreshRS&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/KUNzfw/KindleEar-Docker"&gt;KindleEar-Docker&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/slurdge/goeland"&gt;goeland&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;[KMS 激活服务器]
+&lt;li&gt;KMS 激活服务器
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://hub.docker.com/r/teddysun/kms"&gt;teddysun/kms (docker.com)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://wind4.github.io/vlmcsd/"&gt;vlmcsd&lt;/a&gt;&lt;/li&gt;
@@ -477,7 +528,6 @@ lvdisplay nas # 扩展完成后，使用以下命令检查扩展是否成功&lt;
 &lt;li&gt;Office&lt;/li&gt;
 &lt;li&gt;Drive&lt;/li&gt;
 &lt;li&gt;Moment&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;docker
@@ -485,7 +535,7 @@ lvdisplay nas # 扩展完成后，使用以下命令检查扩展是否成功&lt;
 &lt;li&gt;RssHub / FreshRS&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/KUNzfw/KindleEar-Docker"&gt;KindleEar-Docker&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/slurdge/goeland"&gt;goeland&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;[KMS 激活服务器]
+&lt;li&gt;KMS 激活服务器
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://hub.docker.com/r/teddysun/kms"&gt;teddysun/kms (docker.com)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://wind4.github.io/vlmcsd/"&gt;vlmcsd&lt;/a&gt;&lt;/li&gt;
@@ -574,7 +624,7 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;p&gt;群晖的奇怪设计导致rclone 总是起不来, 思索再三, 决定用虚拟机直接上一个.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="配置webdav-和rclone"&gt;配置webdav 和rclone&lt;/h3&gt;
+&lt;h2 id="配置webdav-和rclone"&gt;配置webdav 和rclone&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
@@ -591,16 +641,23 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;/span&gt;&lt;span class="lnt"&gt;4
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;#新建本地文件夹,位置可以自己选&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; mkdir /data/aliyunwebdav
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;#挂载&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; rclone mount DriveName:Folder LocalFolder --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#新建本地文件夹,位置可以自己选&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir /data/aliyunwebdav
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#挂载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rclone mount DriveName:Folder LocalFolder --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;DriverName是你在配置rclone的时候设置的名字,Folder没有需要求的话填/即可,LocalFolder是你本地挂载的地址,/tmp比较特殊,上传时缓存目录,其他类型挂载一般时不需要这个参数的,默认/tmp地址即可.&lt;/p&gt;
-&lt;p&gt;aliyunDrive
-rclone mount aliyunDrive:Jellfin/ aliyunwebdav &amp;ndash;cache-dir /tmp &amp;ndash;allow-other &amp;ndash;vfs-cache-mode writes &amp;ndash;allow-non-empty&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;aliyunDrive&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rclone mount aliyunDrive:Jellfin/ aliyunwebdav --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
 &lt;/span&gt;&lt;span class="lnt"&gt;2
@@ -612,7 +669,7 @@ rclone mount aliyunDrive:Jellfin/ aliyunwebdav &amp;ndash;cache-dir /tmp &amp;nd
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rclone mount aliyundrive:Jellfin/ aliyundrive --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id="设置开机自启动"&gt;设置开机自启动&lt;/h3&gt;
+&lt;/div&gt;&lt;h2 id="设置开机自启动"&gt;设置开机自启动&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
@@ -632,21 +689,21 @@ rclone mount aliyunDrive:Jellfin/ aliyunwebdav &amp;ndash;cache-dir /tmp &amp;nd
 &lt;/span&gt;&lt;span class="lnt"&gt;15
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;#将后面修改成你上面手动运行命令中，除了rclone的全部参数&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;command&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;mount DriveName:Folder LocalFolder --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;#以下是一整条命令，一起复制到SSH客户端运行&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; cat &amp;gt; /etc/systemd/system/rclone.service &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; [Unit]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; Description=Rclone
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; After=network-online.target
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; [Service]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; Type=simple
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; ExecStart=$(command -v rclone) ${command}
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; Restart=on-abort
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; User=root
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; [Install]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; WantedBy=default.target
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; EOF&lt;/span&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#将后面修改成你上面手动运行命令中，除了rclone的全部参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;command&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;mount DriveName:Folder LocalFolder --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#以下是一整条命令，一起复制到SSH客户端运行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cat &amp;gt; /etc/systemd/system/rclone.service &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;[Unit]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;Description=Rclone
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;After=network-online.target
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;[Service]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;Type=simple
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;ExecStart=$(command -v rclone) ${command}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;Restart=on-abort
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;User=root
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;[Install]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;WantedBy=default.target
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;EOF&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -655,8 +712,8 @@ rclone mount aliyunDrive:Jellfin/ aliyunwebdav &amp;ndash;cache-dir /tmp &amp;nd
 &lt;/span&gt;&lt;span class="lnt"&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; systemctl start rclone &lt;span class="c1"&gt;#启动rclone&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; rclone &lt;span class="c1"&gt;#添加自动启动&lt;/span&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl start rclone &lt;span class="c1"&gt;#启动rclone&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; rclone &lt;span class="c1"&gt;#添加自动启动&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content><category term="tech/收录"/><category term="Homebuild"/></entry><entry><title>Poor Man's Jellfin 反向代理</title><link href="https://hzhu.win/2023/12/07/2023-12-07-Poor-Man-s-Jellfin-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/><id>https://hzhu.win/2023/12/07/2023-12-07-Poor-Man-s-Jellfin-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</id><published>2023-12-07T14:24:30-08:00</published><updated>2023-12-07T14:24:30-08:00</updated><summary type="html">&lt;ol&gt;
@@ -683,54 +740,141 @@ rclone mount aliyunDrive:Jellfin/ aliyunwebdav &amp;ndash;cache-dir /tmp &amp;nd
 &lt;h2 id="zoraxy中创建代理规则"&gt;Zoraxy中创建代理规则&lt;/h2&gt;
 &lt;p&gt;配置代理规则，自动申请证书&lt;/p&gt;</content><category term="tech/收录"/><category term="Homebuild"/></entry><entry><title>DIY餐桌 Part 2</title><link href="https://hzhu.win/2023/11/01/2023-012-07-DIY%E9%A4%90%E6%A1%8C-Part-2/"/><id>https://hzhu.win/2023/11/01/2023-012-07-DIY%E9%A4%90%E6%A1%8C-Part-2/</id><published>2023-11-01T23:09:10-07:00</published><updated>2023-11-01T23:09:10-07:00</updated><summary type="html">&lt;p&gt;最终效果还ok, 但是有一个一开始就应该直接上一个planer. 选的木头有点不太平, 有sander打的有一点不平整. 除此之外上的油也有的不合适&amp;hellip;
 但是总的来说还是满意的.
-&lt;img loading="lazy" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2023/dinning%20table.jpg"&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;最终效果还ok, 但是有一个一开始就应该直接上一个planer. 选的木头有点不太平, 有sander打的有一点不平整. 除此之外上的油也有的不合适&amp;hellip;
+&lt;img alt="DIY 餐桌成品" loading="lazy" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2023/dinning%20table.jpg"&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;最终效果还ok, 但是有一个一开始就应该直接上一个planer. 选的木头有点不太平, 有sander打的有一点不平整. 除此之外上的油也有的不合适&amp;hellip;
 但是总的来说还是满意的.
-&lt;img loading="lazy" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2023/dinning%20table.jpg"&gt;&lt;/p&gt;</content><category term="Homebuild"/></entry><entry><title>小米AX9000折腾记录</title><link href="https://hzhu.win/2023/06/21/2023-06-21-%E5%B0%8F%E7%B1%B3AX9000%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/"/><id>https://hzhu.win/2023/06/21/2023-06-21-%E5%B0%8F%E7%B1%B3AX9000%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</id><published>2023-06-21T19:09:00-07:00</published><updated>2023-06-21T19:09:00-07:00</updated><summary type="html">&lt;p&gt;双分区固件的好处不会死&amp;hellip;… 用小米救砖工具能快速恢复分区表.&lt;/p&gt;
+&lt;img alt="DIY 餐桌成品" loading="lazy" src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2023/dinning%20table.jpg"&gt;&lt;/p&gt;</content><category term="Homebuild"/></entry><entry><title>小米AX9000折腾记录</title><link href="https://hzhu.win/2023/06/21/2023-06-21-%E5%B0%8F%E7%B1%B3AX9000%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/"/><id>https://hzhu.win/2023/06/21/2023-06-21-%E5%B0%8F%E7%B1%B3AX9000%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</id><published>2023-06-21T19:09:00-07:00</published><updated>2023-06-21T19:09:00-07:00</updated><summary type="html">&lt;p&gt;双分区固件的好处不会死&amp;hellip;… 用小米救砖工具能快速恢复分区表.&lt;/p&gt;
 &lt;h2 id="ssh"&gt;ssh&lt;/h2&gt;
 &lt;p&gt;基本原理就是利用另外一个OpenWrt通过中继进行注入攻击, 具体操作参考卡卡的视频. 他的视频是最无脑的.&lt;/p&gt;</summary><content type="html">&lt;p&gt;双分区固件的好处不会死&amp;hellip;… 用小米救砖工具能快速恢复分区表.&lt;/p&gt;
 &lt;h2 id="ssh"&gt;ssh&lt;/h2&gt;
 &lt;p&gt;基本原理就是利用另外一个OpenWrt通过中继进行注入攻击, 具体操作参考卡卡的视频. 他的视频是最无脑的.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cat /proc/mtd&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;mtd21: 03800000 00020000 &amp;ldquo;rootfs&amp;rdquo;
-mtd22: 03800000 00020000 &amp;ldquo;rootfs_1&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;rootfs总共有两个分区, 分别为21和22. 其中,当last success 返回1时, 使用的为mtd22; 返回0时,使用21;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;nvram get flag_last_success&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;返回的值为1, 所以需要使用以下命令切换到21分区:
-nvram set flag_last_success=0
-nvram set flag_boot_rootfs=0
-nvram commit
-reboot&lt;/p&gt;
-&lt;p&gt;需要注意的是,切换分区后返回的值会变,这里指最开始的返回的值.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cat /proc/mtd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mtd21: 03800000 00020000 &amp;#34;rootfs&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mtd22: 03800000 00020000 &amp;#34;rootfs_1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;rootfs总共有两个分区, 分别为21和22. 其中,当last success 返回1时, 使用的为mtd22; 返回0时,使用21;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nvram get flag_last_success
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;返回的值为1, 所以需要使用以下命令切换到21分区:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nvram &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;flag_last_success&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nvram &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;flag_boot_rootfs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nvram commit
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;需要注意的是,切换分区后返回的值会变,这里指最开始的返回的值.&lt;/p&gt;
 &lt;p&gt;接下来需要做两件事:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;刷入OP固件 ubiformat /dev/mtd22 -y -f /tmp/你上传的固件文件名 (.ubi)&lt;/li&gt;
-&lt;li&gt;切换启动分区为22分区；
-&lt;code&gt;nvram set flag_last_success=1 nvram set flag_boot_rootfs=1 nvram commit reboot&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;切换启动分区为22分区；&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="双系统切换"&gt;双系统切换&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nvram &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;flag_last_success&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nvram &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;flag_boot_rootfs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nvram commit
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="双系统切换"&gt;双系统切换&lt;/h2&gt;
 &lt;h3 id="op切换到小米系统"&gt;OP切换到小米系统&lt;/h3&gt;
-&lt;p&gt;fw_setenv flag_last_success 0
-fw_setenv flag_boot_rootfs 0
-reboot&lt;/p&gt;
-&lt;h3 id="小米系统切换到op"&gt;小米系统切换到OP&lt;/h3&gt;
-&lt;p&gt;nvram set flag_last_success=1
-nvram set flag_boot_rootfs=1
-nvram commit
-reboot&lt;/p&gt;
-&lt;p&gt;ssh密码:9b7fb870&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;fw_setenv flag_last_success &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;fw_setenv flag_boot_rootfs &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="小米系统切换到op"&gt;小米系统切换到OP&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nvram &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;flag_last_success&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nvram &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;flag_boot_rootfs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nvram commit
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;ssh密码:9b7fb870&lt;/p&gt;
 &lt;h2 id="配置"&gt;配置&lt;/h2&gt;
 &lt;p&gt;默认安装完以后没有LuCI, 需要使用下列命令安装:
 首先连接ssh: 不建议设置root密码.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;opkg update opkg install luci opkg install luci-ssl /etc/init.d/uhttpd restart&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;默认用factory安装完以后是recovery mode, 进入固件升级页面, 使用同版本的upgrade固件&amp;quot;升级&amp;quot;系统. 重启后会退出该模式, 但是需要重新安装 LuCI.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;opkg update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;opkg install luci
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;opkg install luci-ssl
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/etc/init.d/uhttpd restart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;默认用factory安装完以后是recovery mode, 进入固件升级页面, 使用同版本的upgrade固件&amp;quot;升级&amp;quot;系统. 重启后会退出该模式, 但是需要重新安装 LuCI.&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;接下来就是该干嘛干嘛. 有一个需要注意的是, 官方固件会有第四个radio 出现, 不能有启用它, 一旦启用, wifi会有断流的情况, 每几秒就断流一次. 16MHZ 也不能启用.
 &lt;code&gt;radio3 Qualcomm Atheros QCN6024/9024/9074 802.11ac/ax/n&lt;/code&gt;&lt;/del&gt;&lt;/p&gt;
 &lt;h2 id="频率设置"&gt;频率设置&lt;/h2&gt;
-&lt;p&gt;radio0 (5GHz AN)
-radio1 (5GHz AX 80MHz only)
-radio2 (2.4GHz)
-radio3 (5GHz AX 160MHz)&lt;/p&gt;
-&lt;h2 id="推荐安装的软件"&gt;推荐安装的软件&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;radio0 (5GHz AN)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;radio1 (5GHz AX 80MHz only)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;radio2 (2.4GHz)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;radio3 (5GHz AX 160MHz)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="推荐安装的软件"&gt;推荐安装的软件&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;luci-app-upnp&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://openwrt.org/docs/guide-user/services/dns/adguard-home"&gt;adguard home&lt;/a&gt;&lt;/li&gt;
