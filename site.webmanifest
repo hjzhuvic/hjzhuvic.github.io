@@ -1,0 +1,8 @@
+{
+  "name": "花开彼岸天",
+  "short_name": "花开彼岸天",
+  "icons": [{ "src": "/favicon.ico", "sizes": "48x48", "type": "image/x-icon" }],
+  "theme_color": "#00223E",
+  "background_color": "#fffdf7",
+  "display": "standalone"
+}
