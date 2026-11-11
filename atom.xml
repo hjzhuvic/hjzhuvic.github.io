@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title>花开彼岸天</title><subtitle>鱼跃此时海</subtitle><link href="https://hzhu.win/"/><link href="https://hzhu.win/atom.xml" rel="self" type="application/atom+xml"/><id>https://hzhu.win/</id><author><name>花开彼岸天</name></author><updated>2026-07-30T12:15:00-07:00</updated><entry><title>Thunberbird MCP 加持的 Hermes</title><link href="https://hzhu.win/2026/07/30/2026-07-30-Thunberbird-MCP-%E5%8A%A0%E6%8C%81%E7%9A%84-Hermes/"/><id>https://hzhu.win/2026/07/30/2026-07-30-Thunberbird-MCP-%E5%8A%A0%E6%8C%81%E7%9A%84-Hermes/</id><published>2026-07-30T12:15:00-07:00</published><updated>2026-07-30T12:15:00-07:00</updated><summary type="html">&lt;h1 id="thunderbird-mcp--hermes"&gt;Thunderbird MCP + Hermes&lt;/h1&gt;
-&lt;p&gt;最近想把Thunderbird接到Hermes里面，主要是为了直接让Hermes帮我搜邮件、看邮件、查日历什么的。之前虽然也能用其他方式处理邮箱，但是总觉得不够顺手, 特别是用imap-mcp 访问阿里云邮箱时，总是有很多限制，既然Thunderbird这边已经有MCP了，那就接上试一下。&lt;/p&gt;</summary><content type="html">&lt;h1 id="thunderbird-mcp--hermes"&gt;Thunderbird MCP + Hermes&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title>花开彼岸天</title><subtitle>鱼跃此时海</subtitle><link href="https://hzhu.win/"/><link href="https://hzhu.win/atom.xml" rel="self" type="application/atom+xml"/><id>https://hzhu.win/</id><author><name>花开彼岸天</name></author><updated>2026-07-30T12:15:00-07:00</updated><entry><title>Thunberbird MCP 加持的 Hermes</title><link href="https://hzhu.win/2026/07/30/2026-07-30-Thunberbird-MCP-%E5%8A%A0%E6%8C%81%E7%9A%84-Hermes/"/><id>https://hzhu.win/2026/07/30/2026-07-30-Thunberbird-MCP-%E5%8A%A0%E6%8C%81%E7%9A%84-Hermes/</id><published>2026-07-30T12:15:00-07:00</published><updated>2026-07-30T12:15:00-07:00</updated><summary type="html">&lt;h1 id="thunderbird-mcp--hermes" class="anchor-link"&gt;&lt;a href="#thunderbird-mcp--hermes"&gt;Thunderbird MCP + Hermes&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;最近想把Thunderbird接到Hermes里面，主要是为了直接让Hermes帮我搜邮件、看邮件、查日历什么的。之前虽然也能用其他方式处理邮箱，但是总觉得不够顺手, 特别是用imap-mcp 访问阿里云邮箱时，总是有很多限制，既然Thunderbird这边已经有MCP了，那就接上试一下。&lt;/p&gt;</summary><content type="html">
+&lt;h1 id="thunderbird-mcp--hermes" class="anchor-link"&gt;&lt;a href="#thunderbird-mcp--hermes"&gt;Thunderbird MCP + Hermes&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;最近想把Thunderbird接到Hermes里面，主要是为了直接让Hermes帮我搜邮件、看邮件、查日历什么的。之前虽然也能用其他方式处理邮箱，但是总觉得不够顺手, 特别是用imap-mcp 访问阿里云邮箱时，总是有很多限制，既然Thunderbird这边已经有MCP了，那就接上试一下。&lt;/p&gt;
 &lt;p&gt;这个东西其实不复杂，主要就是两部分：&lt;/p&gt;
 &lt;ol&gt;
@@ -7,7 +8,7 @@
 &lt;li&gt;Hermes里面配置一个HTTP MCP。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;基本流程如下。&lt;/p&gt;
-&lt;h2 id="thunderbird-container"&gt;Thunderbird container&lt;/h2&gt;
+&lt;h2 id="thunderbird-container" class="anchor-link"&gt;&lt;a href="#thunderbird-container"&gt;Thunderbird container&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;我这里不是单独起一个MCP container，而是在Thunderbird的container里面提供MCP服务。用的是&lt;a href="https://hub.docker.com/r/jlesage/thunderbird"&gt;jlesage/thunderbird&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;现在的配置大概是这样：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -52,7 +53,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这里5800是Thunderbird的web界面，8765是MCP的HTTP端口。&lt;code&gt;/config&lt;/code&gt;一定要挂载出来，不然container重建以后，Thunderbird里面的配置和扩展就没了。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;TZ&lt;/code&gt;设置成温哥华，主要是为了邮件和日历时间看起来不要乱。&lt;code&gt;ENABLE_CJK_FONT&lt;/code&gt;是中文字体。Web file manager和Web terminal我也开了，不过这个东西只适合放在自己的内网里面，没必要暴露到公网。&lt;/p&gt;
-&lt;h2 id="hermes里面添加mcp"&gt;Hermes里面添加MCP&lt;/h2&gt;
+&lt;h2 id="hermes里面添加mcp" class="anchor-link"&gt;&lt;a href="#hermes%e9%87%8c%e9%9d%a2%e6%b7%bb%e5%8a%a0mcp"&gt;Hermes里面添加MCP&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Thunderbird MCP的地址是：&lt;code&gt;http://XXX.XXX.XXX.XXX:8765/&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;认证方式是Bearer token。Hermes会把真正的凭据放到：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;~/.hermes/.env&lt;/code&gt;&lt;/p&gt;
@@ -78,14 +79,14 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这里的环境变量名称让Hermes自己管理就好，不需要自己猜。总之就是：配置放config，密码放&lt;code&gt;.env&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id="5800和8765不要搞混"&gt;5800和8765不要搞混&lt;/h3&gt;
+&lt;h3 id="5800和8765不要搞混" class="anchor-link"&gt;&lt;a href="#5800%e5%92%8c8765%e4%b8%8d%e8%a6%81%e6%90%9e%e6%b7%b7"&gt;5800和8765不要搞混&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;5800&lt;/code&gt;是Web界面，&lt;code&gt;8765&lt;/code&gt;才是MCP。&lt;/p&gt;
 &lt;p&gt;如果只是想让Hermes调用Thunderbird，不需要把5800填到Hermes里面。&lt;/p&gt;
-&lt;h3 id="配置目录不要删"&gt;配置目录不要删&lt;/h3&gt;
+&lt;h3 id="配置目录不要删" class="anchor-link"&gt;&lt;a href="#%e9%85%8d%e7%bd%ae%e7%9b%ae%e5%bd%95%e4%b8%8d%e8%a6%81%e5%88%a0"&gt;配置目录不要删&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;宿主机的：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/opt/stacks/thunderbird/thunderbird&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;里面是Thunderbird的配置、账户状态和扩展数据。以后重建container之前，最好先备份一下这个目录。&lt;/p&gt;
-&lt;h2 id="最后"&gt;最后&lt;/h2&gt;
+&lt;h2 id="最后" class="anchor-link"&gt;&lt;a href="#%e6%9c%80%e5%90%8e"&gt;最后&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;整体上这次还是比较顺利的。之前觉得Thunderbird MCP可能要折腾半天，结果真正麻烦的地方主要就是container启动顺序和网关重载，其他基本就是一条命令的事情。&lt;/p&gt;
 &lt;p&gt;现在Hermes可以直接操作Thunderbird了，后面查邮件、整理客户往来、看日历都方便很多。&lt;/p&gt;</content><category term="tech/收录"/></entry><entry><title>Vibe Coding</title><link href="https://hzhu.win/2026/07/01/2026-07-01-Vibe-Coding/"/><id>https://hzhu.win/2026/07/01/2026-07-01-Vibe-Coding/</id><published>2026-07-01T23:59:11-07:00</published><updated>2026-07-01T23:59:11-07:00</updated><summary type="html">&lt;p&gt;今天下午临时想要做一个之前想了很久的基于加速度计的espresso shot timer， 不得不说vibe coding 简直太好用了，也就大概几个小时，一个像模像样的代码已经搞定了，剩下的也就是做一个外壳，然后3D 打印一下。昨天的话搞了一个基于nrf52的一个有线/无线Mouse Mover， 大概用了一个小时，50行左右的代码。 这两个都是用opencode 做的，QWEN3.7-Max + kimi2.6 + deepseek V4-flash。 事实证明还是很能打的。&lt;/p&gt;</summary><content type="html">&lt;p&gt;今天下午临时想要做一个之前想了很久的基于加速度计的espresso shot timer， 不得不说vibe coding 简直太好用了，也就大概几个小时，一个像模像样的代码已经搞定了，剩下的也就是做一个外壳，然后3D 打印一下。昨天的话搞了一个基于nrf52的一个有线/无线Mouse Mover， 大概用了一个小时，50行左右的代码。 这两个都是用opencode 做的，QWEN3.7-Max + kimi2.6 + deepseek V4-flash。 事实证明还是很能打的。&lt;/p&gt;
 &lt;p&gt;之前不是没有用AI写代码，但是写的这么顺利的还是蛮少的。 准备这周在Matlab 上再试一下。 之前欠了好多research上面的东西，还是要重新捡起来，毕竟毕业时自己的事情。&lt;/p&gt;
@@ -372,7 +373,8 @@
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lvdisplay nas
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="扩展physical-volume如果有新磁盘要添加"&gt;扩展Physical Volume（如果有新磁盘要添加）：&lt;/h2&gt;
+&lt;/div&gt;
+&lt;h2 id="扩展physical-volume如果有新磁盘要添加" class="anchor-link"&gt;&lt;a href="#%e6%89%a9%e5%b1%95physical-volume%e5%a6%82%e6%9e%9c%e6%9c%89%e6%96%b0%e7%a3%81%e7%9b%98%e8%a6%81%e6%b7%bb%e5%8a%a0"&gt;扩展Physical Volume（如果有新磁盘要添加）：&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;如果有新的物理磁盘可以添加到卷组中，你可以首先创建一个物理卷（PV），然后将其添加到卷组nas中。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -390,7 +392,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vgextend nas /dev/sdx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="扩展lvm-thin的存储池"&gt;扩展lvm-thin的存储池：&lt;/h2&gt;
+&lt;/div&gt;
+&lt;h2 id="扩展lvm-thin的存储池" class="anchor-link"&gt;&lt;a href="#%e6%89%a9%e5%b1%95lvm-thin%e7%9a%84%e5%ad%98%e5%82%a8%e6%b1%a0"&gt;扩展lvm-thin的存储池：&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;扩展lvm-thin类型的逻辑卷与普通逻辑卷略有不同。lvm-thin的逻辑卷实际上包含两个部分，一个是thin pool（存储池），另一个是具体的逻辑卷。你需要先扩展thin pool，然后再扩展其上的逻辑卷。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;先扩展thin pool：
@@ -425,7 +428,8 @@
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lvextend -L +50G nas/nas-vmdata
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="检查扩展"&gt;检查扩展：&lt;/h2&gt;
+&lt;/div&gt;
+&lt;h2 id="检查扩展" class="anchor-link"&gt;&lt;a href="#%e6%a3%80%e6%9f%a5%e6%89%a9%e5%b1%95"&gt;检查扩展：&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
@@ -438,7 +442,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;df -h &lt;span class="c1"&gt;# 以及检查文件系统的使用情况：&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content><category term="tech/收录"/><category term="Homebuild"/></entry><entry><title>Server Rebuild</title><link href="https://hzhu.win/2024/04/12/2024-04-12-Server-Rebuild/"/><id>https://hzhu.win/2024/04/12/2024-04-12-Server-Rebuild/</id><published>2024-04-12T15:39:00-07:00</published><updated>2024-04-12T15:39:00-07:00</updated><summary type="html">&lt;h2 id="nas-分配"&gt;#NAS 分配&lt;/h2&gt;
+&lt;/div&gt;</content><category term="tech/收录"/><category term="Homebuild"/></entry><entry><title>Server Rebuild</title><link href="https://hzhu.win/2024/04/12/2024-04-12-Server-Rebuild/"/><id>https://hzhu.win/2024/04/12/2024-04-12-Server-Rebuild/</id><published>2024-04-12T15:39:00-07:00</published><updated>2024-04-12T15:39:00-07:00</updated><summary type="html">&lt;h2 id="nas-分配" class="anchor-link"&gt;&lt;a href="#nas-%e5%88%86%e9%85%8d"&gt;#NAS 分配&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;这几天准备把NAS 彻底的迁移一下，现在有三个主机。&lt;/li&gt;
 &lt;li&gt;Old NAS
@@ -457,7 +461,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="self-host-aio"&gt;Self-host (AIO)&lt;/h2&gt;
+&lt;h2 id="self-host-aio" class="anchor-link"&gt;&lt;a href="#self-host-aio"&gt;Self-host (AIO)&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;群晖
 &lt;ul&gt;
@@ -496,7 +500,8 @@
 &lt;li&gt;HomeAssistant&lt;/li&gt;
 &lt;li&gt;Hacktionish&lt;/li&gt;
 &lt;li&gt;PVE 备份&lt;/li&gt;
-&lt;/ul&gt;</summary><content type="html">&lt;h2 id="nas-分配"&gt;#NAS 分配&lt;/h2&gt;
+&lt;/ul&gt;</summary><content type="html">
+&lt;h2 id="nas-分配" class="anchor-link"&gt;&lt;a href="#nas-%e5%88%86%e9%85%8d"&gt;#NAS 分配&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;这几天准备把NAS 彻底的迁移一下，现在有三个主机。&lt;/li&gt;
 &lt;li&gt;Old NAS
@@ -515,7 +520,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="self-host-aio"&gt;Self-host (AIO)&lt;/h2&gt;
+&lt;h2 id="self-host-aio" class="anchor-link"&gt;&lt;a href="#self-host-aio"&gt;Self-host (AIO)&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;群晖
 &lt;ul&gt;
@@ -561,7 +566,7 @@
 &lt;code&gt;qm importdisk 101 /var/lib/vz/template/iso/arc.img local-lvm&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;添加硬盘。由于有一个比较大的18T的硬盘，所以直接passthrough，这样子性能比较好。另外两个硬盘直接作为ssd缓存&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="硬盘直通"&gt;硬盘直通：&lt;/h2&gt;
+&lt;h2 id="硬盘直通" class="anchor-link"&gt;&lt;a href="#%e7%a1%ac%e7%9b%98%e7%9b%b4%e9%80%9a"&gt;硬盘直通：&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;裸磁盘映射，将单个硬盘或者分区，通过qemu进行映射到虚拟机。通过这种方式，硬盘会在虚拟机内会认为是一个qemu-hdd。&lt;/p&gt;</summary><content type="html">&lt;p&gt;旧电脑准备退休了， 准备3D打印机修完以后重新搞一个机箱。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;创建虚拟机。选择intel E1000 网卡。&lt;/li&gt;
@@ -569,20 +574,20 @@
 &lt;code&gt;qm importdisk 101 /var/lib/vz/template/iso/arc.img local-lvm&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;添加硬盘。由于有一个比较大的18T的硬盘，所以直接passthrough，这样子性能比较好。另外两个硬盘直接作为ssd缓存&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="硬盘直通"&gt;硬盘直通：&lt;/h2&gt;
+&lt;h2 id="硬盘直通" class="anchor-link"&gt;&lt;a href="#%e7%a1%ac%e7%9b%98%e7%9b%b4%e9%80%9a"&gt;硬盘直通：&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;裸磁盘映射，将单个硬盘或者分区，通过qemu进行映射到虚拟机。通过这种方式，硬盘会在虚拟机内会认为是一个qemu-hdd。&lt;/p&gt;
-&lt;h2 id="sata控制器直通"&gt;SATA控制器直通&lt;/h2&gt;
+&lt;h2 id="sata控制器直通" class="anchor-link"&gt;&lt;a href="#sata%e6%8e%a7%e5%88%b6%e5%99%a8%e7%9b%b4%e9%80%9a"&gt;SATA控制器直通&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;del&gt;VM系统直通SATA Controller(SATA 控制器)，会把整个SATA总线全部直通过去，就是直接将sata总线直通，那么有些主板sata接口就会全部被直通。性能等于裸机， 需要IOMMU.&lt;/del&gt;
 PVE管理数据备份之类的&lt;/p&gt;
-&lt;h2 id="迁移"&gt;迁移&lt;/h2&gt;
+&lt;h2 id="迁移" class="anchor-link"&gt;&lt;a href="#%e8%bf%81%e7%a7%bb"&gt;迁移&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;迁移最方便的还是用hypber backup，在新主机上安装hypber backup vault， 然后在source上启动备份。
 备份完成后，在新主机上释放备份就可以。&lt;/p&gt;
-&lt;h2 id="passthrough-igpu"&gt;Passthrough iGPU&lt;/h2&gt;
+&lt;h2 id="passthrough-igpu" class="anchor-link"&gt;&lt;a href="#passthrough-igpu"&gt;Passthrough iGPU&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;~~直通iGPU的原因是考虑到Jellfin和Moment的需求。 虽然貌似也可以用CPU，但是iGPU更加方便，特别是Jellfin那边。 ~~&lt;/p&gt;
-&lt;h2 id="其他各种hack"&gt;其他各种hack&lt;/h2&gt;
+&lt;h2 id="其他各种hack" class="anchor-link"&gt;&lt;a href="#%e5%85%b6%e4%bb%96%e5%90%84%e7%a7%8dhack"&gt;其他各种hack&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;其他的就是添加各种支持，hack。
 &lt;a href="https://xpenology.com/forum/topic/65643-ame-30-patcher/"&gt;Advanced Media Extensions 3.0&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="reference"&gt;Reference&lt;/h2&gt;
+&lt;h2 id="reference" class="anchor-link"&gt;&lt;a href="#reference"&gt;Reference&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)"&gt;https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM)&lt;/a&gt;
 &lt;a href="https://pve.proxmox.com/wiki/Performance_Tweaks#Disk_Cache"&gt;https://pve.proxmox.com/wiki/Performance_Tweaks#Disk_Cache&lt;/a&gt;
 &lt;a href="https://optimus-xs.github.io/posts/passthrough-hard-drive-in-proxmox-ve/"&gt;https://optimus-xs.github.io/posts/passthrough-hard-drive-in-proxmox-ve/&lt;/a&gt;&lt;/p&gt;</content><category term="tech/收录"/><category term="Homebuild"/></entry><entry><title>Poor Man's Jellfin</title><link href="https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/"/><id>https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/</id><published>2023-12-09T13:35:53-08:00</published><updated>2023-12-09T13:35:53-08:00</updated><summary type="html">&lt;p&gt;基本流程如下&lt;/p&gt;
@@ -624,7 +629,7 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;p&gt;群晖的奇怪设计导致rclone 总是起不来, 思索再三, 决定用虚拟机直接上一个.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="配置webdav-和rclone"&gt;配置webdav 和rclone&lt;/h2&gt;
+&lt;h2 id="配置webdav-和rclone" class="anchor-link"&gt;&lt;a href="#%e9%85%8d%e7%bd%aewebdav-%e5%92%8crclone"&gt;配置webdav 和rclone&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
@@ -669,7 +674,8 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rclone mount aliyundrive:Jellfin/ aliyundrive --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="设置开机自启动"&gt;设置开机自启动&lt;/h2&gt;
+&lt;/div&gt;
+&lt;h2 id="设置开机自启动" class="anchor-link"&gt;&lt;a href="#%e8%ae%be%e7%bd%ae%e5%bc%80%e6%9c%ba%e8%87%aa%e5%90%af%e5%8a%a8"&gt;设置开机自启动&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
@@ -721,9 +727,9 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;li&gt;设置路由器端口转发 Zoraxy&lt;/li&gt;
 &lt;li&gt;Zoraxy中创建代理规则&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="创建zoraxy-lxc"&gt;创建Zoraxy LXC&lt;/h2&gt;
+&lt;h2 id="创建zoraxy-lxc" class="anchor-link"&gt;&lt;a href="#%e5%88%9b%e5%bb%bazoraxy-lxc"&gt;创建Zoraxy LXC&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;PVE真的是个好东西。 &lt;a href="https://tteck.github.io/Proxmox/#zoraxy-lxc"&gt;PVE Scripts Helper&lt;/a&gt; 更是好东西。&lt;/p&gt;
-&lt;h2 id="openwrt端口转发"&gt;OpenWRT端口转发&lt;/h2&gt;
+&lt;h2 id="openwrt端口转发" class="anchor-link"&gt;&lt;a href="#openwrt%e7%ab%af%e5%8f%a3%e8%bd%ac%e5%8f%91"&gt;OpenWRT端口转发&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;理论上不需要做端口转发了. 直接指向端口转发服务器就可以啊.
 80端口是给ACME申请证书用的。
 除此之外，群晖的drive需要暴露一个端口给pc端用。 Wireguard 暴露一个端口。&lt;/p&gt;</summary><content type="html">&lt;ol&gt;
@@ -731,21 +737,21 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;li&gt;设置路由器端口转发 Zoraxy&lt;/li&gt;
 &lt;li&gt;Zoraxy中创建代理规则&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="创建zoraxy-lxc"&gt;创建Zoraxy LXC&lt;/h2&gt;
+&lt;h2 id="创建zoraxy-lxc" class="anchor-link"&gt;&lt;a href="#%e5%88%9b%e5%bb%bazoraxy-lxc"&gt;创建Zoraxy LXC&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;PVE真的是个好东西。 &lt;a href="https://tteck.github.io/Proxmox/#zoraxy-lxc"&gt;PVE Scripts Helper&lt;/a&gt; 更是好东西。&lt;/p&gt;
-&lt;h2 id="openwrt端口转发"&gt;OpenWRT端口转发&lt;/h2&gt;
+&lt;h2 id="openwrt端口转发" class="anchor-link"&gt;&lt;a href="#openwrt%e7%ab%af%e5%8f%a3%e8%bd%ac%e5%8f%91"&gt;OpenWRT端口转发&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;理论上不需要做端口转发了. 直接指向端口转发服务器就可以啊.
 80端口是给ACME申请证书用的。
 除此之外，群晖的drive需要暴露一个端口给pc端用。 Wireguard 暴露一个端口。&lt;/p&gt;
-&lt;h2 id="zoraxy中创建代理规则"&gt;Zoraxy中创建代理规则&lt;/h2&gt;
+&lt;h2 id="zoraxy中创建代理规则" class="anchor-link"&gt;&lt;a href="#zoraxy%e4%b8%ad%e5%88%9b%e5%bb%ba%e4%bb%a3%e7%90%86%e8%a7%84%e5%88%99"&gt;Zoraxy中创建代理规则&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;配置代理规则，自动申请证书&lt;/p&gt;</content><category term="tech/收录"/><category term="Homebuild"/></entry><entry><title>DIY餐桌 Part 2</title><link href="https://hzhu.win/2023/11/01/2023-012-07-DIY%E9%A4%90%E6%A1%8C-Part-2/"/><id>https://hzhu.win/2023/11/01/2023-012-07-DIY%E9%A4%90%E6%A1%8C-Part-2/</id><published>2023-11-01T23:09:10-07:00</published><updated>2023-11-01T23:09:10-07:00</updated><summary type="html">&lt;p&gt;最终效果还ok, 但是有一个一开始就应该直接上一个planer. 选的木头有点不太平, 有sander打的有一点不平整. 除此之外上的油也有的不合适&amp;hellip;
 但是总的来说还是满意的.
 &lt;img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2023/dinning%20table.jpg" alt="DIY 餐桌成品"&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;最终效果还ok, 但是有一个一开始就应该直接上一个planer. 选的木头有点不太平, 有sander打的有一点不平整. 除此之外上的油也有的不合适&amp;hellip;
 但是总的来说还是满意的.
 &lt;img src="https://raw.githubusercontent.com/hjzhuvic/picLib/master/2023/dinning%20table.jpg" alt="DIY 餐桌成品"&gt;&lt;/p&gt;</content><category term="Homebuild"/></entry><entry><title>小米AX9000折腾记录</title><link href="https://hzhu.win/2023/06/21/2023-06-21-%E5%B0%8F%E7%B1%B3AX9000%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/"/><id>https://hzhu.win/2023/06/21/2023-06-21-%E5%B0%8F%E7%B1%B3AX9000%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</id><published>2023-06-21T19:09:00-07:00</published><updated>2023-06-21T19:09:00-07:00</updated><summary type="html">&lt;p&gt;双分区固件的好处不会死&amp;hellip;… 用小米救砖工具能快速恢复分区表.&lt;/p&gt;
-&lt;h2 id="ssh"&gt;ssh&lt;/h2&gt;
+&lt;h2 id="ssh" class="anchor-link"&gt;&lt;a href="#ssh"&gt;ssh&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;基本原理就是利用另外一个OpenWrt通过中继进行注入攻击, 具体操作参考卡卡的视频. 他的视频是最无脑的.&lt;/p&gt;</summary><content type="html">&lt;p&gt;双分区固件的好处不会死&amp;hellip;… 用小米救砖工具能快速恢复分区表.&lt;/p&gt;
-&lt;h2 id="ssh"&gt;ssh&lt;/h2&gt;
+&lt;h2 id="ssh" class="anchor-link"&gt;&lt;a href="#ssh"&gt;ssh&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;基本原理就是利用另外一个OpenWrt通过中继进行注入攻击, 具体操作参考卡卡的视频. 他的视频是最无脑的.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
@@ -809,8 +815,9 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;reboot
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="双系统切换"&gt;双系统切换&lt;/h2&gt;
-&lt;h3 id="op切换到小米系统"&gt;OP切换到小米系统&lt;/h3&gt;
+&lt;/div&gt;
+&lt;h2 id="双系统切换" class="anchor-link"&gt;&lt;a href="#%e5%8f%8c%e7%b3%bb%e7%bb%9f%e5%88%87%e6%8d%a2"&gt;双系统切换&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="op切换到小米系统" class="anchor-link"&gt;&lt;a href="#op%e5%88%87%e6%8d%a2%e5%88%b0%e5%b0%8f%e7%b1%b3%e7%b3%bb%e7%bb%9f"&gt;OP切换到小米系统&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
@@ -823,7 +830,8 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;reboot
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id="小米系统切换到op"&gt;小米系统切换到OP&lt;/h3&gt;
+&lt;/div&gt;
+&lt;h3 id="小米系统切换到op" class="anchor-link"&gt;&lt;a href="#%e5%b0%8f%e7%b1%b3%e7%b3%bb%e7%bb%9f%e5%88%87%e6%8d%a2%e5%88%b0op"&gt;小米系统切换到OP&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
@@ -839,7 +847,7 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;ssh密码:9b7fb870&lt;/p&gt;
-&lt;h2 id="配置"&gt;配置&lt;/h2&gt;
+&lt;h2 id="配置" class="anchor-link"&gt;&lt;a href="#%e9%85%8d%e7%bd%ae"&gt;配置&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;默认安装完以后没有LuCI, 需要使用下列命令安装:
 首先连接ssh: 不建议设置root密码.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -859,7 +867,7 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;/div&gt;&lt;p&gt;默认用factory安装完以后是recovery mode, 进入固件升级页面, 使用同版本的upgrade固件&amp;quot;升级&amp;quot;系统. 重启后会退出该模式, 但是需要重新安装 LuCI.&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;接下来就是该干嘛干嘛. 有一个需要注意的是, 官方固件会有第四个radio 出现, 不能有启用它, 一旦启用, wifi会有断流的情况, 每几秒就断流一次. 16MHZ 也不能启用.
 &lt;code&gt;radio3 Qualcomm Atheros QCN6024/9024/9074 802.11ac/ax/n&lt;/code&gt;&lt;/del&gt;&lt;/p&gt;
-&lt;h2 id="频率设置"&gt;频率设置&lt;/h2&gt;
+&lt;h2 id="频率设置" class="anchor-link"&gt;&lt;a href="#%e9%a2%91%e7%8e%87%e8%ae%be%e7%bd%ae"&gt;频率设置&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
@@ -874,15 +882,17 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;radio3 (5GHz AX 160MHz)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="推荐安装的软件"&gt;推荐安装的软件&lt;/h2&gt;
+&lt;/div&gt;
+&lt;h2 id="推荐安装的软件" class="anchor-link"&gt;&lt;a href="#%e6%8e%a8%e8%8d%90%e5%ae%89%e8%a3%85%e7%9a%84%e8%bd%af%e4%bb%b6"&gt;推荐安装的软件&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;luci-app-upnp&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://openwrt.org/docs/guide-user/services/dns/adguard-home"&gt;adguard home&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;ddns&lt;/li&gt;
 &lt;li&gt;acme&lt;/li&gt;
 &lt;/ul&gt;</content><category term="tech/收录"/></entry><entry><title>DIY餐桌 Part 1</title><link href="https://hzhu.win/2023/05/01/2023-05-01-DIY%E9%A4%90%E6%A1%8C-Part-1/"/><id>https://hzhu.win/2023/05/01/2023-05-01-DIY%E9%A4%90%E6%A1%8C-Part-1/</id><published>2023-05-01T23:09:10-07:00</published><updated>2023-05-01T23:09:10-07:00</updated><summary type="html">&lt;p&gt;看了一眼餐桌的选项，貌似最合适的是DIY。房子买了，但是太贵了。差不多一点的桌子都要一千多，而且也不是多么的好的那种。 不知道为什么突然灵光一闪，可以用homedepot的成品countertop来弄啊。一对桌脚，差不多就是$200，那么搭配一些螺丝，seal，wood finish oil，砂纸之类的，应该在$700左右。&lt;/p&gt;</summary><content type="html">&lt;p&gt;看了一眼餐桌的选项，貌似最合适的是DIY。房子买了，但是太贵了。差不多一点的桌子都要一千多，而且也不是多么的好的那种。 不知道为什么突然灵光一闪，可以用homedepot的成品countertop来弄啊。一对桌脚，差不多就是$200，那么搭配一些螺丝，seal，wood finish oil，砂纸之类的，应该在$700左右。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://hardwoodreflections.com/gallery/"&gt;Hardwood Reflections&lt;/a&gt; 有一个很漂亮的相思木的厨房countertop，搭配&lt;a href="https://www.homedepot.ca/product/richelieu--2-pack-28-inch-710-mm-structural-table-legs-with-levelling-glide-matte-black/1001572991"&gt;桌脚&lt;/a&gt;或者&lt;a href="https://www.homedepot.ca/product/live-edge-timber-co--28-inch-high-x-legs-raw-steel/1001676707"&gt;X型桌腿&lt;/a&gt;。 看上去效果很好，也可以考虑&lt;a href="https://www.homedepot.ca/product/belanger-laminates-inc-74-inch-x-39-inch-x-1-5-inch-acacia-live-edge-wood-kitchen-island/1001607097"&gt;live edge&lt;/a&gt;的桌面。&lt;/p&gt;</content><category term="Homebuild"/></entry><entry><title>Building stuffs-李笑来</title><link href="https://hzhu.win/2023/04/03/2023-04-03-%E6%9D%8E%E7%AC%91%E6%9D%A5-Building-stuffs/"/><id>https://hzhu.win/2023/04/03/2023-04-03-%E6%9D%8E%E7%AC%91%E6%9D%A5-Building-stuffs/</id><published>2023-04-03T13:23:12-07:00</published><updated>2023-04-03T13:23:12-07:00</updated><summary type="html">&lt;h2 id="building-stuffs--做出东西来"&gt;Building stuffs — 做出东西来&lt;/h2&gt;
-&lt;p&gt;我个人最看中人的这个特质。人群中只有少数人最终能拿出完整的作品一人与人之间的差异是如此之大，乃至于少数人有作品，更少数人有好的作品，只极少数极少数人才可能作出传世的作品；而与此同时，绝大多数人（万分之九千九百九十九的人）一辈子都没有像样的作品，他们连一篇作文都写不明白。&lt;/p&gt;</summary><content type="html">&lt;h2 id="building-stuffs--做出东西来"&gt;Building stuffs — 做出东西来&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://hardwoodreflections.com/gallery/"&gt;Hardwood Reflections&lt;/a&gt; 有一个很漂亮的相思木的厨房countertop，搭配&lt;a href="https://www.homedepot.ca/product/richelieu--2-pack-28-inch-710-mm-structural-table-legs-with-levelling-glide-matte-black/1001572991"&gt;桌脚&lt;/a&gt;或者&lt;a href="https://www.homedepot.ca/product/live-edge-timber-co--28-inch-high-x-legs-raw-steel/1001676707"&gt;X型桌腿&lt;/a&gt;。 看上去效果很好，也可以考虑&lt;a href="https://www.homedepot.ca/product/belanger-laminates-inc-74-inch-x-39-inch-x-1-5-inch-acacia-live-edge-wood-kitchen-island/1001607097"&gt;live edge&lt;/a&gt;的桌面。&lt;/p&gt;</content><category term="Homebuild"/></entry><entry><title>Building stuffs-李笑来</title><link href="https://hzhu.win/2023/04/03/2023-04-03-%E6%9D%8E%E7%AC%91%E6%9D%A5-Building-stuffs/"/><id>https://hzhu.win/2023/04/03/2023-04-03-%E6%9D%8E%E7%AC%91%E6%9D%A5-Building-stuffs/</id><published>2023-04-03T13:23:12-07:00</published><updated>2023-04-03T13:23:12-07:00</updated><summary type="html">&lt;h2 id="building-stuffs--做出东西来" class="anchor-link"&gt;&lt;a href="#building-stuffs--%e5%81%9a%e5%87%ba%e4%b8%9c%e8%a5%bf%e6%9d%a5"&gt;Building stuffs — 做出东西来&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;我个人最看中人的这个特质。人群中只有少数人最终能拿出完整的作品一人与人之间的差异是如此之大，乃至于少数人有作品，更少数人有好的作品，只极少数极少数人才可能作出传世的作品；而与此同时，绝大多数人（万分之九千九百九十九的人）一辈子都没有像样的作品，他们连一篇作文都写不明白。&lt;/p&gt;</summary><content type="html">
+&lt;h2 id="building-stuffs--做出东西来" class="anchor-link"&gt;&lt;a href="#building-stuffs--%e5%81%9a%e5%87%ba%e4%b8%9c%e8%a5%bf%e6%9d%a5"&gt;Building stuffs — 做出东西来&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;我个人最看中人的这个特质。人群中只有少数人最终能拿出完整的作品一人与人之间的差异是如此之大，乃至于少数人有作品，更少数人有好的作品，只极少数极少数人才可能作出传世的作品；而与此同时，绝大多数人（万分之九千九百九十九的人）一辈子都没有像样的作品，他们连一篇作文都写不明白。&lt;/p&gt;
 &lt;p&gt;从一开始就要想尽一切办法做出完整的作品来，哪怕最初的作品很差一但必须完整。那些有完整作品的人，能力、耐力、学习能力都会超出他人许多倍。无论看起来多简单的作品，只要是完整的，其表面之下的复杂程度是那些没做出过东西的人全然无法想像的。&lt;/p&gt;
 &lt;p&gt;我甚至经常建议我的合伙人们，在招人的时候，把这一点当作最靠谱的判断方式。少废话，少吹牛逼，给我看看你的作品。这个原则可以一下子过滤掉所有的废物。
@@ -946,7 +956,7 @@ PVE管理数据备份之类的&lt;/p&gt;
 &lt;li&gt;知识图谱的调整与方法整理&lt;/li&gt;
 &lt;li&gt;写论文&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="关于作息"&gt;关于作息&lt;/h2&gt;
+&lt;h2 id="关于作息" class="anchor-link"&gt;&lt;a href="#%e5%85%b3%e4%ba%8e%e4%bd%9c%e6%81%af"&gt;关于作息&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;08:00 起床&lt;/li&gt;
 &lt;li&gt;08:00-8:25 在早饭之前刷牙，吃早餐&lt;/li&gt;
