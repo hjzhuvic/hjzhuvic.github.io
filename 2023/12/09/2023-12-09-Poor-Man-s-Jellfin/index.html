@@ -1,21 +1,42 @@
-<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="chrome=1"><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=referrer content="no-referrer"><meta name=description content="鱼跃此时海"><title>Poor Man's Jellfin - 花开彼岸天</title><link rel=canonical href=https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/><meta property="og:title" content="Poor Man&amp;rsquo;s Jellfin - 花开彼岸天"><meta property="og:type" content="article"><meta property="og:description" content="鱼跃此时海"><meta property="og:url" content="https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/"><meta property="og:site_name" content="花开彼岸天"><meta name=twitter:card content="summary"><meta name=twitter:title content="Poor Man&amp;rsquo;s Jellfin - 花开彼岸天"><meta name=twitter:description content="鱼跃此时海"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"花开彼岸天"},"dateModified":"2023-12-09T13:35:53-08:00","datePublished":"2023-12-09T13:35:53-08:00","description":"鱼跃此时海","headline":"Poor Man's Jellfin","mainEntityOfPage":"https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/","publisher":{"@type":"Person","name":"花开彼岸天"},"url":"https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/"}</script><link rel="shortcut icon" href=/favicon.ico><link rel=stylesheet href=/css/main.min.477d158eeaa3d6be16246d84a899d2c73d4f21574941da569b1b9330796b141a.css integrity="sha256-R30Vjuqj1r4WJG2EqJnSxz1PIVdJQdpWmxuTMHlrFBo=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/site.min.67461f34c1cc28025ffe6158d112103612c6e9ccff032e1121eff2101a98b537.css integrity="sha256-Z0YfNMHMKAJf/mFY0RIQNhLG6cz/Ay4RIe/yEBqYtTc=" crossorigin=anonymous media=screen></head><body><section id=top class=section><div class="container hero"><h1 class="bold-title is-1">文章</h1></div><div class=section><div class=container><hr><nav class=navbar role=navigation aria-label="main navigation"><button type=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false aria-controls=navMenu>
-<span aria-hidden=true></span>
-<span aria-hidden=true></span>
-<span aria-hidden=true></span></button><div class=navbar-menu id=navMenu><a class=navbar-item href=/>主页
-</a><a class=navbar-item href=/posts/>文章
-</a><a class=navbar-item href=/archives/>时间轴
-</a><a class=navbar-item href=/tags/>标签
-</a><a class=navbar-item href=/search/>搜索
-</a><a class=navbar-item href=/about/>关于
-</a><a class=navbar-item href=/books/>书单
-</a><a class=navbar-item href=/movies/>影单
-</a><a class=navbar-item href=/wish/>心愿
-</a><a class=navbar-item href=/man/>MAN</a></div></nav><hr></div><div class=container><h2 class="title is-1 top-pad strong-post-title"><a href=https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/>Poor Man&rsquo;s Jellfin</a></h2><div class=post-data>2023-12-09
-|
-2 分钟</div><p>标签:
-<a href=/tags/tech-%E6%94%B6%E5%BD%95/>tech/收录</a>
-, <a href=/tags/Homebuild/>Homebuild</a></p></div><div class="container markdown top-pad"><p>基本流程如下</p><ol><li>备份</li><li>部署aliyun-webdav</li><li>部署rclone</li><li>配置Jelyfin
-<a href=https://github.com/messense/aliyundrive-webdav>aliyundrive-webdav</a></li></ol><p><a href=https://messense-aliyundrive-webdav-backendrefresh-token-ucs0wn.streamlit.app/>通过在线工具获取 refresh token</a></p><ol><li><p>暴露阿里云盘API 使得他能通过webdav的方式访问</p></li><li><p>因为Jellyfin不支持直接访问WebDav, 所以需要中间层, 之前别人是通过rclone来实现的, 但是我觉得太复杂了, 后来看到了<a href=https://messense.me/aliyundrive-fuse>aliyundrive-fuse</a>, 但是阿里云盘改了API原作者懒得改了, 直接archive了项目. 所以又回到了rclone</p></li><li><p>群晖的奇怪设计导致rclone 总是起不来, 思索再三, 决定用虚拟机直接上一个.</p></li></ol><h2 id=配置webdav-和rclone class=anchor-link><a href=#%e9%85%8d%e7%bd%aewebdav-%e5%92%8crclone>配置webdav 和rclone</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+<!doctype html><html lang=zh><head><title>Poor Man's Jellfin · 花开彼岸天</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="花开彼岸天"><meta name=description content="基本流程如下
+
+备份
+部署aliyun-webdav
+部署rclone
+配置Jelyfin
+aliyundrive-webdav
+
+通过在线工具获取 refresh token
+
+
+暴露阿里云盘API 使得他能通过webdav的方式访问
+
+
+因为Jellyfin不支持直接访问WebDav, 所以需要中间层, 之前别人是通过rclone来实现的, 但是我觉得太复杂了, 后来看到了aliyundrive-fuse, 但是阿里云盘改了API原作者懒得改了, 直接archive了项目. 所以又回到了rclone
+
+
+群晖的奇怪设计导致rclone 总是起不来, 思索再三, 决定用虚拟机直接上一个.
+
+"><meta name=keywords content="blog,tech,life"><meta name=twitter:card content="summary"><meta name=twitter:title content="Poor Man's Jellfin"><meta name=twitter:description content="基本流程如下
+备份 部署aliyun-webdav 部署rclone 配置Jelyfin aliyundrive-webdav 通过在线工具获取 refresh token
+暴露阿里云盘API 使得他能通过webdav的方式访问
+因为Jellyfin不支持直接访问WebDav, 所以需要中间层, 之前别人是通过rclone来实现的, 但是我觉得太复杂了, 后来看到了aliyundrive-fuse, 但是阿里云盘改了API原作者懒得改了, 直接archive了项目. 所以又回到了rclone
+群晖的奇怪设计导致rclone 总是起不来, 思索再三, 决定用虚拟机直接上一个."><meta property="og:url" content="https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/"><meta property="og:site_name" content="花开彼岸天"><meta property="og:title" content="Poor Man's Jellfin"><meta property="og:description" content="基本流程如下
+备份 部署aliyun-webdav 部署rclone 配置Jelyfin aliyundrive-webdav 通过在线工具获取 refresh token
+暴露阿里云盘API 使得他能通过webdav的方式访问
+因为Jellyfin不支持直接访问WebDav, 所以需要中间层, 之前别人是通过rclone来实现的, 但是我觉得太复杂了, 后来看到了aliyundrive-fuse, 但是阿里云盘改了API原作者懒得改了, 直接archive了项目. 所以又回到了rclone
+群晖的奇怪设计导致rclone 总是起不来, 思索再三, 决定用虚拟机直接上一个."><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-12-09T13:35:53-08:00"><meta property="article:modified_time" content="2023-12-09T13:35:53-08:00"><meta property="article:tag" content="tech/收录"><meta property="article:tag" content="Homebuild"><link rel=canonical href=https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/coder.min.d4c088da9083de3a0456a126f2fdfa28822d6cc30715fbd74e1daf126f878485.css integrity="sha256-1MCI2pCD3joEVqEm8v36KIItbMMHFfvXTh2vEm+HhIU=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/coder-dark.min.18009bfd4d743e18b114540e52f4779776386464bc365c00d3717af96f8936b2.css integrity="sha256-GACb/U10PhixFFQOUvR3l3Y4ZGS8NlwA03F6+W+JNrI=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/site.min.ede1c2608f07dea3eec87cf50c081f43751b8f621f7e05183d262996b7880b6d.css integrity="sha256-7eHCYI8H3qPuyHz1DAgfQ3Ubj2IffgUYPSYplreIC20=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-auto"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://hzhu.win/>花开彼岸天
+</a><input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/posts/>文章</a></li><li class=navigation-item><a class=navigation-link href=/archives/>时间轴</a></li><li class=navigation-item><a class=navigation-link href=/tags/>标签</a></li><li class=navigation-item><a class=navigation-link href=/search/>搜索</a></li><li class=navigation-item><a class=navigation-link href=/about/>关于</a></li><li class=navigation-item><a class=navigation-link href=/books/>书单</a></li><li class=navigation-item><a class=navigation-link href=/movies/>影单</a></li><li class=navigation-item><a class=navigation-link href=/wish/>心愿</a></li><li class=navigation-item><a class=navigation-link href=/man/>MAN</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://hzhu.win/2023/12/09/2023-12-09-Poor-Man-s-Jellfin/>Poor Man's Jellfin</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
+<time datetime=2023-12-09T13:35:53-08:00>2023-12-09
+</time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
+阅读时间：2 分钟</span></div><div class=tags><i class="fa-solid fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/tags/tech-%E6%94%B6%E5%BD%95/>tech/收录</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/tags/Homebuild/>Homebuild</a></span></div></div></header><div class=post-content><p>基本流程如下</p><ol><li>备份</li><li>部署aliyun-webdav</li><li>部署rclone</li><li>配置Jelyfin
+<a href=https://github.com/messense/aliyundrive-webdav class=external-link target=_blank rel=noopener>aliyundrive-webdav</a></li></ol><p><a href=https://messense-aliyundrive-webdav-backendrefresh-token-ucs0wn.streamlit.app/ class=external-link target=_blank rel=noopener>通过在线工具获取 refresh token</a></p><ol><li><p>暴露阿里云盘API 使得他能通过webdav的方式访问</p></li><li><p>因为Jellyfin不支持直接访问WebDav, 所以需要中间层, 之前别人是通过rclone来实现的, 但是我觉得太复杂了, 后来看到了<a href=https://messense.me/aliyundrive-fuse class=external-link target=_blank rel=noopener>aliyundrive-fuse</a>, 但是阿里云盘改了API原作者懒得改了, 直接archive了项目. 所以又回到了rclone</p></li><li><p>群晖的奇怪设计导致rclone 总是起不来, 思索再三, 决定用虚拟机直接上一个.</p></li></ol><h2 id=配置webdav-和rclone>配置webdav 和rclone
+<a class=heading-link href=#%e9%85%8d%e7%bd%aewebdav-%e5%92%8crclone><i class="fa-solid fa-link" aria-hidden=true title=链接到标题></i>
+<span class=sr-only>链接到标题</span></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>rclone config
 </span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -33,7 +54,9 @@
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>mkdir /data/aliyundrive
 </span></span><span class=line><span class=cl>sudo apt install fuse <span class=c1>#安装FUSE</span>
 </span></span><span class=line><span class=cl>rclone mount aliyundrive:Jellfin/ aliyundrive --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty
-</span></span></code></pre></td></tr></table></div></div><h2 id=设置开机自启动 class=anchor-link><a href=#%e8%ae%be%e7%bd%ae%e5%bc%80%e6%9c%ba%e8%87%aa%e5%90%af%e5%8a%a8>设置开机自启动</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h2 id=设置开机自启动>设置开机自启动
+<a class=heading-link href=#%e8%ae%be%e7%bd%ae%e5%bc%80%e6%9c%ba%e8%87%aa%e5%90%af%e5%8a%a8><i class="fa-solid fa-link" aria-hidden=true title=链接到标题></i>
+<span class=sr-only>链接到标题</span></a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -67,4 +90,9 @@
 </span><span class=lnt>2
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>systemctl start rclone <span class=c1>#启动rclone</span>
 </span></span><span class=line><span class=cl>systemctl <span class=nb>enable</span> rclone <span class=c1>#添加自动启动</span>
-</span></span></code></pre></td></tr></table></div></div></div><div class=container><hr></div><div class="container has-text-centered top-pad"><a href=#top><i class="fa fa-arrow-up"></i></a></div><div class=container><hr></div><div class=section id=footer><div class="container has-text-centered">花开彼岸天 · 鱼跃此时海</div></div></div></section><script src=https://hzhu.win/js/bundle.9f1477b8777751f58a8067ea8c685a70d1fad62a3c3c63c6b9fb067bf980d918.js integrity="sha256-nxR3uHd3UfWKgGfqjGhacNH61io8PGPGufsGe/mA2Rg="></script></body></html>
+</span></span></code></pre></td></tr></table></div></div></div><footer></footer></article></section></div><footer class=footer><section class=container>©
+2012 -
+2026
+花开彼岸天
+·
+技术支持 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.</section></footer></main><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
